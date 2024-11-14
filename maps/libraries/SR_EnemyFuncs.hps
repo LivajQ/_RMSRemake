@@ -1,0 +1,527 @@
+void CheckEnemyCount()
+{
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Trensletor", "Illusioner", "Bull", "Krabs"};
+	for(int x = 0; x < EnemyList.length(); x++)
+	{
+		if(GetGlobalVarInt("Active" + EnemyList[x]) == 1) AddLocalVarInt("EnemyCount", 1);
+	}
+}
+void SpawnEnemies()
+{
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs"};
+	for(int x = 0; x < EnemyList.length(); x++)
+	{
+		if(GetGlobalVarInt("Active" + EnemyList[x]) == 1) SetSpawn(EnemyList[x]);
+	}
+	if(GetGlobalVarInt("ActiveTrensletor") == 1) SetSpawn("Trensletor" + GetLocalVarInt("TrensletorSkin"));
+}
+void SpawnOverload()
+{
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Trensletor", "Illusioner", "Bull", "Krabs"};
+	for(int x = 1; x <= 10; x++)
+	{
+		SetSpawn("Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x);
+		if(GetGlobalVarString("OverloadEnemy") == "Krabs") SetEntityActive("servant_Overload_Plankton_" + x, true);
+	}
+}
+void SetSpawn(string enemy)
+{
+	bool loop = true;
+	while(loop)
+	{
+		int SpawnPos = RandInt(1, GetLocalVarInt("SpawnNodes"));
+		if(GetLocalVarInt("CanSpawnAtPos" + SpawnPos) == 1)
+		{
+			SetLocalVarInt("CanSpawnAtPos" + SpawnPos, 0);
+			SetEntityActive("servant_" + enemy, true);
+			TeleportEnemyToNode("servant_" + enemy, "NodeSpawn_" + SpawnPos, true);
+			loop = false;
+			AddDebugMessage("Spawn successful", false);
+		}
+		else AddDebugMessage("Spawn failed - already taken. Retrying", false);
+	}
+	AddDebugMessage("exited loop", false);
+}
+void AggroReset(string &in asTimer)
+{
+		if(GetGlobalVarInt("SetAggressive") == 2) return;
+		string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Plankton"};
+		ClearEnemyPatrolNodes("servant_*");
+		for(int x = 0; x < EnemyList.length(); x++)
+		{
+			string Enemy = "servant_" + EnemyList[x];
+			SetEntityPos("Box_" + EnemyList[x], GetEntityPosX(Enemy), GetEntityPosY(Enemy), GetEntityPosZ(Enemy));
+			SetLocalVarFloat("PosX_" + EnemyList[x], GetEntityPosX(Enemy));
+			SetLocalVarFloat("PosY_" + EnemyList[x], GetEntityPosY(Enemy));
+			SetLocalVarFloat("PosZ_" + EnemyList[x], GetEntityPosZ(Enemy));
+			TeleportEnemyToNode(Enemy, "SafetyNode_" + x, true);
+			AddEnemyPatrolNode(Enemy, "SafetyNode_" + x, 0.001f, "Idle");
+		}
+		string EnemyT = "servant_Trensletor" + GetLocalVarInt("TrensletorSkin");
+		SetEntityPos("Box_Trensletor", GetEntityPosX(EnemyT), GetEntityPosY(EnemyT), GetEntityPosZ(EnemyT));
+		SetLocalVarFloat("PosX_Trensletor", GetEntityPosX(EnemyT));
+		SetLocalVarFloat("PosY_Trensletor", GetEntityPosY(EnemyT));
+		SetLocalVarFloat("PosZ_Trensletor", GetEntityPosZ(EnemyT));
+		TeleportEnemyToNode(EnemyT, "SafetyNode_27", true);
+		AddEnemyPatrolNode(EnemyT, "SafetyNode_27", 0.001f, "Idle");
+			
+		for(int x = 1; x <= 10; x++)
+		{
+			string Enemy = "servant_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x;
+			SetEntityPos("Box_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, GetEntityPosX(Enemy), GetEntityPosY(Enemy), GetEntityPosZ(Enemy));
+			SetLocalVarFloat("PosX_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, GetEntityPosX(Enemy));
+			SetLocalVarFloat("PosY_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, GetEntityPosY(Enemy));
+			SetLocalVarFloat("PosZ_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, GetEntityPosZ(Enemy));
+			TeleportEnemyToNode(Enemy, "SafetyNode_" + x, true);
+			AddEnemyPatrolNode(Enemy, "SafetyNode_" + x, 0.001f, "Idle");
+			
+			if(GetGlobalVarString("OverloadEnemy") == "Krabs")
+			{	
+				SetLocalVarFloat("PosX_Overload_Plankton_" + x, GetEntityPosX("servant_Overload_Plankton_" + x));
+				SetLocalVarFloat("PosY_Overload_Plankton_" + x, GetEntityPosY("servant_Overload_Plankton_" + x));
+				SetLocalVarFloat("PosZ_Overload_Plankton_" + x, GetEntityPosZ("servant_Overload_Plankton_" + x));
+				TeleportEnemyToNode("servant_Overload_Plankton_" + x, "SafetyNode_" + x + 10, true);
+				AddEnemyPatrolNode("servant_Overload_Plankton_" + x, "SafetyNode_" + x + 10, 0.001f, "Idle");
+			}
+		}
+		SetEnemyDisableTriggers("servant_*", true);
+		AddTimer("c", 0.1f, "AggroReset2");
+		AddTimer("f", 0.05f, "EnemyBoxes");
+		AddTimer("c", 3.0f, "StopBoxes");
+		AddDebugMessage("ENEMIES SHOULD RESET AGGRO NOW", false);
+}
+void EnemyBoxes(string &in asTimer)
+{
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Plankton"};
+	string Enemy;	
+		for(int x = 0; x < EnemyList.length(); x++)
+		{
+			Enemy = "servant_" + EnemyList[x];
+			SetEntityPos("Box_" + EnemyList[x], GetEntityPosX(Enemy), GetEntityPosY(Enemy), GetEntityPosZ(Enemy));
+		}
+		string EnemyT = "servant_Trensletor" + GetLocalVarInt("TrensletorSkin");
+		SetEntityPos("Box_Trensletor", GetEntityPosX(EnemyT), GetEntityPosY(EnemyT), GetEntityPosZ(EnemyT));
+		for(int x = 1; x <= 10; x++)
+		{
+			Enemy = "servant_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x;
+			SetEntityPos("Box_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, GetEntityPosX(Enemy), GetEntityPosY(Enemy), GetEntityPosZ(Enemy));
+			Enemy = "servant_Overload_Plankton_" + x;
+			SetEntityPos("Box_Overload_Plankton_" + x, GetEntityPosX(Enemy), GetEntityPosY(Enemy), GetEntityPosZ(Enemy));
+		}
+		AddTimer("f", 0.01f, "EnemyBoxes");
+}
+void StopBoxes(string &in asTimer)
+{
+	RemoveTimer("f");
+	ResetProp("Box_*");
+	SetEnemyDisableTriggers("servant_*", false);
+}
+void AggroReset2(string &in asTimer)
+{
+        SetEntityActive("servant_*", false);
+		ClearEnemyPatrolNodes("servant_*");
+		string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Plankton"};
+		if(GetGlobalVarInt("SetOverload") == 1)
+		{
+			for(int x = 1; x <= 10; x++)
+			{
+				float PosX = GetLocalVarFloat("PosX_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x);
+				float PosY = GetLocalVarFloat("PosY_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x);
+				float PosZ = GetLocalVarFloat("PosZ_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x);
+				SetEntityActive("servant_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, true);
+				SetEntityPos("servant_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, PosX, PosY, PosZ);
+				if(GetGlobalVarString("OverloadEnemy") == "Krabs")
+				{	
+					float PosPX = GetLocalVarFloat("PosX_Overload_Plankton_" + x);
+					float PosPY = GetLocalVarFloat("PosY_Overload_Plankton_" + x);
+					float PosPZ = GetLocalVarFloat("PosZ_Overload_Plankton_" + x);
+					SetEntityActive("servant_Overload_Plankton_" + x, true);
+					SetEntityPos("servant_Overload_Plankton_" + x, PosPX, PosPY, PosPZ);
+					AlertEnemyOfPlayerPresence("servant_Overload_Plankton_" + x);
+				}
+			}
+		}
+		else
+		{
+			for(int x = 0; x < EnemyList.length(); x++)
+			{
+				float PosX = GetLocalVarFloat("PosX_" + EnemyList[x]);
+				float PosY = GetLocalVarFloat("PosY_" + EnemyList[x]);
+				float PosZ = GetLocalVarFloat("PosZ_" + EnemyList[x]);
+				if(GetGlobalVarInt("Active" + EnemyList[x]) == 1) 
+				{
+					SetEntityActive("servant_" + EnemyList[x], true);
+					SetEntityPos("servant_" + EnemyList[x], PosX, PosY, PosZ);
+				}
+			}
+			
+			float TPosX = GetLocalVarFloat("PosX_Trensletor");
+			float TPosY = GetLocalVarFloat("PosY_Trensletor");
+			float TPosZ = GetLocalVarFloat("PosZ_Trensletor");
+			if(GetGlobalVarInt("ActiveTrensletor") == 1) 
+			{
+				SetEntityActive("servant_Trensletor" + GetLocalVarInt("TrensletorSkin"), true);
+				SetEntityPos("servant_Trensletor" + GetLocalVarInt("TrensletorSkin"), TPosX, TPosY, TPosZ);
+			}
+			AlertEnemyOfPlayerPresence("servant_Plankton");
+		}
+		switch(GetGlobalVarInt("SetDifficulty"))
+		{
+		    case 1:
+				AddTimer("c", 20.0f, "AggroReset"); 
+				break;
+            case 2:
+				AddTimer("c", 25.0f, "AggroReset"); 
+				break;
+		    case 3:
+				AddTimer("c", 30.0f, "AggroReset"); 
+				break;
+		    case 4:
+				AddTimer("c", 35.0f, "AggroReset"); 
+				break;
+			case 5:
+				AddTimer("c", 40.0f, "AggroReset"); 
+				break;
+			case 6:
+				AddTimer("c", 45.0f, "AggroReset"); 
+				break;
+		}
+		AddTimer("c", 0.1f, "ChoosePath");
+}
+void ChoosePath(string &in asTimer)
+{
+        string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs"};
+		ClearEnemyPatrolNodes("servant_*");
+		for(int x = 1; x <= 10; x++)
+		{
+			for(int y = 0; y < EnemyList.length(); y++)
+			{
+				AddEnemyPatrolNode("servant_" + EnemyList[y], "PathNodeArea_" + RandInt(1, GetLocalVarInt("NodeAmount")), 0.001f, "Idle");
+			}
+			AddEnemyPatrolNode("servant_Trensletor" + GetLocalVarInt("TrensletorSkin"), "PathNodeArea_" + RandInt(1, GetLocalVarInt("NodeAmount")), 0.001f, "Idle");
+			for(int y = 1; y <= 10; y++)
+			{
+				AddEnemyPatrolNode("servant_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, "PathNodeArea_" + RandInt(1, GetLocalVarInt("NodeAmount")), 0.001f, "Idle");
+			}
+		}
+}
+void MonsterFallPreventer(string &in asTimer)
+{
+        string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs"};
+			for(int x = 0; x < EnemyList.length(); x++)
+			{
+				if(GetEntityPosY("servant_" + EnemyList[x]) < -30.0f) 
+				TeleportEnemyToNode("servant_" + EnemyList[x], "NodeSpawn_" + RandInt(1, GetLocalVarInt("SpawnNodes")), true);
+			}
+			if(GetEntityPosY("servant_Trensletor" + GetLocalVarInt("TrensletorSkin")) < -30.0f) 
+			TeleportEnemyToNode("servant_Trensletor" + GetLocalVarInt("TrensletorSkin"), "NodeSpawn_" + RandInt(1, GetLocalVarInt("SpawnNodes")), true);
+			for(int x = 1; x <= 10; x++)
+			{
+				if(GetEntityPosY("servant_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x) < -30.0f) 
+				TeleportEnemyToNode("servant_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, "NodeSpawn_" + RandInt(1, GetLocalVarInt("SpawnNodes")), true);
+			}
+			if(GetPlayerPosY() < -30.0f) TeleportPlayer("PlayerStartArea_1");
+
+		AddTimer("c", 1.0f, "MonsterFallPreventer");
+}
+void IllusionerEffect(string &in asEntity, int alState)
+{
+	string Name = StringSub(asEntity, 8, 30);
+	if(GetLocalVarInt(Name + "Cooldown") == 0)
+	{
+	    int Illusionerosos = RandInt(1, 6);
+		switch(Illusionerosos)
+		{
+		    case 1:
+			    SetMessage("Info", "Blinded", 4.0f);
+				FadeOut(2.0f);
+				AddTimer("d", 8.0f, "IllusionerFix");
+				break;
+			case 2:
+			    SetMessage("Info", "BeenShaked", 4.0f);
+				StartScreenShake(0.85f, 15.0f, 2.5f, 2.5f);
+				break;
+			case 3:
+			    SetMessage("Info", "Mirrored", 4.0f);
+				FadePlayerAspectMulTo(8.0f, 2.0f);
+				AddTimer("d", 20.0f, "IllusionerFix");
+				break;
+			case 4:
+			    SetMessage("Info", "BarrelRoll", 4.0f);
+			    FadePlayerRollTo(180.0f, 50.0f, 50.0f);
+			    AddTimer("d", 25.0f, "IllusionerFix");
+			    break;
+		    case 5:
+			    SetMessage("Info", "Binoculars", 4.0f);
+				FadePlayerFOVMulTo(0.2f, 1.5f);
+			    AddTimer("d", 30.0f, "IllusionerFix");
+				break;
+			case 6:
+			    SetMessage("Info", "Shrinked", 4.0f);
+				MovePlayerHeadPos(0.0f, -1.0f, 0.0f, 1.0f, -0.7f);
+				SetPlayerMoveSpeedMul(SpeedIllu() * 0.8f);
+				SetPlayerRunSpeedMul(SpeedIllu() * 0.8f);
+			    AddTimer("d", 30.0f, "IllusionerFix");
+				break;
+		}
+		SetLocalVarFloat(Name + "Cooldown", 1);
+		AddTimer(Name + "Cooldown", 31.0f, "RemoveCooldown");
+	}
+}
+float SpeedIllu()
+{
+	float MySpeed;
+	switch(GetGlobalVarInt("SetDifficulty"))
+	{
+		case 1:
+			MySpeed = 1.5f;
+			break;
+		case 2:
+			MySpeed = 1.3f;
+			break;
+		case 3:
+			MySpeed = 1.15f;
+			break;
+		case 4:
+			MySpeed = 1.0f;
+			break;
+		case 5:
+			MySpeed = 0.9f;
+			break;
+		case 6:
+			MySpeed = 0.75f;
+			break;
+	}
+	MySpeed *= GetLocalVarFloat("Multiplier");
+	return MySpeed;
+}
+void RemoveCooldown(string &in asTimer)
+{
+	SetLocalVarFloat(asTimer, 0);
+}
+void IllusionerFix(string &in asTimer)
+{
+	SetPlayerMoveSpeedMul(SpeedIllu());
+	SetPlayerRunSpeedMul(SpeedIllu());
+	FadePlayerAspectMulTo(1.0f, 2.0f);
+	FadeIn(2.0f);
+	FadePlayerRollTo(0.0f, 50.0f, 50.0f);
+	FadePlayerFOVMulTo(1.0f, 1.5f);
+	MovePlayerHeadPos(0.0f, 0.0f, 0.0f, 1.0f, -0.3f);
+}
+void MagicianTeleport(string &in asTimer)
+{
+		if(GetGlobalVarInt("SetOverload") == 1 && GetGlobalVarString("OverloadEnemy") == "Magician")
+		{
+			for(int x = 1; x <= 10; x++)
+			{
+				TeleportEnemyToNode("servant_Overload_Magician_" + x, "PathNodeArea_" + RandInt(1, GetLocalVarInt("NodeAmount")), true);
+				bool Jumpscare = RareJumpscare(GetGlobalVarInt("SetDifficulty"));
+				if(Jumpscare) 
+				{
+					float DirectionX;
+					float DirectionZ;
+					if(RandInt(1, 2) == 1) DirectionX = 1.0f;
+					else DirectionX = -1.0f;
+					if(RandInt(1, 2) == 1) DirectionZ = 1.0f;
+					else DirectionZ = -1.0f;
+					SetEntityPos("servant_Overload_Magician_" + x, GetPlayerPosX() + DirectionX, GetPlayerPosY(), GetPlayerPosZ() + DirectionZ);
+				}
+			}
+		}
+		else
+		{
+			TeleportEnemyToNode("servant_Magician", "PathNodeArea_" + RandInt(1, GetLocalVarInt("NodeAmount")), true);
+			bool Jumpscare = RareJumpscare(GetGlobalVarInt("SetDifficulty"));
+			if(Jumpscare) 
+			{
+				float DirectionX;
+				float DirectionZ;
+				if(RandInt(1, 2) == 1) DirectionX = 1.0f;
+				else DirectionX = -1.0f;
+				if(RandInt(1, 2) == 1) DirectionZ = 1.0f;
+				else DirectionZ = -1.0f;
+				SetEntityPos("servant_Magician", GetPlayerPosX() + DirectionX, GetPlayerPosY(), GetPlayerPosZ() + DirectionZ);
+			}
+		}
+		if(GetGlobalVarInt("SetMagician") == 1) AddTimer("a", 3.0f, "MagicianTeleport");
+		else AddTimer("a", 30.0f, "MagicianTeleport");
+}
+bool RareJumpscare(int Difficulty)
+{
+	float Chance;
+	switch(Difficulty)
+	{
+		case 1:
+			Chance = 5.0f;
+			break;
+		case 2:
+			Chance = 10.0f;
+			break;
+		case 3:
+			Chance = 20.0f;
+			break;
+		case 4:
+			Chance = 35.0f;
+			break;
+		case 5:
+			Chance = 50.0f;
+			break;
+		case 6:
+			Chance = 75.0f;
+			break;
+		default:
+			Chance = 20.0f;
+			break;
+	}
+	if(RandFloat(0.0f, 100.0f) < Chance) return true;
+	else return false;
+	return false;
+}
+void JackalDetect(string &in asTimer)
+{
+        AlertEnemyOfPlayerPresence("servant_Jackal");
+		for(int x = 1; x <= 10; x++)
+		{
+			AlertEnemyOfPlayerPresence("servant_Overload_Jackal_" + x);
+		}
+		AddTimer("c", 15.0f, "JackalDetect");
+}
+void RafalalaMine(string &in asTimer)
+{
+        if(GetGlobalVarInt("SetOverload") == 1 && GetGlobalVarString("OverloadEnemy") == "Rafalala")
+		{
+			for(int x = 1; x <= 10; x++)
+			{
+				AddLocalVarInt("MineIndex", 1);
+				int Mine = GetLocalVarInt("MineIndex");
+				CreateEntityAtArea("landmine_" + Mine, "deskpad.ent", "ScriptArea_1", false);
+				PlaceEntityAtEntity("landmine_" + Mine, "servant_Overload_Rafalala_" + x, "", true);
+				AddEntityCollideCallback("Player", "landmine_" + Mine, "MineTriggered", false, 0);
+				SetEntityPlayerInteractCallback("landmine_" + Mine, "DefuseMine", false);
+			}
+		}
+		else
+		{
+			AddLocalVarInt("MineIndex", 1);
+			int Mine = GetLocalVarInt("MineIndex");
+			CreateEntityAtArea("landmine_" + Mine, "deskpad.ent", "ScriptArea_1", false);
+			PlaceEntityAtEntity("landmine_" + Mine, "servant_Rafalala", "", true);
+			AddTimer("a", 1.5f, "MakeStatic");
+			AddEntityCollideCallback("Player", "landmine_" + Mine, "MineTriggered", false, 0);
+			SetEntityPlayerInteractCallback("landmine_" + Mine, "DefuseMine", false);
+		}
+		if(GetGlobalVarInt("SetMines") == 1) AddTimer("a", 5.0f, "RafalalaMine");
+		else AddTimer("a", 35.0f, "RafalalaMine");
+}
+void MakeStatic(string &in asTimer)
+{
+    SetPropStaticPhysics("landmine_" + GetLocalVarInt("MineIndex"), true);
+}
+void DefuseMine(string &in asEntity)
+{
+    PlayGuiSound("17_position_on.snt", 1);
+    SetEntityActive(asEntity, false);
+}
+void MineTriggered(string &in asParent, string &in asChild, int alState)
+{
+    CreateParticleSystemAtEntity("", "ps_break_cavein.ps", asParent, false);
+    SetEntityActive(asChild, false);
+    PlayGuiSound("break_wood_metal.snt", 1);
+    FadeImageTrailTo(1.5f, 0.1f);
+    GivePlayerDamage(100.0f, "BloodSplat", true, true);
+    AddTimer("a", 3.0f, "BackToNormal");
+    ShowEnemyPlayerPosition("servant_*");
+}
+void KrabsLoop(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetOverload") == 1 && GetGlobalVarString("OverloadEnemy") == "Krabs")
+	{
+		for(int x = 1; x <= 10; x++)
+		{
+			if((GetEnemyStateName("servant_Overload_Krabs_" + x) == "Alert" || GetEnemyStateName("servant_Overload_Krabs_" + x) == "Hunt") && GetLocalVarInt("Krabs_Overload_" + x + "_Cooldown") == 0)
+			{
+				string Index = StringSub("servant_Overload_Krabs_" + x, 23, 2);
+				DrJrDeployer("servant_Overload_Krabs_" + x, "servant_Overload_Plankton_" + Index, "Krabs_Overload_" + x + "_Cooldown");
+			}
+		}
+	}
+	else
+	{
+		if((GetEnemyStateName("servant_Krabs") == "Alert" || GetEnemyStateName("servant_Krabs") == "Hunt") && GetLocalVarInt("KrabsCooldown") == 0)
+		{
+			DrJrDeployer("servant_Krabs", "servant_Plankton", "KrabsCooldown");
+		}
+	}
+	AddTimer("a", 0.2f, "KrabsLoop");
+}
+void DrJrDeployer(string KrabsId, string PlanktonId, string VarName)
+{
+	SetEntityActive(PlanktonId, true);
+	PlaceEntityAtEntity("DrJrSpawner", KrabsId, "", true);
+	TeleportEnemyToEntity(PlanktonId, "DrJrSpawner", "", true);
+	SetEnemyDisabled(PlanktonId, false);
+	AlertEnemyOfPlayerPresence(PlanktonId);
+	SetLocalVarInt(VarName, 1);
+	AddTimer(PlanktonId, 20.0f, "DespawnDrJr");
+	AddTimer(VarName, 40.0f, "ReenableDrJr");
+	RemoveTimer("e");
+	AddTimer("e", 41.0f, "DrJrGlobalReenabler");
+}
+void DespawnDrJr(string &in asTimer)
+{
+	TeleportEnemyToNode(asTimer, "SafetyNode_30", true);
+	SetEntityActive(asTimer, false);
+	SetEnemyDisabled(asTimer, true);
+}
+void ReenableDrJr(string &in asTimer)
+{
+	SetLocalVarInt(asTimer, 0);
+	SetEnemyDisabled(asTimer, false);
+}
+void DrJrGlobalReenabler(string &in asTimer)
+{
+	SetLocalVarInt("KrabsCooldown", 0);
+	SetEnemyDisabled("servant_Plankton", false);
+	for(int x = 1; x <= 10; x++)
+	{
+		SetLocalVarInt("Krabs_Overload_" + x + "_Cooldown", 0);
+		SetEnemyDisabled("servant_Overload_Plankton_" + x, false);
+	}
+}
+void BackToNormal(string &in asTimer)
+{
+    FadeImageTrailTo(0.0f, 2.0f);
+}
+void AggressiveLoop(string &in asTimer)
+{
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs"};
+	
+	if(GetGlobalVarInt("SetAggressive") == 2) 
+	{
+		ShowEnemyPlayerPosition("servant_*");
+		AddTimer("b", 10.0f, "AggressiveLoop");
+	}
+	
+	else if(GetGlobalVarInt("SetOverload") == 0)
+	{
+		for(int x = 0; x < EnemyList.length(); x++)
+		{
+			if(GetEnemyStateName("servant_" + EnemyList[x]) == "Alert") ShowEnemyPlayerPosition("servant_*");
+		}
+		for(int x = 1; x <= 10; x++)
+		{
+			if(GetEnemyStateName("servant_Trensletor" + x) == "Alert") ShowEnemyPlayerPosition("servant_*");
+		}
+		AddTimer("b", 0.5f, "AggressiveLoop");
+	}
+	
+	else
+	{
+		for(int x = 1; x <= 10; x++)
+		{
+			if(GetEnemyStateName("servant_Overload_" + GetGlobalVarString("OverloadEnemy")) == "Alert") ShowEnemyPlayerPosition("servant_*");
+		}
+		AddTimer("b", 0.5f, "AggressiveLoop");
+	}
+}

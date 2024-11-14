@@ -1,0 +1,194 @@
+void OnStart()
+{
+	TeleportPlayer("PlayerStartArea_2");
+	if(GetLocalVarInt("yourslave") == 2)
+	{
+	    TeleportEnemyToNode("servant_bitch_1", "PathNodeArea_15", true);
+	}
+	for(int x = 1; x<=20; x++)
+	{
+	    StopMusic(1, x);
+	}
+	PlayMusic("clubzzz.ogg", true, 1, 0, 30, true);
+	AddTimer("partyer", 1.0f, "boxing");
+	AddTimer("partyer", 60.0f, "resetboxes");
+	SetLocalVarInt("partycolors", 3);
+	AddTimer("", 1.0f, "weparty");
+	AddTimer("", 1.0f, "runners");
+	SetLocalVarInt("partyboxleftnumber", 1);
+	SetLocalVarInt("partyboxrightnumber", 1);
+	SetLocalVarInt("numberone", 1);
+	SetLocalVarInt("numberfour", 4);
+	SetEnemySanityDecreaseActive("servant_*", false);
+	RotatePropToSpeed("disco_ball_1", 1.5f, 1.5f, 0.0f, -1.0f, 0.0f, false, "");
+	RotatePropToSpeed("disco_ball_2", 1.5f, 1.5f, 0.0f, -1.0f, 0.0f, false, "");
+	RotatePropToSpeed("disco_ball_3", 1.5f, 1.5f, 0.0f, -1.0f, 0.0f, false, "");
+	PlaySoundAtEntity("", "krabwalker.snt", "servant_brute_nospawnmusic_1", 0.1f, false);
+}
+void OnEnter()
+{
+	AddEnemyPatrolNode("servant_suitor_nospawnmusic_2", "PathNodeArea_6", 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_suitor_nospawnmusic_1", "PathNodeArea_5", 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_brute_nospawnmusic_2", "PathNodeArea_2", 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_brute_nospawnmusic_1", "PathNodeArea_1", 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_grunt_nospawnmusic_2", "PathNodeArea_4", 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_grunt_nospawnmusic_1", "PathNodeArea_3", 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_bitch_2", "PathNodeArea_74", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_bitch_1", "PathNodeArea_75", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_bartender_1", "PathNodeArea_23", 9999.001f, "Idle");
+	AddEnemyPatrolNode("servant_beholder_1", "PathNodeArea_29", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_bull_1", "PathNodeArea_33", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_ninja_1", "PathNodeArea_30", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_charger_1", "PathNodeArea_31", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_jackal_1", "PathNodeArea_26", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_rafalala_1", "PathNodeArea_37", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_trensletor_1", "PathNodeArea_76", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_illusioner_1", "PathNodeArea_89", 999.001f, "Idle");
+	AddEnemyPatrolNode("servant_athlete_1", "PathNodeArea_24", 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_athlete_1", "PathNodeArea_25", 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_athlete_1", "PathNodeArea_28", 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_athlete_1", "PathNodeArea_27", 0.001f, "Idle");
+}
+void OnLeave()
+{
+	
+}
+void weparty(string &in asTimer)
+{
+    switch(GetLocalVarInt("partycolors"))
+		 {
+			case 3:
+			        FadeLightTo("PartyLight_1", 0.0f, 0.0f, 0.6f, 1.0f, -1, 0.5f);
+					SetLocalVarInt("partycolors", 4);
+		            AddTimer("a", 0.5f, "weparty");
+					break;
+			case 4:
+			        FadeLightTo("PartyLight_1", 0.6f, 0.0f, 0.6f, 1.0f, -1, 0.5f);
+					SetLocalVarInt("partycolors", 5);
+		            AddTimer("a", 0.5f, "weparty");
+					break;
+			case 5:
+			        FadeLightTo("PartyLight_1", 0.1f, 0.1f, 0.1f, 1.0f, -1, 0.5f);
+					SetLocalVarInt("partycolors", 6);
+		            AddTimer("a", 0.5f, "weparty");
+					break;
+			case 6:
+			        FadeLightTo("PartyLight_1", 0.0f, 0.6f, 0.6f, 1.0f, -1, 0.5f);
+					SetLocalVarInt("partycolors", 3);
+		            AddTimer("a", 0.5f, "weparty");
+					break;				
+		 }
+}
+void boxing(string &in asTimer)
+{
+    CreateEntityAtArea("partyboxleft_"+GetLocalVarInt("partyboxleftnumber"), "wood_box01.ent", "ScriptArea_1", false);
+	CreateEntityAtArea("partyboxleft_"+(GetLocalVarInt("partyboxleftnumber")+GetLocalVarInt("numberone")), "wood_box01.ent", "ScriptArea_2", false);
+	CreateEntityAtArea("partyboxleft_"+(GetLocalVarInt("partyboxleftnumber")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")), "wood_box01.ent", "ScriptArea_3", false);
+	CreateEntityAtArea("partyboxleft_"+(GetLocalVarInt("partyboxleftnumber")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")), "wood_box01.ent", "ScriptArea_8", false);
+	CreateEntityAtArea("partyboxright_"+GetLocalVarInt("partyboxrightnumber"), "wood_box01.ent", "ScriptArea_4", false);
+	CreateEntityAtArea("partyboxright_"+(GetLocalVarInt("partyboxrightnumber")+GetLocalVarInt("numberone")), "wood_box01.ent", "ScriptArea_5", false);
+	CreateEntityAtArea("partyboxright_"+(GetLocalVarInt("partyboxrightnumber")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")), "wood_box01.ent", "ScriptArea_6", false);
+	CreateEntityAtArea("partyboxright_"+(GetLocalVarInt("partyboxrightnumber")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")), "wood_box01.ent", "ScriptArea_7", false);
+	AddTimer("partyer", 0.1f, "flyman");
+}
+void flyman(string &in asTimer)
+{
+	AddPropForce("partyboxleft_"+GetLocalVarInt("partyboxleftnumber"), 0.0f, 5000.0f, -5000.0f, "world");
+	AddPropForce("partyboxleft_"+(GetLocalVarInt("partyboxleftnumber")+GetLocalVarInt("numberone")), 0.0f, 5000.0f, -5000.0f, "world");
+	AddPropForce("partyboxleft_"+(GetLocalVarInt("partyboxleftnumber")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")), 0.0f, 5000.0f, -5000.0f, "world");
+	AddPropForce("partyboxleft_"+(GetLocalVarInt("partyboxleftnumber")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")), 0.0f, 5000.0f, -5000.0f, "world");
+    AddPropForce("partyboxright_"+GetLocalVarInt("partyboxrightnumber"), 0.0f, 5000.0f, 5000.0f, "world");
+	AddPropForce("partyboxright_"+(GetLocalVarInt("partyboxrightnumber")+GetLocalVarInt("numberone")), 0.0f, 5000.0f, 5000.0f, "world");
+	AddPropForce("partyboxright_"+(GetLocalVarInt("partyboxrightnumber")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")), 0.0f, 5000.0f, 5000.0f, "world");
+	AddPropForce("partyboxright_"+(GetLocalVarInt("partyboxrightnumber")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")+GetLocalVarInt("numberone")), 0.0f, 5000.0f, 5000.0f, "world");
+	AddTimer("partyer", 2.0f, "boxing");
+	SetLocalVarInt("partyboxleftnumber", GetLocalVarInt("partyboxleftnumber")+GetLocalVarInt("numberfour"));
+	SetLocalVarInt("partyboxrightnumber", GetLocalVarInt("partyboxrightnumber")+GetLocalVarInt("numberfour"));
+}
+void resetboxes(string &in asTimer)
+{
+       SetEntityActive("partyboxleft_*", false);
+	   SetEntityActive("partyboxright_*", false);
+   AddTimer("partyer", 60.0f, "resetboxes");
+}
+void runners(string &in asTimer)
+{
+    AddEnemyPatrolNode("servant_ninja_2", "PathNodeArea_"+RandInt(7, 20), 0.001f, "Idle");
+	AddEnemyPatrolNode("servant_ninja_3", "PathNodeArea_"+RandInt(7, 20), 0.001f, "Idle");
+	AddTimer("a", 2.0f, "runners");
+}
+void drinking(string &in asEntity)
+{
+    if(GetGlobalVarInt("globalcash") >=20)
+	{
+	    SetPropActiveAndFade("amnesia_bottle_*", false, 1.5f);
+		SetEntityActive("DrinkArea_*", false);
+		AddTimer("a", 2.0f, "drunkstatechange");
+		SetGlobalVarInt("globalcash", GetGlobalVarInt("globalcash") - 20);
+	}
+	else SetMessage("Mono", "omgcash", 4.0f);
+}
+void drunkstatechange(string &in asTimer)
+{
+    //how fucked up you are
+	SetPropActiveAndFade("amnesia_bottle_*", true, 1.5f);
+	SetEntityActive("DrinkArea_*", true);
+	switch(GetLocalVarInt("drunkstate"))
+	{
+	    case 0:
+		    SetLocalVarInt("drunkstate", 1);
+			SetLocalVarFloat("intensity", 0.2f);
+			FadeImageTrailTo(0.2f, 0.2f);
+			FadeRadialBlurTo(0.2f, 0.2f);
+			AddTimer("a", 2.0f, "flasher");
+			break;
+		case 1:
+		    SetLocalVarInt("drunkstate", 2);
+			SetLocalVarFloat("intensity", 0.4f);
+			FadeImageTrailTo(0.4f, 0.2f);
+			FadeRadialBlurTo(0.4f, 0.2f);
+			break;
+		case 2:
+		    SetLocalVarInt("drunkstate", 3);
+			SetLocalVarFloat("intensity", 0.6f);
+			FadeImageTrailTo(0.6f, 0.2f);
+			FadeRadialBlurTo(0.6f, 0.2f);
+			break;
+		case 3:
+		    SetLocalVarInt("drunkstate", 4);
+			SetLocalVarFloat("intensity", 1.0f);
+			FadeImageTrailTo(1.0f, 0.2f);
+			FadeRadialBlurTo(1.0f, 0.2f);
+			break;
+		case 4:
+		    SetLocalVarInt("drunkstate", 5);
+			SetLocalVarFloat("intensity", 1.5f);
+			FadeImageTrailTo(1.5f, 0.2f);
+			FadeRadialBlurTo(1.5f, 0.2f);
+			break;
+		case 5:
+		    SetMessage("Mono", "enoughisenough", 4.0f);
+			SetGlobalVarInt("globalcash", GetGlobalVarInt("globalcash") + 20);
+			break;
+	}
+}
+void rolling(string &in asTimer)
+{
+    FadePlayerRollTo(45.0f, 20*GetLocalVarFloat("intensity"), 20*GetLocalVarFloat("intensity"));
+	AddTimer("a", 5.0f, "rolling2");
+}
+void rolling2(string &in asTimer)
+{
+    FadePlayerRollTo(-45.0f, 20*GetLocalVarFloat("intensity"), 20*GetLocalVarFloat("intensity"));
+	AddTimer("a", 5.0f, "rolling");
+}
+void flasher(string &in asTimer)
+{
+    FadeOut(2.0f/GetLocalVarFloat("intensity"));
+	AddTimer("a", 5.0f, "flasher2");
+}
+void flasher2(string &in asTimer)
+{
+    FadeIn(2.0f/GetLocalVarFloat("intensity"));
+	AddTimer("a", 5.0f, "flasher");
+}

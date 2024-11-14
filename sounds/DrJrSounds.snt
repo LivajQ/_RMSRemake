@@ -1,0 +1,15 @@
+<SOUNDENTITY>
+  <SOUNDS>
+  	<Main>
+  		<Sound File="DrJrSounds_1" />
+  		<Sound File="DrJrSounds_2" />
+  		<Sound File="DrJrSounds_3" />
+  		<Sound File="DrJrSounds_4" />
+  		<Sound File="DrJrSounds_5" />
+  		<Sound File="DrJrSounds_6" />
+  		<Sound File="DrJrSounds_7" />
+  		<Sound File="DrJrSounds_8" />
+  	</Main>
+  </SOUNDS>
+  <PROPERTIES Volume="0.7" MinDistance="0.5" MaxDistance="20" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="False" Use3D="True" Blockable="False" BlockVolumeMul="0.7" Priority="0" />
+</SOUNDENTITY>

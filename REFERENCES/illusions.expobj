@@ -1,0 +1,100 @@
+<Level>
+    <MapData FogActive="false" FogColor="1 1 1 1" FogCulling="true" FogEnd="20" FogFalloffExp="1" FogStart="0" GlobalDecalMaxTris="300" Name="" SkyBoxActive="false" SkyBoxColor="1 1 1 1" SkyBoxTexture="">
+        <MapContents>
+            <FileIndex_StaticObjects NumOfFiles="20">
+                <File Id="0" Path="static_objects/mansionbase/wall/default02.dae" />
+                <File Id="1" Path="static_objects/mansionbase/wall/door_way02.dae" />
+                <File Id="2" Path="static_objects/mansionbase/ceiling/concave.dae" />
+                <File Id="3" Path="static_objects/mansionbase/ceiling/corner_concave_short.dae" />
+                <File Id="4" Path="static_objects/mansionbase/wall/door_frame.dae" />
+                <File Id="5" Path="static_objects/machine/hanging_chain/hanging_chain.dae" />
+                <File Id="6" Path="static_objects/cellarbase/special/dividing_wall.dae" />
+                <File Id="7" Path="static_objects/ornaments/carpets/carpet03.dae" />
+                <File Id="8" Path="static_objects/ornaments/carpets/carpet01.dae" />
+                <File Id="9" Path="static_objects/ornaments/carpets/carpet02.dae" />
+                <File Id="10" Path="static_objects/ornaments/carpets/carpet04.dae" />
+                <File Id="11" Path="static_objects/mansionbase/wall/short02.dae" />
+                <File Id="12" Path="static_objects/mansionbase/wall/default.dae" />
+                <File Id="13" Path="static_objects/mansionbase/wall/door_way.dae" />
+                <File Id="14" Path="static_objects/mansionbase/wall/welder.dae" />
+                <File Id="15" Path="static_objects/dungeonbase/special/torture_podium_square.dae" />
+                <File Id="16" Path="static_objects/mansionbase/wall/welder02_convex.dae" />
+                <File Id="17" Path="static_objects/ornaments/curtains/curtain01_open.dae" />
+                <File Id="18" Path="static_objects/mansionbase/wall/welder02_concave.dae" />
+                <File Id="19" Path="static_objects/decals/pool_wine02.dae" />
+            </FileIndex_StaticObjects>
+            <FileIndex_Entities NumOfFiles="54">
+                <File Id="0" Path="entities/furniture/sofa/sofa.ent" />
+                <File Id="1" Path="entities/furniture/table_nice02/table_nice02.ent" />
+                <File Id="2" Path="entities/door/level_hub/level_hub.ent" />
+                <File Id="3" Path="entities/navigation/sign_ancient_tomes/sign_ancient_tomes.ent" />
+                <File Id="4" Path="entities/door/mansion/mansion.ent" />
+                <File Id="5" Path="entities/debris/wood/wood_beam.ent" />
+                <File Id="6" Path="entities/ornament/shield01/shield01.ent" />
+                <File Id="7" Path="entities/bottle/amnesia/amnesia_bottle.ent" />
+                <File Id="8" Path="entities/bottle/wine_stack/wine_stack.ent" />
+                <File Id="9" Path="entities/bottle/wine_row/wine_row.ent" />
+                <File Id="10" Path="entities/navigation/sign_cellblock/sign_cellblock_a_chain.ent" />
+                <File Id="11" Path="entities/ornament/arabic_carafe/arabic_carafe.ent" />
+                <File Id="12" Path="entities/ornament/arabic_statue/arabic_statue.ent" />
+                <File Id="13" Path="entities/ornament/arabic_statue/arabic_statue_gold.ent" />
+                <File Id="14" Path="entities/ornament/armor/armor.ent" />
+                <File Id="15" Path="entities/ornament/banners/banners02/banner_long02.ent" />
+                <File Id="16" Path="entities/statues/armour_nice/armour_nice_complete.ent" />
+                <File Id="17" Path="entities/ptest/angel_statue/angel_statue.ent" />
+                <File Id="18" Path="entities/lamp/candle_floor/candle_floor.ent" />
+                <File Id="19" Path="entities/lamp/candle_floor/candle_floor_small.ent" />
+                <File Id="20" Path="entities/ornament/pot_plant_small01/pot_plant_small01.ent" />
+                <File Id="21" Path="entities/statues/eagle/eagle.ent" />
+                <File Id="22" Path="entities/ornament/book01/book01.ent" />
+                <File Id="23" Path="entities/ornament/goblet/goblet.ent" />
+                <File Id="24" Path="entities/ornament/shield02/shield02.ent" />
+                <File Id="25" Path="entities/gameplay/button_simple/button_simple.ent" />
+                <File Id="26" Path="entities/door/level_wood/level_wood.ent" />
+                <File Id="27" Path="entities/navigation/sign_floor_plans/sign_floor_plans.ent" />
+                <File Id="28" Path="custom_stories/Amnesia-Experiments/entities/enemies/servant_beholder/servant_beholder.ent" />
+                <File Id="29" Path="custom_stories/Amnesia-Experiments/entities/enemies/servant_magician/servant_magician.ent" />
+                <File Id="30" Path="entities/navigation/sign_archives/sign_archives.ent" />
+                <File Id="31" Path="custom_stories/Amnesia-Experiments/entities/enemies/servant_ninja/servant_ninja.ent" />
+                <File Id="32" Path="custom_stories/Amnesia-Experiments/entities/enemies/fp_monster_chubby/Monster Tutorial.ent" />
+                <File Id="33" Path="entities/statues/pedestal/pedestal.ent" />
+                <File Id="34" Path="custom_stories/bjeda/entities/enemy/fp_monster_servant_buffy/fp_monster_servant_buffy.ent" />
+                <File Id="35" Path="custom_stories/Amnesia-Experiments/entities/bitch/servant_bitch.ent" />
+                <File Id="36" Path="entities/storage/storage_box_wood01/storage_box_wood01_large.ent" />
+                <File Id="37" Path="entities/bottle/flask01/flask01.ent" />
+                <File Id="38" Path="custom_stories/Isla Caprela/entities/enemy/fp_monster_ghost/fp_monster_ghost.ent" />
+                <File Id="39" Path="custom_stories/Amnesia-Experiments/entities/enemies/fp_monster_servant_skinny/fp_monster_servant_skinny.ent" />
+                <File Id="40" Path="custom_stories/Amnesia-Experiments/entities/enemies/flying_demon/flying_demon.ent" />
+                <File Id="41" Path="custom_stories/bjeda/entities/enemy/Amnesia_Rebirth_GHOUL/ghoul.ent" />
+                <File Id="42" Path="entities/item/note_letter/note_letter.ent" />
+                <File Id="43" Path="entities/ornament/paintings/painting05/painting05.ent" />
+                <File Id="44" Path="custom_stories/Classic Amnesia CS/entities/ornament/paintings/painting_large01/painting_large02.ent" />
+                <File Id="45" Path="custom_stories/Classic Amnesia CS/entities/technical/block_box/block_box.ent" />
+                <File Id="46" Path="entities/ornament/paintings/painting03/painting03.ent" />
+                <File Id="47" Path="entities/navigation/sign_storage/sign_storage_arrow_left.ent" />
+                <File Id="48" Path="entities/debris/rock_debris/brick02.ent" />
+                <File Id="49" Path="entities/navigation/sign_catalogs/sign_catalogs.ent" />
+                <File Id="50" Path="entities/ornament/paintings/painting04/painting04.ent" />
+                <File Id="51" Path="custom_stories/Amnesia-Experiments/entities/enemies/infected/character_infected.ent" />
+                <File Id="52" Path="custom_stories/Classic Amnesia CS/entities/technical/block_box/block_box_nonchar.ent" />
+                <File Id="53" Path="entities/furniture/table_nice_round/table_nice_round.ent" />
+            </FileIndex_Entities>
+            <FileIndex_Decals NumOfFiles="0" />
+            <StaticObjects />
+            <Primitives>
+                <Plane Active="true" AlignToWorldCoords="false" CastShadows="false" Collides="true" Corner1UV="0 10.125" Corner2UV="0 0" Corner3UV="7 0" Corner4UV="7 10.125" EndCorner="14 0 20.25" Group="0" ID="1199" Material="static_objects/mansionbase/ceiling/mansionbase_ceiling_wood.mat" Name="Plane_18" Rotation="0 0 -3.14159" Scale="1 1 1" StartCorner="0 0 0" Tag="" TextureAngle="0" TileAmount="0.5 1 0.5" TileOffset="0 0 0" WorldPos="6.75 4 10.25" />
+                <Plane Active="true" AlignToWorldCoords="false" CastShadows="false" Collides="true" Corner1UV="4.97964 0" Corner2UV="0 0" Corner3UV="-2 0" Corner4UV="2.97964 0" EndCorner="4 0 5.75" Group="0" ID="1176" Material="textures/water/water_sewer_streaming_slow.mat" Name="Plane_25" Rotation="-1.57771 -1.5708 0.00690925" Scale="1 1 1" StartCorner="0 0 0" Tag="" TextureAngle="-4.18879" TileAmount="1 1 0" TileOffset="0 0 0" WorldPos="-3 0 14.25" />
+                <Plane Active="true" AlignToWorldCoords="true" CastShadows="false" Collides="true" Corner1UV="0.999948 0" Corner2UV="1 0" Corner3UV="1.00001 0" Corner4UV="0.999958 0" EndCorner="4 0 5.75" Group="0" ID="1165" Material="textures/water/water_sewer_streaming_slow.mat" Name="Plane_22" Rotation="2.35619 1.5708 -2.35619" Scale="1 1 1" StartCorner="0 0 0" Tag="" TextureAngle="0" TileAmount="1 1 0" TileOffset="0 0 0" WorldPos="1 0 18.25" />
+                <Plane Active="true" AlignToWorldCoords="false" CastShadows="false" Collides="true" Corner1UV="0 10.125" Corner2UV="0 0" Corner3UV="7 0" Corner4UV="7 10.125" EndCorner="14 0 20.25" Group="0" ID="1130" Material="static_objects/mansionbase/floor/mansionbase_floor.mat" Name="MS_classicModer" Rotation="0 0 0" Scale="1 1 1" StartCorner="0 0 0" Tag="" TextureAngle="0" TileAmount="0.5 1 0.5" TileOffset="0 0 0" WorldPos="-7.25 0 10" />
+                <Plane Active="true" AlignToWorldCoords="false" CastShadows="false" Collides="true" Corner1UV="0.575 -2.08149e-008" Corner2UV="0 0" Corner3UV="-1.448e-006 -0.004" Corner4UV="0.574999 -0.00400002" EndCorner="4 0 5.75" Group="0" ID="1186" Material="textures/water/water_sewer_streaming_slow.mat" Name="Plane_28" Rotation="-2.7979 -1.5708 1.2271" Scale="1 1 1" StartCorner="0 0 0" Tag="" TextureAngle="1.5708" TileAmount="0.1 1 0.001" TileOffset="0 0 0" WorldPos="-3 0 22.25" />
+                <Plane Active="true" AlignToWorldCoords="true" CastShadows="false" Collides="true" Corner1UV="0.00999997 2.625" Corner2UV="0.01 2.625" Corner3UV="0.00999985 2.225" Corner4UV="0.00999983 2.225" EndCorner="4 0 5.75" Group="0" ID="1188" Material="textures/water/water_sewer_streaming_slow.mat" Name="Plane_29" Rotation="-1.55397 1.5708 0.0168268" Scale="1 1 1" StartCorner="0 0 0" Tag="" TextureAngle="0" TileAmount="0.01 1 0.1" TileOffset="0 0 0" WorldPos="1 0 26.25" />
+                <Plane Active="true" AlignToWorldCoords="false" CastShadows="false" Collides="true" Corner1UV="0 0" Corner2UV="0 0" Corner3UV="40 0" Corner4UV="40 0" EndCorner="4 0 5.75" Group="0" ID="1179" Material="textures/water/water_sewer_streaming_slow.mat" Name="Plane_26" Rotation="-1.5708 -2.26498e-006 -4.37722e-008" Scale="1 1 1" StartCorner="0 0 0" Tag="" TextureAngle="0" TileAmount="10 1 0" TileOffset="0 0 0" WorldPos="-3 0 26.25" />
+                <Plane Active="true" AlignToWorldCoords="false" CastShadows="false" Collides="true" Corner1UV="0 37.75" Corner2UV="0 0" Corner3UV="14.75 0" Corner4UV="14.75 37.75" EndCorner="14.75 0 37.75" Group="0" ID="489" Material="static_objects/mansionbase/floor/mansionbase_floor_boards.mat" Name="Plane" Rotation="0 0 0" Scale="1 1 1" StartCorner="0 0 0" Tag="" TextureAngle="0" TileAmount="1 1 1" TileOffset="0 0 0" WorldPos="-21.75 0 12" />
+            </Primitives>
+            <Decals />
+            <Entities />
+            <Misc />
+            <StaticObjectCombos />
+        </MapContents>
+    </MapData>
+</Level>

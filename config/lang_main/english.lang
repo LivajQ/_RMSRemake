@@ -1,0 +1,499 @@
+<!--⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+	⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+	⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ 
+	⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ 
+	⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ 
+	⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ 
+	⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ 
+	⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+	⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+	⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+	⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ 
+	⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ 
+	⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ 
+	⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉-->
+<LANGUAGE>
+	<RESOURCES>
+    <Directory Path="fonts/eng"/>
+    <Directory Path="lang/eng"/>
+  </RESOURCES>
+	<CATEGORY Name="Journal">
+		<-- Notes -->
+		<Entry Name="Note_notka_Name">This is insanity</Entry>
+		<Entry Name="Note_notka_Text">fakajdvf opllka jijasod momnocna haramoane aszpak vbc oaioioio porafdsas adsaf trensletor poopoo brain makunbafs leages posfaiw ;-; </Entry>
+		<-- Diaries -->
+		<Entry Name="Diary_DearDiary_Name1">soaopdsp zcvcn</Entry>
+		<Entry Name="Diary_DearDiary_Text1">hohohoh nxnaajfa poosfna uucuuacn apiawrfn mllaskda iawfahh moooonaoacs pochuasco water asdoo mbasod</Entry>
+
+		<-- Mementos -->
+		<Entry Name="Quest_window_Text">I should find a way to reach that window.</Entry>
+	</CATEGORY>
+	
+	<CATEGORY Name="PreMenu">
+    <Entry Name="WelcomeMessage01">⡴⠒⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠉⠳⡆⠀
+	[br]			     		   ⠰⠉⢙⡄⠀⠀⣴⠖⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣆⠁⠙⡆
+	[br]			     		   ⡇⢠⠞⠉⠙⣾⠃⢀⡼⠀⠀⠀⠀⠀⠀⠀⢀⣼⡀⠄⢷⣄⣀⠀⠀⠀⠀⠀⠀⠀⠰⠒⠲⡄⠀⣏⣆⣀⡍
+	[br]			     		   ⢠⡏⠀⡤⠒⠃⠀⡜⠀⠀⠀⠀⠀⢀⣴⠾⠛⡁⠀⠀⢀⣈⡉⠙⠳⣤⡀⠀⠀⠀⠘⣆⠀⣇⡼⢋⠀⠀⢱
+	[br]			     		   ⠘⣇⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⡴⢋⡣⠊⡩⠋⠀⠀⠀⠣⡉⠲⣄⠀⠙⢆⠀⠀⠀⣸⠀⢉⠀⢀⠿⠀⢸
+	[br]			     		   ⠀⠸⡄⠀⠈⢳⣄⡇⠀⠀⢀⡞⠀⠈⠀⢀⣴⣾⣿⣿⣿⣿⣦⡀⠀⠀⠀⠈⢧⠀⠀⢳⣰⠁⠀⠀⠀⣠⠃
+	[br]			     		   ⠀⠀⠘⢄⣀⣸⠃⠀⠀⠀⡸⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠈⣇⠀⠀⠙⢄⣀⠤⠚⠁⠀
+	[br]			     		   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			     		   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⢘⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			     		   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢰⣿⣿⣿⡿⠛⠁⠀⠉⠛⢿⣿⣿⣿⣧⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			     		   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⣸⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⡀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			     		   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠹⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⡿⠁⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			     		   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣤⣞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢢⣀⣠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			     			⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⢤⣀⣀⠀⢀⣀⣀⠤⠒⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</Entry>
+    <Entry Name="WelcomeMessage02">⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ 
+	[br]						   ⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ 
+	[br]						   ⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+	[br]						   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉</Entry>
+    <Entry Name="WelcomeMessage03">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠔⠚⠉⠉⠉⠉⠑⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠒⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠎⠀⠀⠀⠀⠀⠀⡘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠎⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠴⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢂⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⣀⣀⣀⣤⣠⡄⣤⣄⡶⣤⣤⣤⡠⣄⣠⣀⣤⣤⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢄⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⡴⠃⠀⠀⠀⠀⢀⣀⣤⣤⣴⣦⣿⣾⣿⣾⣯⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣾⣿⣿⣿⣿⣾⣽⣿⣿⣿⣿⣿⣿⣿⣶⢶⣦⣤⣤⣀⡀⠑⢄⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⢀⠎⠀⠀⢀⡴⣲⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣽⣶⣄⠱⡀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⢀⡎⢀⡤⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢯⡷⢹⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⢺⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⢁⡇
+	[br]			   			   ⠀⠀⠀⠀⠀⠸⡟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠾⣁⠞⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⢣⡙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠛⢋⡩⠤⠖⠁⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠉⠢⢍⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⡿⢿⣿⣿⣿⣿⣿⡇⡴⠒⠊⠁⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⣻⡟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⠀⠀⠈⢿⣿⣿⡿⢏⡜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠐⣏⠒⢦⣀⣀⡀⠀⠳⡙⢷⣟⠾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠻⠙⢿⣿⣿⢿⡄⠀⠀⠀⠈⠿⣠⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⢘⣿⠛⣾⣷⣬⢣⠀⠉⠢⣙⠻⣾⣽⣿⣿⢿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡳⣝⣤⣀⡘⣿⣾⣿⣿⣿⣶⣶⣦⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⢻⣁⢻⣿⣿⣿⢸⡆⠀⠀⠀⠉⠒⠀⠒⠤⠴⢍⢻⣿⣯⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣶⣿⡼⣖⣻⣿⣿⣿⣿⣿⡳⢆⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⢀⡿⢠⣿⣿⣿⣎⡛⣆⢤⣤⠠⡆⠀⠀⠀⠀⠀⠑⢬⡛⢿⡾⣽⣻⣽⣷⣻⢿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⣹⡼⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⢸⡧⢹⣿⣿⣿⢱⣝⢿⣎⢻⡆⢷⠀⠀⠀⠀⠀⠀⠀⠈⣳⣿⣿⣽⣿⣾⣿⣟⡾⣽⢿⣟⣯⣿⢿⣟⣯⠿⣛⣁⡧⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⢠⠾⠯⣷⣘⣿⣿⣿⡇⠯⠓⣝⣯⣽⣏⠢⢀⣀⣀⣠⢤⣿⣭⣽⣿⣻⣿⣿⣿⣿⣿⣟⡿⠤⠬⢍⣋⣙⣉⠤⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⣠⠋⢀⢲⡼⣿⣾⣿⣿⡇⢸⠀⠀⠙⣿⣿⣿⣷⣶⣿⣿⣿⡟⣿⣿⣿⣷⣿⣿⣿⣿⣿⣍⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⢰⢧⢶⣬⣿⣿⣿⣿⣿⣿⠆⣿⠀⠀⣰⣿⣿⣿⣿⣿⢿⣛⡧⣟⣿⣿⣿⣿⣿⣿⣿⣻⣿⡝⠄⠀⠉⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⣿⢶⣯⣿⣿⣿⣿⣿⣿⣿⣧⡘⢄⠀⣻⣿⣿⣿⣿⣏⣶⣹⣾⣿⣞⡷⣯⡿⣟⢿⣯⣧⠙⠘⠀⠀⠀⠚⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠸⡯⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣊⣦⣽⣿⡿⢏⡳⣮⣷⣿⣿⣿⣯⣿⣽⣟⣮⠷⣌⠛⣿⣆⡄⠀⠀⠰⡄⡱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠱⡝⣿⣿⣿⣿⣿⣿⣿⣿⣿⢳⡿⢋⣽⣚⣷⣿⢟⢻⣽⣿⣿⣿⣿⣿⣿⣾⡽⣦⣛⡤⢚⣿⣦⠀⠀⣹⣷⣌⡓⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠈⠢⢛⣿⡿⠿⣿⡿⣿⢷⡾⣡⢯⣿⣿⡿⠋⠁⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⣯⢞⡵⢊⢻⣧⡀⢿⢭⡻⣷⣦⡀⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠈⠉⠉⠁⠉⢀⡼⣡⣿⣿⡿⠏⠀⠀⠀⣸⣻⣿⣿⣿⣿⣿⣿⣿⡿⣝⣧⢏⡰⠀⠂⢹⣧⠘⡇⠙⣎⢿⣽⣦⠈⠐⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⢀⠤⢐⣈⣩⢷⣳⡟⣽⠁⠀⠀⣰⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣟⣮⡳⣌⠳⣈⠤⢹⣇⢷⠀⠈⢹⠟⣯⠑⢢⠀⠀⠐⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⢀⠤⢒⣵⣶⢿⣽⣾⣿⣿⡱⡇⠀⠀⠀⣇⢠⡙⣿⣿⣿⣿⣿⣿⣿⡿⣿⣻⢷⡻⣜⣣⢓⠎⢦⢻⡞⠀⠀⡞⢸⡇⣀⣠⣀⠀⢤⡀⠈⠐⡄⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⢸⣿⣶⣿⣿⣯⣿⣾⣿⣿⣿⣳⠀⢠⠖⠚⡩⠟⠰⢦⠙⡛⣿⡽⣻⣷⢿⡿⣽⣏⠿⣜⠢⣍⠚⡤⠂⡇⠀⠀⡇⣿⡹⣿⠫⠿⣿⣶⣳⠀⡀⢳⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⣸⢋⣹⣟⣿⣿⣿⣿⣿⠯⠋⠀⠀⢷⣾⡿⠁⠀⠀⠘⠳⠧⣄⠲⠉⠉⠯⣹⠷⣞⡿⣬⢳⡌⠓⢌⠡⡟⠀⠀⠹⣽⣷⣻⡄⠀⢹⡿⣿⣄⢻⣘⠆⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠛⢿⠟⣿⣿⡿⡯⠛⠁⠀⠀⠀⠀⠈⠙⡇⠀⠀⠀⠀⠀⠀⠈⠀⠰⢦⡐⠈⠇⠘⠅⢋⠣⠘⠀⠀⢀⣽⠀⠀⠀⠉⠛⠋⠀⠀⠀⡇⣿⣿⣿⠾⠁⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠐⣧⡾⣻⠕⠋⠀⠀⠀⠀⠀⡠⠐⠒⠒⠛⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡼⣀⢠⡅⠀⠈⢓⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⣿⣿⣜⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⡜⠁⠀⠉⠉⠉⠁⠐⣂⠠⠤⣄⡀⠀⠀⠀⠀⠈⠳⣌⡈⠑⠠⣠⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⣀⠀⣠⢦⣄⣆⢳⠲⣈⠷⣆⠌⠙⠂⣄⠀⠀⠀⠀⠁⡔⢌⡴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⣘⠶⣙⠾⣽⣯⡋⣷⣩⢶⣍⡛⢦⡐⠘⠳⡀⠀⠂⠀⢹⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⢀⡳⢄⠺⡍⣞⠲⡼⠀⠻⣏⠓⠯⣛⡄⠒⠨⠀⠀⠀⠀⠀⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⢠⠑⣌⡱⢊⠌⡓⠀⠀⠀⠈⢦⠀⠈⠙⢶⣀⣀⣀⣀⣀⣤⣿⡄⠀⠀⠀⢀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⢸⣱⢦⣟⡾⡙⢦⢊⠥⣉⠀⠀⠀⠙⡆⠀⠀⠀⠀⠀⣀⣤⠟⠟⢁⡉⠁⢈⣉⣀⡤⠤⠄⣈⠐⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⢸⣼⣿⣿⣽⣷⣮⣮⣵⢧⠶⠀⠀⣸⠃⠀⠀⠀⢶⣊⠁⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠙⠢⢀⠑⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠿⢿⣿⣷⣿⣾⡽⢦⠶⠃⠀⠀⠀⠀⢸⡉⢀⠀⡀⢀⡁⢀⠀⠀⢂⠀⣤⡄⢂⠀⣀⡀⠠⡄⢠⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡁⢢⠐⠰⢡⣈⠦⡜⢶⡉⣶⣖⣺⣽⣻⣿⣾⣵⣶⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇⣰⢎⡗⣫⡜⣷⢻⣷⣽⣶⣿⣿⣿⠿⠿⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]			   			   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠾⢷⡾⠽⠿⠽⠛⠛⠛⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</Entry>
+    <Entry Name="WelcomeMessage04">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⢀⣄⠀⣀⣤⣤⣴⣶⣶⣶⣤⣤⣄⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣤⣤⣤⣶⣶⣶⣶⣦⣤⣝⣿⣶⣤⡀⠀⠀
+	[br]							⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠲⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡻⣷⡄
+	[br]							⣿⣫⣿⣿⡿⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠙⠛⢻⡿⠿⠛⠋⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⣿⣛⣛⣛⢉⡉⠉⠉⠀⠀⠀⠀⠀⠀⠈⠙⠛⢿⣿⣯⡅
+	[br]							⠀⠻⠟⠁⠀⠀⠀⠀⠀⠘⠛⠛⠒⠛⠒⠒⠛⠛⠛⠛⠛⢇⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢛⢛⠂⠀⠀⠀⠀⠀⠈⠻⠇
+	[br]							⠀⠀⠀⠀⠀⠀⣀⣤⣶⠿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣶⣦⠸⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⢠⣿⠟⠡⣶⢾⣿⡿⣿⣿⣿⣿⣿⣿⡿⠿⣷⣦⡀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⣠⣴⣿⡋⠁⠀⢿⣿⣿⣿⣷⣿⣿⠈⢿⣷⡀⠀⣼⡿⠁⠀⠀⠀⠀⠀⠀⠀⠘⢿⣶⠀⢠⣿⠟⠘⣿⣿⣿⣿⣿⣿⡟⠀⣀⣙⣿⣦⡄⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠙⠃⠙⠿⠿⠿⠿⠿⠿⠿⠿⠿⠷⠿⠿⠿⢷⠄⠙⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠠⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠟⠉⠈⠁⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⡿⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢠⣾⠏⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡏⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣷⠀⠀⠀⢀⣾⣟⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⠏⠀⠀⠀⣼⡿⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣤⣤⣶⣿⠟⠋⠀⠀⠀⠀⢠⣿⠃⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣷⣶⣦⣤⣤⣤⣤⣤⣤⣶⣶⣶⣶⣶⣶⣶⣶⣾⣿⡿⠿⠿⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⣼⡟⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⡍⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠇⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀</Entry>
+    <Entry Name="WelcomeMessage05">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣴⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣦⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣻⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⢀⣴⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⢠⣾⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀
+	[br]							⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣍⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀
+	[br]							⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀
+	[br]							⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢿⣿⡇⢸⣿⡟⢙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀
+	[br]							⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠈⢿⣿⣾⡟⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀
+	[br]							⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢁⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⠇⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀
+	[br]							⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⣿⣿⡀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀
+	[br]							⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⡇⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀
+	[br]							⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣫⣽⣿⣿⣿⡟⢸⣿⣿⣿⣶⣿⡟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀
+	[br]							⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⢹⣿⣿⣿⣿⣿⣿⠿⡿⠿⠿⢟⣛⣯⣥⣶⣷⣮⡛⢿⣿⣿⣿⣿⣿⣿⢻⣿⣿⠟⣊⣙⠿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀
+	[br]							⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⢋⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⢻⣿⣿⣿⣿⢧⠟⣫⣶⣿⣿⣿⣿⣶⣦⣭⢡⣾⡿⠁⠀⠀⠀
+	[br]							⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣮⣽⣛⣛⣿⡏⢚⣯⣭⣴⡀⠀⠀⠀⠀⠀⣦⣭⡅⣿⣿⣿⣿⡠⣾⠿⢟⣛⡛⠛⠛⠛⠛⠻⢧⢻⡇⠀⠀⠀⠀
+	[br]							⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⣛⣿⣿⣷⠻⣿⣿⣿⣷⣮⣄⣈⣤⣾⣿⡟⣼⣿⣿⣿⣿⣷⡺⣿⣿⣿⣧⠀⡀⠂⠐⣸⢇⣖⡂⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢻⣿⣿⣿⣿⣷⣾⣿⣿⣿⣿⣷⣍⡻⢿⣿⣿⣿⣿⣿⠟⣫⢞⣿⣿⣿⣿⣿⣿⣿⣮⠻⣿⣿⣿⣶⣶⡿⢫⣾⣿⣿⡄⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣷⣶⣶⢟⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠩⣭⣭⣭⣵⣾⣿⣿⣿⣿⣇⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣛⣭⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣶⣭⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⠀⢼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿⣿⡇⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠿⣿⣿⣿⡄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢫⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⢿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣨⣦⡈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡌⣷⢹⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡆⢠⣈⠙⠛⠿⠿⠿⠿⢻⣿⣿⣿⣿⣿⠟⡆⢿⣟⢤⣍⡻⣿⣿⣿⣿⣿⣿⣿⡇⡏⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⠁⣾⣿⣿⣿⣶⣶⣶⡆⢸⣿⣿⣿⣿⡟⣾⣿⣼⣿⣦⣿⣿⣎⠻⣿⣿⣿⣿⣿⢇⣿⡸⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⡿⣼⣿⣿⣿⣿⣿⣿⣿⣿⣷⣌⣛⣛⣩⣵⣿⣿⣷⢿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⢱⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⢿⣿⠿⠿⣿⣿⣿⣿⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⡏⠀⣿⣿⣿⣿⣿⣿⣿⣿⣤⣿⣿⠏⣿⣿⣿⣿⣿⣿⡿⣫⣵⣾⣿⣶⣦⣾⣷⣌⢻⣿⣿⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⡇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣸⣿⣿⣿⣿⡿⣫⣾⣿⣿⠟⢩⢿⣿⡿⠋⣿⣆⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⡇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⢭⣽⣭⣴⣾⣮⣬⣥⣶⣷⣶⠆⣾⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣝⠿⣿⣿⣿⣿⣿⣿⡿⢋⣾⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣮⣝⣛⣛⣋⣥⣾⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⠻⢿⣿⠟⣻⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣉⣉⣉⡉⠛⠻⢿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⢻⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⢸⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠻⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠁⠈⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	[br]							⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠛⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</Entry>
+    <Entry Name="WelcomeMessage06">Yeah I know it's broken, not your fucking business</Entry>
+  </CATEGORY>
+  
+	<CATEGORY Name="Inventory">
+		<Entry Name="ItemName_InvCrowbar">Crowbar</Entry>
+		<Entry Name="ItemDesc_InvCrowbar">A handy tool for removing those pesky lids. Always bring it when dealing with anomalous materials.</Entry>
+		<Entry Name="ItemName_InvJar">Glass Jar</Entry>
+		<Entry Name="ItemDesc_InvJar">A glass jar full of air. If you want, it can also be filled with something else. Crazy right?</Entry>
+		<Entry Name="ItemName_InvKeyRusty">Rusty Key</Entry>
+		<Entry Name="ItemDesc_InvKeyRusty">A key covered in rust cause apparently everybody leaves their keys on the rain here. Gotta remove the rust before it can be used, and you know exactly how to do this.</Entry>
+		<Entry Name="ItemName_InvKeyLeave">Exit Key</Entry>
+		<Entry Name="ItemDesc_InvKeyLeave">Some might try to convince you it's machine room key but worry not, it actually works.</Entry>
+		<Entry Name="ItemName_InvHammer">Hammer</Entry>
+		<Entry Name="ItemDesc_InvHammer">As per amnesia standards you never use a hammer the way the designer intended it, which is to build. Instead you're of course meant to destroy shit with it.</Entry>
+		<Entry Name="ItemName_InvKeyClean">Cleaned Key</Entry>
+		<Entry Name="ItemDesc_InvKeyClean">It's working now, good. How you just managed to throw your hand inside an acid without it dissolving is a different topic though.</Entry>
+		<Entry Name="ItemName_InvJarOil">Glass Jar With Oil</Entry>
+		<Entry Name="ItemDesc_InvJarOil">Stuck machinery is no more.</Entry>
+		<Entry Name="ItemName_InvJarWax">Wax Jar</Entry>
+		<Entry Name="ItemDesc_InvJarWax">Jar of flammable wax. Would require a decent amount of heat to liquidise tho</Entry>
+		<Entry Name="ItemName_InvLighter">Lighter</Entry>
+		<Entry Name="ItemDesc_InvLighter">Really cool, and that's about it. No, it doesn't produce a 'decent amount of heat'.</Entry>
+		<Entry Name="ItemName_InvString">String</Entry>
+		<Entry Name="ItemDesc_InvString">A piece of string. Looks like a fuse but it isn't. Yet...</Entry>
+		<Entry Name="ItemName_InvFuse">Fuse</Entry>
+		<Entry Name="ItemDesc_InvFuse">Now, it is a fuse. I think.</Entry>
+	</CATEGORY>
+
+	<CATEGORY Name="Levels">
+		<Entry Name="spawn">Hub Area</Entry>
+		<Entry Name="menson">Menson</Entry>
+		<Entry Name="prison">Prison</Entry>
+	</CATEGORY>
+	
+	<CATEGORY Name="DeathHint">
+		<Entry Name="DeathMessage1">It would appear your life has been abruptly halted...</Entry>
+		<Entry Name="DeathMessage2">L...</Entry>
+		<Entry Name="DeathMessage3">Imagine dying...</Entry>
+		<Entry Name="DeathMessage4">No rizz...</Entry>
+		<Entry Name="DeathMessage5">Does thou require more skill...?</Entry>
+		<Entry Name="NotCreative">Green is not a creative color...</Entry>
+	</CATEGORY> 
+	
+	<CATEGORY Name="Locked">
+	    <Entry Name="goback">I don't feel like going back there</Entry>
+	</CATEGORY>
+    
+    <CATEGORY Name="Info">
+        <Entry Name="PartyMapOn">Party map enabled</Entry>
+        <Entry Name="PartyMapOff">Party map disabled</Entry>
+        <Entry Name="SignSettings">Settings</Entry>
+        <Entry Name="SignPlay">Play</Entry>
+        <Entry Name="SignShop">Shop</Entry>
+        <Entry Name="SignMain">Main Game</Entry>
+        <Entry Name="SignMini">Minigames</Entry>
+        <Entry Name="SignKrabs">The famous penny pincher made it into Amnesia. Mr. Krabs purchased God Mode and NoClip, and if he spots you running around with cash, he will send Dr. Jr. to steal it</Entry>
+        <Entry Name="SignMagician">There he is, the one and only - Magician. The most unpredictable of them all, you never know when he will randomly teleport in front of you</Entry>
+        <Entry Name="SignAthlete">Ah yes, one speedy son of a bitch. Always runs, never gets tired. You saw him at the other side of the map? No problem, he will appear behind you in 5 seconds</Entry>
+        <Entry Name="SignNinja">This fella makes no sounds, walks pretty fast and has better vision than others. Better constantly check what's behind unless you want to get stabbed in the back. Heart attack guaranteed</Entry>
+        <Entry Name="SignCharger">At first looks like a medium threat, but soon you will find out he can gain speed 5 times higher than yours. Good luck escaping</Entry>
+        <Entry Name="SignBeholder">Sees everything, hears everything. Not only can he perfectly spot you in the darkness, but is also able to see you from behind, better look out</Entry>
+        <Entry Name="SignJackal">Typical counter to camping. If Jackal finds your trail, you better find some escape route unless you're up for engagement. He may not hit hard, but won't hestitate to call homies for help</Entry>
+        <Entry Name="SignRafalala">Rafalala has only 1 task, that is - being annoying. It puts its traps everywhere so better check where you walk(Pro tip: "click" the traps to disarm them)</Entry>
+        <Entry Name="SignTrensletor">I are trensletor, where mode</Entry>
+        <Entry Name="SignBull">That's the type of enemy nobody usually cares about unless he appears right in front of you whilst trying to escape. Slow, loud, but strong AF. Doors won't stop him, he will just rush through them. Barriers? He doesn't know what that is. Worth mentioning you will always be clapped in one hit</Entry>
+        <Entry Name="SignIllusioner">If you felt like there's not enough randomness and magic in this mod, maybe the Illusioner can change your mind. Quite literally. Whenever you look at him, either purposely or by accident, you will be greeted with a random screen effect. Ain't so fun when you lose your sight while running away eh.</Entry>
+        <Entry Name="MagicianOn">Magician has been enabled</Entry>
+        <Entry Name="MagicianOff">Magician has been disabled</Entry>
+		<Entry Name="NinjaOn">Ninja has been enabled</Entry>
+        <Entry Name="NinjaOff">Ninja has been disabled</Entry>
+		<Entry Name="AthleteOn">Athlete has been enabled</Entry>
+        <Entry Name="AthleteOff">Athlete has been disabled</Entry>
+		<Entry Name="RafalalaOn">Rafalala has been enabled</Entry>
+        <Entry Name="RafalalaOff">Rafalala has been disabled</Entry>
+		<Entry Name="BeholderOn">Beholder has been enabled</Entry>
+        <Entry Name="BeholderOff">Beholder has been disabled</Entry>
+		<Entry Name="JackalOn">Jackal has been enabled</Entry>
+        <Entry Name="JackalOff">Jackal has been disabled</Entry>
+		<Entry Name="JackalOn">Jackal has been enabled</Entry>
+        <Entry Name="JackalOff">Jackal has been disabled</Entry>
+		<Entry Name="TrensletorOn">Trensletor has been enabled</Entry>
+        <Entry Name="TrensletorOff">Trensletor has been disabled</Entry>
+		<Entry Name="IllusionerOn">Illusioner has been enabled</Entry>
+        <Entry Name="IllusionerOff">Illusioner has been disabled</Entry>
+		<Entry Name="BullOn">Bull has been enabled</Entry>
+        <Entry Name="BullOff">Bull has been disabled</Entry>
+		<Entry Name="KrabsOn">Mr. Krabs has been enabled</Entry>
+        <Entry Name="KrabsOff">Mr. Krabs has been disabled</Entry>
+		<Entry Name="ChargerOn">Charger has been enabled</Entry>
+        <Entry Name="ChargerOff">Charger has been disabled</Entry>
+        <Entry Name="OptionDifficulty">Difficulty</Entry>
+        <Entry Name="OptionTheme">Theme</Entry>
+        <Entry Name="OptionMusic">Music</Entry>
+        <Entry Name="OptionInvincible">Invincible Mode</Entry>
+        <Entry Name="OptionSpeed">Speed 200% Mode</Entry>
+        <Entry Name="OptionMines">TooManyMines Mode</Entry>
+        <Entry Name="OptionMagician">Crazy Magician Mode</Entry>
+        <Entry Name="OptionShield">Shield Mode</Entry>
+        <Entry Name="OptionSeizure">Seizure Mode</Entry>
+        <Entry Name="OptionRespawns">Respawning Doors Mode</Entry>
+        <Entry Name="OptionOverload">Enemy Overload Mode</Entry>
+        <Entry Name="OptionOverEnemy">Enemy Type</Entry>
+        <Entry Name="NeedOverload">Enable Enemy Overload Mode first</Entry>
+        <Entry Name="OverloadingMagician">Overloading set to: Magician</Entry>
+        <Entry Name="OverloadingNinja">Overloading set to: Ninja</Entry>
+        <Entry Name="OverloadingAthlete">Overloading set to: Athlete</Entry>
+        <Entry Name="OverloadingRafalala">Overloading set to: Rafalala</Entry>
+        <Entry Name="OverloadingBeholder">Overloading set to: Beholder</Entry>
+        <Entry Name="OverloadingJackal">Overloading set to: Jackal</Entry>
+        <Entry Name="OverloadingCharger">Overloading set to: Charger</Entry>
+        <Entry Name="OverloadingTrensletor">Overloading set to: Trensletor</Entry>
+        <Entry Name="OverloadingIllusioner">Overloading set to: Illusioner</Entry>
+        <Entry Name="OverloadingBull">Overloading set to: Bull</Entry>
+        <Entry Name="OverloadingKrabs">Overloading set to: Mr. Krabs</Entry>
+        <Entry Name="ThemeNormal">Normal Theme</Entry>
+        <Entry Name="ThemeParty">Party Theme</Entry>
+        <Entry Name="OnlyParty">Only available in party mode</Entry>
+        <Entry Name="DifficultyCrybaby">Difficulty set to: Crybaby</Entry>
+        <Entry Name="DifficultyEasy">Difficulty set to: Easy</Entry>
+        <Entry Name="DifficultyMedium">Difficulty set to: Normal</Entry>
+        <Entry Name="DifficultyHard">Difficulty set to: Hard</Entry>
+        <Entry Name="DifficultyExtreme">Difficulty set to: Extreme</Entry>
+        <Entry Name="DifficultyMom">Mom Come Pick Me Up I'm Scared</Entry>
+        <Entry Name="Enabled">Enabled</Entry>
+        <Entry Name="Disabled">Disabled</Entry>
+        <Entry Name="NoShield">You need to purchase a shield first</Entry>
+        <Entry Name="GetMoney">Poor man's dream...</Entry>
+        <Entry Name="YourCash">Your cash</Entry>
+        <Entry Name="GameWhaca">Whac'A'Gruntole</Entry>
+        <Entry Name="GameCabin">The Cabin in the Woods</Entry>
+        <Entry Name="GameCalculator">Calcoolator</Entry>
+        <Entry Name="GamePlayground">Playground</Entry>
+        <Entry Name="GameClub">Night Club</Entry>
+        <Entry Name="GameHockey">Air Hockey</Entry>
+        <Entry Name="GameCreative">Creative Zone</Entry>
+        <Entry Name="GameIllusion">ACHTUNG!!!1!1!1 [br] Illusion Zone</Entry>
+		<Entry Name="ShopCompanion">A "friendly" companion who follows you around (and pushes you into the void) whenever you're at the spawn. Has anger issues so be nice</Entry>
+        <Entry Name="ShopFloppa">A 2 in 1 feline pack. Grab yourself a nice duo of Floppa and Bingus and conquer the world together. Everything you see them do is intended</Entry>
+        <Entry Name="ShopShieldL">A shield, or pussy mode. Blocks most frontal attacks at the cost of limited world interactions. Just remember where you left it</Entry>
+        <Entry Name="ShopShieldH">A bigger and bulkier version of a shield, or ultimate pussy mode. Covers you completely from the front and makes you harder to be spotted. Though it's not very ergonomic, mind you</Entry>
+        <Entry Name="ShopAxe">Unlock a powerful fire axe as a weapon for the Cabin in the Woods game mode. Random spawn location</Entry>
+        <Entry Name="AntiCamping">Camping Prevention Center - start moving if you want your rewards</Entry>
+        <Entry Name="NoCashInvincible">Health/Oil boosted. No cash due to Invincible Mode</Entry>
+        <Entry Name="NoCashEnemies">Health/Oil boosted. No cash due to less than 4 active enemies</Entry>
+        <Entry Name="CashArrived">Health/Oil/Cash boosted</Entry>
+        <Entry Name="Blinded">Illusioner has blinded you!</Entry>
+		<Entry Name="BeenShaked">Illusioner gave you a headshake!</Entry>
+		<Entry Name="Mirrored">Illusioner has ruined your coordination!</Entry>
+		<Entry Name="BarrelRoll">Illusioner has flipped your reality upside down!</Entry>
+		<Entry Name="Binoculars">Illusioner attached binoculars to your eyes!</Entry>
+		<Entry Name="Shrinked">Illusioner has shown you your inner dwarf!</Entry>
+		<Entry Name="LeaveMap">Leave map</Entry>
+		<Entry Name="MapExit">Exit</Entry>
+		<Entry Name="SignKitchen">Kitchen</Entry>
+		<Entry Name="SignStorage">Storage</Entry>
+		<Entry Name="SignCellC">Cell Area C</Entry>
+		<Entry Name="SignCellD">Cell Area D</Entry>
+		<Entry Name="IsNoFuse">It's a string, not a fuse.</Entry>
+		<Entry Name="IsNoLighter">Nothing to light without a string.</Entry>
+		<Entry Name="Count3">3</Entry>
+		<Entry Name="Count2">2</Entry>
+		<Entry Name="Count1">1</Entry>
+		<Entry Name="CountGo">GO</Entry>
+		<Entry Name="GoalYou">You Score!</Entry>
+		<Entry Name="GoalEnemy">Opponent Scores!</Entry>
+		<Entry Name="LastGo">One Minute Left!</Entry>
+		<Entry Name="HockeyWinner">Game Over! [br] You won, GG</Entry>
+		<Entry Name="HockeyLoser">Game Over! [br] You lost, RIP bozo</Entry>
+		<Entry Name="HockeyTie">Game Over! [br] Tie</Entry>
+		<Entry Name="GruntSpeed">Player Speed</Entry>
+		<Entry Name="GruntSpawn">Spawn Rate</Entry>
+		<Entry Name="GruntLeave">Leave</Entry>
+		<Entry Name="GruntHealth">Health</Entry>
+		<Entry Name="GruntSpeed1">Speed: Very slow</Entry>
+		<Entry Name="GruntSpeed2">Speed: Slow</Entry>
+		<Entry Name="GruntSpeed3">Speed: Normal</Entry>
+		<Entry Name="GruntSpeed4">Speed: High</Entry>
+		<Entry Name="GruntSpeed5">Speed: Very high</Entry>
+		<Entry Name="GruntSpeed6">Speed: Krole</Entry>
+		<Entry Name="GruntRate1">Spawn Rate: Low</Entry>
+		<Entry Name="GruntRate2">Spawn Rate: Normal</Entry>
+		<Entry Name="GruntRate3">Spawn Rate: High</Entry>
+		<Entry Name="GruntRate4">Spawn Rate: Very high</Entry>
+		<Entry Name="GruntRate5">Spawn Rate: Insane</Entry>
+		<Entry Name="GruntRate6">Spawn Rate: Very low</Entry>
+		<Entry Name="GruntHealth1">Health: Low</Entry>
+		<Entry Name="GruntHealth2">Health: Standard</Entry>
+		<Entry Name="GruntHealth3">Health: High</Entry>
+		<Entry Name="GruntHealth4">Health: Very high</Entry>
+		<Entry Name="GruntHealth5">Health: Chad Mode</Entry>
+		<Entry Name="GruntCountNum10">10</Entry>
+		<Entry Name="GruntCountNum9">9</Entry>
+		<Entry Name="GruntCountNum8">8</Entry>
+		<Entry Name="GruntCountNum7">7</Entry>
+		<Entry Name="GruntCountNum6">6</Entry>
+		<Entry Name="GruntCountNum5">5</Entry>
+		<Entry Name="GruntCountNum4">4</Entry>
+		<Entry Name="GruntCountNum3">3</Entry>
+		<Entry Name="GruntCountNum2">2</Entry>
+		<Entry Name="GruntCountNum1">1</Entry>
+		<Entry Name="GruntStart">START</Entry>
+		<Entry Name="GruntExpired">Settings period expired</Entry>
+		<Entry Name="FireCool">The button is on cooldown</Entry>
+		<Entry Name="WaterCool">Healing water is on cooldown</Entry>
+		<Entry Name="HunterAttack">Hunter is going after you</Entry>
+		<Entry Name="TooLong">Number too long</Entry>
+		<Entry Name="EnterNumber">Enter some number first</Entry>
+		<Entry Name="MissingNumOp">Missing number/operator</Entry>
+		<Entry Name="OptionAggressive">Aggressive Monsters Mode</Entry>
+		<Entry Name="OptionPlaylistMain">Custom Playlist(max 15 tracks)</Entry>
+		<Entry Name="OptionPlaylistAdd">Add/Remove current</Entry>
+		<Entry Name="OptionPlaylistChoose">Track changer</Entry>
+		<Entry Name="OptionPlaylistActivate">Enable/Disable custom playlist</Entry>
+		<Entry Name="OptionPlaylistClear">Reset playlist</Entry>
+		<Entry Name="PlaylistRemoved">Track removed from the playlist</Entry>
+		<Entry Name="PlaylistAdded">Track added to the playlist</Entry>
+		<Entry Name="PlaylistFull">Playlist is full</Entry>
+		<Entry Name="PlaylistEnabled">Custom playlist enabled</Entry>
+		<Entry Name="PlaylistDisabled">Custom playlist disabled</Entry>
+		<Entry Name="PlaylistEmpty">The playlist is empty</Entry>
+		<Entry Name="Aggressive1">Aggressive Monsters</Entry>
+		<Entry Name="Aggressive2">Endless Chase</Entry>
+		<Entry Name="Aggressive0">Standard</Entry>
+	</CATEGORY>
+	
+	<CATEGORY Name="Mono">	
+	    <Entry Name="RemoveLid">The lid got stuck. Likely won't move without some leverage</Entry>
+	    <Entry Name="OpenLid">Good to use now</Entry>
+	    <Entry Name="CanPour">It appears I can get oil from this barrel, provided I have a container</Entry>
+	    <Entry Name="ToolsNo">Seems to require a key to open</Entry>
+	    <Entry Name="PlankDestroyer">Gotta smash these planks before I can proceed</Entry>
+	    <Entry Name="LongRoad">Long road before I can open it</Entry>
+	    <Entry Name="StillPlanks">I still have planks to remove</Entry>
+	    <Entry Name="StillMaster">The door itself is still locked</Entry>
+	    <Entry Name="LeverStuck">The lever is stuck</Entry>
+	    <Entry Name="DoorMechanical">This door is likely controlled with some mechanism</Entry>
+	    <Entry Name="TrynaCheat">Trying to cheat are we</Entry>
+	</CATEGORY>
+	
+	<CATEGORY Name="WinMess">	
+	    <Entry Name="Congrats">Congratulations! You won</Entry>
+	    <Entry Name="RankingTime">Now, it's ranking time...</Entry>
+	    <Entry Name="InvincibleOn">Invincibility: enabled...</Entry>
+	    <Entry Name="InvincibleOff">Invincibility: disabled...</Entry>
+	    <Entry Name="RankUninstall">Final Rank: Pls uninstall...</Entry>
+	    <Entry Name="RankHope">Final Rank: There's no hope for you...</Entry>
+	    <Entry Name="RankGolf">Final Rank: Go play golf or sth</Entry>
+	    <Entry Name="RankBuySkill">Final Rank: Yeah, buy more skill</Entry>
+	    <Entry Name="RankNormie">Final Rank: Normie; Not good, not bad.</Entry>
+	    <Entry Name="RankGood">Final Rank: Good Stuff</Entry>
+	    <Entry Name="RankChad">Final Rank: Chad Player</Entry>
+	    <Entry Name="RankMaster">Final Rank: Master Gamer</Entry>
+	    <Entry Name="RankGigachad">Final Rank: Gigachad</Entry>
+	    <Entry Name="RankGod">Final Rank: Literal God. Damn bro</Entry>
+	    <Entry Name="EnemiesNone">Enemy Count: none...</Entry>
+	    <Entry Name="Enemies1">Enemy Count: 1...</Entry>
+	    <Entry Name="Enemies2">Enemy Count: 2...</Entry>
+	    <Entry Name="Enemies3">Enemy Count: 3...</Entry>
+	    <Entry Name="Enemies4">Enemy Count: 4...</Entry>
+	    <Entry Name="Enemies5">Enemy Count: 5...</Entry>
+	    <Entry Name="Enemies6">Enemy Count: 6...</Entry>
+	    <Entry Name="Enemies7">Enemy Count: 7...</Entry>
+	    <Entry Name="Enemies8">Enemy Count: 8...</Entry>
+	    <Entry Name="Enemies9">Enemy Count: 9...</Entry>
+	    <Entry Name="Enemies10">Enemy Count: 10...</Entry>
+	    <Entry Name="Enemies11">Enemy Count: 11...</Entry>
+	    <Entry Name="ShieldNo">Shield: disabled...</Entry>
+	    <Entry Name="ShieldYes">Shield: enabled...</Entry>
+	    <Entry Name="SpeedNo">200% Speed: disabled...</Entry>
+	    <Entry Name="SpeedYes">200% Speed: enabled...</Entry>
+	    <Entry Name="RespawnsNo">Door Respawns: disabled...</Entry>
+	    <Entry Name="RespawnsYes">Door Respawns: enabled...</Entry>
+	    <Entry Name="SeizureNo">Seizure Mode: disabled...</Entry>
+	    <Entry Name="SeizureYes">Seizure Mode: enabled...</Entry>
+	    <Entry Name="MagicianNo">Crazy Magician: disabled...</Entry>
+	    <Entry Name="MagicianYes">Crazy Magician: enabled...</Entry>
+	    <Entry Name="MinesNo">TooManyMines: disabled...</Entry>
+	    <Entry Name="MinesYes">TooManyMines: enabled...</Entry>
+	    <Entry Name="Difficulty1">Difficulty: Crybaby...</Entry>
+	    <Entry Name="Difficulty2">Difficulty: Easy...</Entry>
+	    <Entry Name="Difficulty3">Difficulty: Normal...</Entry>
+	    <Entry Name="Difficulty4">Difficulty: Hard...</Entry>
+	    <Entry Name="Difficulty5">Difficulty: Extreme...</Entry>
+	    <Entry Name="Difficulty6">Difficulty: Mom Come Pick Me Up I'm Scared...</Entry>
+		<Entry Name="AggressiveNo">Aggressive Mode: Disabled</Entry>
+		<Entry Name="AggressiveYes">Aggressive Mode: Enabled</Entry>
+		<Entry Name="AggressiveYesYes">Aggressive Mode: Endless Chase</Entry>
+	</CATEGORY>
+	
+	<CATEGORY Name="Info2">
+		<Entry Name="LoadingCat"></Entry>
+	</CATEGORY>
+	
+	<CATEGORY Name="Credits">	
+	    <Entry Name="finish">Litwo, Ojczyzno moja! ty jestes jak zdrowie;
+Ile cie trzeba cenic, ten tylko sie dowie,
+Kto cie stracil. Dzis pieknosc twa w calej ozdobie
+Widze i opisuje, bo tesknie po tobie.
+
+Panno swieta, co Jasnej bronisz Czestochowy
+I w Ostrej swiecisz Bramie! Ty, co grod zamkowy
+Nowogrodzki ochraniasz z jego wiernym ludem!
+Jak mnie dziecko do zdrowia powrocilas cudem
+
+Gdy od placzacej matki, pod Twoja opieke
+Ofiarowany martwa podnioslem powieke;
+I zaraz moglem pieszo, do Twych swiatyn progu
+Isc za wrocone zycie podziekowac Bogu
+
+Tak nas powrocisz cudem na Ojczyzny lono!...
+Tymczasem, przenos moja dusze uteskniona
+Do tych pagorkow lesnych, do tych lak zielonych,
+Szeroko nad blekitnym Niemnem rozciagnionych;
+
+Do tych pol malowanych zbozem rozmaitem,
+Wyzlacanych pszenica, posrebrzanych zytem;
+Gdzie bursztynowy swierzop, gryka jak snieg biala,
+Gdzie panienskim rumiencem dziecielina pala,
+A wszystko przepasane jakby wstega, miedza
+Zielona, na niej zrzadka ciche grusze siedza.</Entry>
+	</CATEGORY>
+</LANGUAGE>

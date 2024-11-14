@@ -1,0 +1,30 @@
+#include "SR_Maths.hps"
+
+void OnStart()
+{
+	for(int x = 0; x <= 9; x++)
+	{
+		SetEntityPlayerInteractCallback("Button_" + x, "PressButton", false);
+	}
+	SetEntityPlayerInteractCallback("Button_C", "PressButton", false);
+	SetEntityPlayerInteractCallback("Button_D", "PressButton", false);
+	SetEntityPlayerInteractCallback("Button_T", "PressButton", false);
+	SetEntityPlayerInteractCallback("Button_M", "PressButton", false);
+	SetEntityPlayerInteractCallback("Button_P", "PressButton", false);
+	SetEntityPlayerInteractCallback("Button_E", "PressButton", false);
+	
+	SetEntityPlayerInteractCallback("level_hub_1", "Leave", false);
+}
+void OnEnter()
+{
+	Clear();
+	PlayMusic("calculatormoment.ogg", true, 1, 0.01f, 1, false);
+}
+void OnLeave()
+{
+	
+}
+void Leave(string &in asEntity)
+{
+	ChangeMap("SR_spawn.map", "PlayerStartArea_6", "", "");
+}

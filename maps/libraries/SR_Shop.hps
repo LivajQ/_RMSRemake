@@ -1,0 +1,136 @@
+void CompanionLoop(string &in asTimer)
+{
+	if(MathAbs(GetEntityPosY("servant_bitch_1") - GetPlayerPosY()) >= 0.5f) SetEntityPos("servant_bitch_1", GetEntityPosX("servant_bitch_1"), GetPlayerPosY(), GetEntityPosZ("servant_bitch_1"));
+	if(MathAbs(GetEntityPosX("servant_bitch_1") - GetPlayerPosX()) >= 5.0f
+	|| MathAbs(GetEntityPosZ("servant_bitch_1") - GetPlayerPosZ()) >= 5.0f) SetEntityPos("servant_bitch_1", GetPlayerPosX() + 1.0f, GetEntityPosY("servant_bitch_1"), GetPlayerPosZ() + 1.0f); 
+	AddTimer("a", 0.3f, "CompanionLoop");
+}
+void FloppaLoop(string &in asTimer)
+{
+	if(MathAbs(GetEntityPosY("hideout_bingus_1") - GetPlayerPosY()) >= 0.5f) SetEntityPos("hideout_bingus_1", GetEntityPosX("hideout_bingus_1"), GetPlayerPosY(), GetEntityPosZ("hideout_bingus_1"));
+	if(MathAbs(GetEntityPosX("hideout_bingus_1") - GetPlayerPosX()) >= 5.0f
+	|| MathAbs(GetEntityPosZ("hideout_bingus_1") - GetPlayerPosZ()) >= 5.0f) SetEntityPos("hideout_bingus_1", GetPlayerPosX() + 1.0f, GetEntityPosY("hideout_bingus_1"), GetPlayerPosZ() + 1.0f); 
+	
+	if(MathAbs(GetEntityPosY("hideout_caracal_1") - GetPlayerPosY()) >= 0.5f) SetEntityPos("hideout_caracal_1", GetEntityPosX("hideout_caracal_1"), GetPlayerPosY(), GetEntityPosZ("hideout_bingus_1"));
+	if(MathAbs(GetEntityPosX("hideout_caracal_1") - GetPlayerPosX()) >= 5.0f
+	|| MathAbs(GetEntityPosZ("hideout_caracal_1") - GetPlayerPosZ()) >= 5.0f) SetEntityPos("hideout_caracal_1", GetPlayerPosX() + 1.0f, GetEntityPosY("hideout_caracal_1"), GetPlayerPosZ() + 1.0f); 
+	
+	AddTimer("a", 0.3f, "FloppaLoop");
+}
+void PurchaseEvent()
+{
+	if(GetLocalVarInt("FirstPurchase") == 1)
+	{
+		SetEntityActive("shop_mrkrabs_1", true);
+		SetLocalVarInt("FirstPurchase", 0);
+		SetEnemySanityDecreaseActive("shop_mrkrabs_1", false);
+		AddEnemyPatrolNode("shop_mrkrabs_1", "PathNodeArea_23", 3.0f, "Idle");
+		PlaySoundAtEntity("walkerman", "krabwalker.snt", "shop_mrkrabs_1", 0.1f, false);
+		AddTimer("a", 1.0f, "PurchaseEvent2");
+	}
+}
+void PurchaseEvent2(string &in asTimer)
+{
+	PlaySoundAtEntity("walkerman2", "jamesinteraction.snt", "shop_mrkrabs_1", 0.1f, false);
+	AddTimer("a", 2.0f, "PurchaseEvent3");
+}
+void PurchaseEvent3(string &in asTimer)
+{
+	AddTimer("a", 0.9f, "PurchaseEvent4");
+	for(float x = 1.0f; x <= 7.5f; x += 0.5f) AddTimer("a", x, "PurchaseBoom");
+	AddTimer("a", 8.0f, "PurchaseEventEnder");
+}
+void PurchaseEvent4(string &in asTimer)
+{
+	SetEntityActive("shop_mrkrabs_obj_1", true);
+	SetEntityPos("shop_mrkrabs_obj_1", GetEntityPosX("shop_mrkrabs_1"), GetEntityPosY("shop_mrkrabs_1"), GetEntityPosZ("shop_mrkrabs_1"));
+	SetEntityActive("shop_mrkrabs_1", false);
+	CreateParticleSystemAtEntity("burner", "burningmoder.ps", "shop_mrkrabs_obj_1", false);
+	StopSound("walkerman", 0.1f);
+}
+void PurchaseBoom(string &in asTimer)
+{
+	float PushX = RandFloat(-20000.0f, 20000.0f);
+	float PushY = RandFloat(-20000.0f, 20000.0f);
+	float PushZ = RandFloat(-20000.0f, 20000.0f);
+	AddPropForce("shop_mrkrabs_obj_1", PushX, PushY, PushZ, "world");
+}
+void PurchaseEventEnder(string &in asTimer)
+{
+	DestroyParticleSystem("burner");
+	StopSound("walkerman2", 0.1f);
+	SetEntityActive("shop_mrkrabs_obj_1", false);
+}
+void BuyCompanion(string &in asEntity)					//better balance prices after setting up the cash earning system
+{
+	if(GetGlobalVarInt("Cash") >= 1000)
+	{
+		AddGlobalVarInt("Cash", -1000);
+		SetGlobalVarInt("PurchasedCompanion", 1);
+		SetEnemyDisableTriggers("servant_bitch_1", false);
+		PlayGuiSound("goodchoicestranger.snt", 1);
+		SetEntityPos(asEntity, 0.0f, -100.0f, 0.0f);
+		AddTimer("a", 0.3f, "CompanionLoop");
+		MoneyUpdate();
+		PurchaseEvent();
+	}
+	else SetMessage("Info", "GetMoney", 4.0f);
+}
+void BuyFloppa(string &in asEntity)
+{
+	if(GetGlobalVarInt("Cash") >= 1000)
+	{
+		AddGlobalVarInt("Cash", -1000);
+		SetGlobalVarInt("PurchasedFloppa", 1);
+		SetEnemyDisableTriggers("hideout_bingus_1", false);
+		SetEnemyDisableTriggers("hideout_caracal_1", false);
+		PlayGuiSound("goodchoicestranger.snt", 1);
+		SetEntityPos(asEntity, 0.0f, -100.0f, 0.0f);
+		AddTimer("a", 0.3f, "FloppaLoop");
+		MoneyUpdate();
+		PurchaseEvent();
+	}
+	else SetMessage("Info", "GetMoney", 4.0f);
+}
+void BuyShieldL(string &in asEntity)
+{
+	if(GetGlobalVarInt("Cash") >= 500)
+	{
+		AddGlobalVarInt("Cash", -500);
+		SetGlobalVarInt("PurchasedShieldL", 1);
+		PlayGuiSound("goodchoicestranger.snt", 1);
+		SetEntityActive("ballisticshield_1", false);
+		SetEntityPos(asEntity, 0.0f, -100.0f, 0.0f);
+		MoneyUpdate();
+		PurchaseEvent();
+	}
+	else SetMessage("Info", "GetMoney", 4.0f);
+}
+void BuyShieldH(string &in asEntity)
+{
+	if(GetGlobalVarInt("Cash") >= 1500)
+	{
+		AddGlobalVarInt("Cash", -1500);
+		SetGlobalVarInt("PurchasedShieldH", 1);
+		PlayGuiSound("goodchoicestranger.snt", 1);
+		SetEntityActive("heavyshield_1", false);
+		SetEntityPos(asEntity, 0.0f, -100.0f, 0.0f);
+		MoneyUpdate();
+		PurchaseEvent();
+	}
+	else SetMessage("Info", "GetMoney", 4.0f);
+}
+void BuyFireAxe(string &in asEntity)
+{
+	if(GetGlobalVarInt("Cash") >= 1500)
+	{
+		AddGlobalVarInt("Cash", -1500);
+		SetGlobalVarInt("PurchasedFireAxe", 1);
+		PlayGuiSound("goodchoicestranger.snt", 1);
+		SetEntityActive("fireaxe_1", false);
+		SetEntityPos(asEntity, 0.0f, -100.0f, 0.0f);
+		MoneyUpdate();
+		PurchaseEvent();
+	}
+	else SetMessage("Info", "GetMoney", 4.0f);
+}

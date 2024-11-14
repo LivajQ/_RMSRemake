@@ -1,0 +1,13 @@
+<SOUNDENTITY>
+  <SOUNDS>
+  	<Main>
+  		<Sound File="moder05_notice01" />
+  		<Sound File="moder05_notice02" />
+  		<Sound File="moder05_notice03" />
+  		<Sound File="moder05_notice04" />
+  		<Sound File="moder05_notice05" />
+  		<Sound File="moder05_notice06" />
+  	</Main>
+  </SOUNDS>
+  <PROPERTIES Volume="0.7" MinDistance="0.5" MaxDistance="20" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="False" Use3D="True" Blockable="False" BlockVolumeMul="0.7" Priority="0" />
+</SOUNDENTITY>

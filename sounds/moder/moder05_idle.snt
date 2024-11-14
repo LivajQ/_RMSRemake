@@ -1,0 +1,16 @@
+<SOUNDENTITY>
+  <SOUNDS>
+  	<Main>
+  		<Sound File="moder05_idle01" />
+  		<Sound File="moder05_idle02" />
+  		<Sound File="moder05_idle03" />
+  		<Sound File="moder05_idle04" />
+  		<Sound File="moder05_idle05" />
+  		<Sound File="moder05_idle06" />
+  		<Sound File="moder05_idle07" />
+  		<Sound File="moder05_idle08" />
+  		<Sound File="moder05_idle09" />
+  	</Main>
+  </SOUNDS>
+  <PROPERTIES Volume="0.7" MinDistance="0.5" MaxDistance="20" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="False" Use3D="True" Blockable="False" BlockVolumeMul="0.7" Priority="0" />
+</SOUNDENTITY>

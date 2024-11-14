@@ -1,0 +1,182 @@
+#include "SR_Maths.hps"
+#include "SR_MenuInitializer.hps"
+#include "SR_ButtonsAndOptions.hps"
+#include "SR_Shop.hps"
+
+void OnStart()
+{
+	SetLocalVarInt("ChosenMap", 1);
+	SetLocalVarInt("FirstPurchase", 1);
+    
+	SetGlobalVarInt("Cash", 0);
+	SetGlobalVarInt("IsPartyMap", 1);
+	SetGlobalVarInt("SongAmount", 30);
+	SetGlobalVarInt("MapAmount", 2);
+	SetGlobalVarInt("ActiveMagician", 1);
+	SetGlobalVarInt("ActiveNinja", 1);
+	SetGlobalVarInt("ActiveAthlete", 1);
+	SetGlobalVarInt("ActiveRafalala", 1);
+	SetGlobalVarInt("ActiveBeholder", 1);
+	SetGlobalVarInt("ActiveJackal", 1);
+	SetGlobalVarInt("ActiveCharger", 1);
+	SetGlobalVarInt("ActiveTrensletor", 1);
+	SetGlobalVarInt("ActiveIllusioner", 1);
+	SetGlobalVarInt("ActiveBull", 1);
+	SetGlobalVarInt("ActiveKrabs", 1);
+	SetGlobalVarInt("SetTheme", 1);
+	SetGlobalVarInt("SetDifficulty", 3);
+	SetGlobalVarInt("SetInvincible", 0);
+	SetGlobalVarInt("SetSpeed", 0);
+	SetGlobalVarInt("SetMines", 0);
+	SetGlobalVarInt("SetMagician", 0);
+	SetGlobalVarInt("SetShield", 0);
+	SetGlobalVarInt("SetSeizure", 0);
+	SetGlobalVarInt("SetRespawns", 0);
+	SetGlobalVarInt("SetOverload", 0);
+	SetGlobalVarInt("SetAggressive", 0);
+	SetGlobalVarString("OverloadEnemy", "Magician");
+	SetGlobalVarInt("PurchasedShieldL", 0);
+	SetGlobalVarInt("PurchasedShieldH", 0);
+	SetGlobalVarInt("PurchasedCompanion", 0);
+	SetGlobalVarInt("PurchasedFireAxe", 0);
+	SetGlobalVarInt("PurchasedFloppa", 0);
+	for(int x = 1; x <= 15; x++)
+	{
+		SetGlobalVarString("CustomSong_" + x, "None");
+	}
+	SetGlobalVarInt("PlaylistActive", 0);
+	SetGlobalVarInt("PlaylistIndex", 1);
+	
+	AddEntityCollideCallback("Player", "GoThrough_1", "Teleport_MainGame", false, 0);
+	AddEntityCollideCallback("Player", "GoThrough_2", "Teleport_MiniGames", false, 0);
+	AddEntityCollideCallback("Player", "GoThrough_3", "Teleport_Default", false, 0);
+	AddEntityCollideCallback("Player", "GoThrough_6", "Teleport_Default", false, 0);
+	AddEntityCollideCallback("Player", "GoThrough_7", "Teleport_Default", false, 0);
+	AddEntityCollideCallback("Player", "GoThrough_8", "Teleport_Default", false, 0);
+	AddEntityCollideCallback("Player", "GoThrough_4", "Teleport_Shop", false, 0);
+	AddEntityCollideCallback("Player", "GoThrough_5", "Teleport_Settings", false, 0);
+	AddEntityCollideCallback("Player", "Init_Hockey", "StartMini", false, 1);
+	AddEntityCollideCallback("Player", "Init_Whaca", "StartMini", false, 1);
+	AddEntityCollideCallback("Player", "Init_Calc", "StartMini", false, 1);
+	AddEntityCollideCallback("Player", "Init_Creat", "StartMini", false, 1);
+	
+	SetEntityPlayerInteractCallback("ScriptArea_1", "ChooserUp", false);
+	SetEntityPlayerInteractCallback("ScriptArea_3", "ChooserDown", false);
+	SetEntityPlayerInteractCallback("ScriptArea_4", "StartSurvival", false);
+	SetEntityPlayerInteractCallback("button_simple_1", "PartyMap", false);
+	SetEntityPlayerInteractCallback("Button*", "Enabler", false);
+	SetEntityPlayerInteractCallback("button_simple_13", "ChangeTheme", false);
+	SetEntityPlayerInteractCallback("button_simple_14", "ChangeMusic", false);
+	SetEntityPlayerInteractCallback("button_simple_15", "ChangeInvincible", false);
+	SetEntityPlayerInteractCallback("button_simple_16", "ChangeDifficulty", false);
+	SetEntityPlayerInteractCallback("button_simple_17", "ChangeSpeed", false);
+	SetEntityPlayerInteractCallback("button_simple_18", "ChangeMines", false);
+	SetEntityPlayerInteractCallback("button_simple_19", "ChangeMagician", false);
+	SetEntityPlayerInteractCallback("button_simple_20", "ChangeShield", false);
+	SetEntityPlayerInteractCallback("button_simple_21", "ChangeSeizure", false);
+	SetEntityPlayerInteractCallback("button_simple_22", "ChangeRespawns", false);
+	SetEntityPlayerInteractCallback("button_simple_23", "ChangeOverload", false);
+	SetEntityPlayerInteractCallback("button_simple_24", "ChangeOverEnemy", false);
+	SetEntityPlayerInteractCallback("button_simple_30", "ChangeAggressive", false);
+	SetEntityPlayerInteractCallback("button_simple_28", "ResetPlaylist", false);
+	SetEntityPlayerInteractCallback("button_simple_26", "StartPlaylist", false);
+	SetEntityPlayerInteractCallback("button_simple_25", "GoNextPlaylist", false);
+	SetEntityPlayerInteractCallback("button_simple_27", "AddPlaylist", false);
+	SetEntityPlayerInteractCallback("ScriptArea_5", "BuyCompanion", false);
+	SetEntityPlayerInteractCallback("ScriptArea_6", "BuyShieldL", false);
+	SetEntityPlayerInteractCallback("ScriptArea_7", "BuyShieldH", false);
+	SetEntityPlayerInteractCallback("ScriptArea_8", "BuyFireAxe", false);
+	SetEntityPlayerInteractCallback("ScriptArea_9", "BuyFloppa", false);
+	SetEntityPlayerInteractCallback("ScriptArea_10", "TryDrJr", false);
+}
+void OnEnter()
+{
+	ClearSavedMaps();
+	LoadMenuMapStuff();
+	AutoSave();
+}
+void OnLeave()
+{
+	SetPlayerJumpForceMul(1.0f);
+	SetPlayerFallDamageDisabled(false);
+	StopMusic(1, 1);
+	StopMusic(1, 2);
+	StopMusic(1, 3);
+	RemoveTimer("a");
+	RemoveTimer("b");
+	SetupLoadScreen("Info2", "LoadingCat", 1, "loadingfella.jpg");
+}
+void HeightChecker(string &in asTimer)
+{
+	if(GetPlayerPosY() <= -50.0f) SetPlayerPos(-34.75f, 1.0f, -14.0f);
+	AddTimer("a", 1.0f, "HeightChecker");
+}
+void Teleport_MainGame(string &in asParent, string &in asChild, int alState)
+{
+	SetPlayerPos(-235.4f, 4.5f, 1.75f);
+	AddPlayerBodyForce(-20000.0f, 0.0f, 0.0f, false);
+}
+void Teleport_MiniGames(string &in asParent, string &in asChild, int alState)
+{
+	SetPlayerPos(-235.25f, 4.5f, -72.75f);
+	AddPlayerBodyForce(-20000.0f, 0.0f, 0.0f, false);
+}
+void Teleport_Settings(string &in asParent, string &in asChild, int alState)
+{
+	SetPlayerPos(-36.75f, 3.75f, -216.75f);
+	AddPlayerBodyForce(0.0f, 0.0f, -20000.0f, false);
+}
+void Teleport_Shop(string &in asParent, string &in asChild, int alState)
+{
+	SetPlayerPos(-37.0f, 3.5f, 223.25f);
+	AddPlayerBodyForce(0.0f, 0.0f, 20000.0f, false);
+}
+void Teleport_Default(string &in asParent, string &in asChild, int alState)
+{
+	SetPlayerPos(-34.75f, 0.5f, -14.0f);
+	AddPlayerBodyForce(0.0f, -10000.0f, 0.0f, false);
+}
+void MagicianLoop(string &in asTimer)
+{
+	TeleportEnemyToNode("servant_magician_1", "PathNodeArea_" + RandInt(1, 4), true);
+	AddTimer("a", 2.0f, "MagicianLoop");
+} 
+void ParticleLoop(string &in asTimer)
+{
+	DestroyParticleSystem("useless");
+	for(int x = 1; x <= 30; x++)
+	{
+		CreateParticleSystemAtEntity("useless", "ps_fire_orb_room.ps", "BurningArea_" + x, false);
+	}
+	
+	CreateParticleSystemAtEntity("useless", "portalparticle_1.ps", "PortalParticle_1", false);
+	for(int x = 2; x <= 100; x++)
+	{
+		if(x % 2 == 0)
+		{
+			CreateParticleSystemAtEntity("useless", "portalparticle_2.ps", "PortalParticle_" + x, false);
+		}
+		else
+		{
+			CreateParticleSystemAtEntity("useless", "portalparticle_1.ps", "PortalParticle_" + x, false);
+		}
+	}
+	
+	CreateParticleSystemAtEntity("useless", "portalparticle_3.ps", "MiniPortal_1", false);
+	for(int x = 2; x <= 100; x++)
+	{
+		if(x % 2 == 0)
+		{
+			CreateParticleSystemAtEntity("useless", "portalparticle_4.ps", "MiniPortal_" + x, false);
+		}
+		else
+		{
+			CreateParticleSystemAtEntity("useless", "portalparticle_3.ps", "MiniPortal_" + x, false);
+		}
+	}
+	AddTimer("a", 5.0f, "ParticleLoop");
+}
+void TryDrJr(string &in asEntity)
+{
+	PlaySoundAtEntity("DrMoment", "DrJrSounds.snt", "servant_plankton_obj_1", 0.1f, false);
+}

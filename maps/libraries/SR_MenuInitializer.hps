@@ -1,0 +1,192 @@
+#include "SR_Shop.hps"
+
+void LoadMenuMapStuff()
+{
+	SetSkyBoxActive(true);
+	SetSkyBoxTexture("pure_sky.dds");
+	SetMapDisplayNameEntry("spawn");
+	MoneyUpdate();
+	SetPlayerJumpForceMul(2.0f);
+	SetPlayerMoveSpeedMul(1.0f);
+	SetPlayerRunSpeedMul(1.0f);
+	SetPlayerHealth(100.0f);
+	SetPlayerLampOil(0.0f);
+	SetPlayerJumpDisabled(false);
+	SetPlayerCrouchDisabled(false);
+	MovePlayerHeadPos(0.0f, 0.0f, 0.0f, 1.0f, -0.3f);
+	FadeImageTrailTo(0.0f, 1.0f);
+	SetPlayerFallDamageDisabled(true);
+	SetEnemySanityDecreaseActive("servant_*", false);
+	SetEnemySanityDecreaseActive("hideout_*", false);
+	SetEntityActive("servant_*", true);
+	SetEntityActive("hideout_*", true);
+	SetLocalVarInt("TrensletorSkinn", RandInt(1, 6));
+	SetEntityActive("servant_Trensletor*", false);
+	SetEntityActive("servant_Trensletor" + GetLocalVarInt("TrensletorSkinn"), true);
+	
+	AddTimer("a", 1.0f, "HeightChecker");
+	AddTimer("a", 2.0f, "MagicianLoop");
+	AddTimer("a", 1.0f, "ParticleLoop");
+	
+	PreloadParticleSystem("portalparticle_1.ps");
+	PreloadParticleSystem("portalparticle_2.ps");
+	PreloadParticleSystem("portalparticle_3.ps");
+	PreloadParticleSystem("portalparticle_4.ps");
+	PreloadParticleSystem("ps_fire_orb_room.ps");
+	
+	AddEnemyPatrolNode("servant_mrkrabs_1", "PathNodeArea_18", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_bull_1", "PathNodeArea_17", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_illusioner_1", "PathNodeArea_16", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_Trensletor1", "PathNodeArea_15", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_Trensletor2", "PathNodeArea_15", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_Trensletor3", "PathNodeArea_15", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_Trensletor4", "PathNodeArea_15", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_Trensletor5", "PathNodeArea_15", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_Trensletor6", "PathNodeArea_15", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_charger_1", "PathNodeArea_14", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_jackal_1", "PathNodeArea_13", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_beholder_1", "PathNodeArea_12", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_rafalala_1", "PathNodeArea_11", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_athlete_1", "PathNodeArea_7", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_athlete_1", "PathNodeArea_8", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_athlete_1", "PathNodeArea_9", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_athlete_1", "PathNodeArea_10", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_ninja_1", "PathNodeArea_5", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_ninja_1", "PathNodeArea_6", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_magician_1", "PathNodeArea_1", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_magician_1", "PathNodeArea_2", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_magician_1", "PathNodeArea_3", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_magician_1", "PathNodeArea_4", 0.01f, "Idle");
+	AddEnemyPatrolNode("servant_ninja_2", "PathNodeArea_19", 3.0f, "Idle");
+	AddEnemyPatrolNode("hideout_bingus_1", "PathNodeArea_24", 3.0f, "Idle");
+	AddEnemyPatrolNode("hideout_caracal_1", "PathNodeArea_25", 3.0f, "Idle");
+	
+	RotatePropToSpeed("portaloring_1", 2.0f, 2.0f, 1.0f, 0.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_2", 1.0f, 1.0f, -1.0f, 0.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_3", 2.0f, 2.0f, 1.0f, 0.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_4", 1.0f, 1.0f, -1.0f, 0.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_5", 2.0f, 2.0f, -1.0f, 0.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_6", 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_7", 2.0f, 2.0f, 0.0f, 1.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_8", 1.0f, 1.0f, 0.0f, -1.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_9", 2.0f, 2.0f, 0.0f, 1.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_10", 1.0f, 1.0f, 0.0f, -1.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_11", 2.0f, 2.0f, 0.0f, 0.0f, -1.0f, false, "");
+	RotatePropToSpeed("portaloring_12", 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, false, "");
+	RotatePropToSpeed("portaloring_13", 2.0f, 2.0f, 0.0f, 0.0f, 1.0f, false, "");
+	RotatePropToSpeed("portaloring_14", 1.0f, 1.0f, 0.0f, 0.0f, -1.0f, false, "");
+	RotatePropToSpeed("portaloring_15", 2.0f, 2.0f, 0.0f, 0.0f, -1.0f, false, "");
+	RotatePropToSpeed("portaloring_16", 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, false, "");
+	RotatePropToSpeed("portaloring_17", 2.0f, 2.0f, 0.0f, 0.0f, 1.0f, false, "");
+	RotatePropToSpeed("portaloring_18", 1.0f, 1.0f, 0.0f, 0.0f, -1.0f, false, "");
+	RotatePropToSpeed("portaloring_19", 2.0f, 2.0f, -1.0f, 0.0f, 0.0f, false, "");
+	RotatePropToSpeed("portaloring_20", 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, false, "");
+	
+	RotatePropToSpeed("ballisticshield_1", 0.5f, 0.5f, 0.0f, -1.0f, 0.0f, false, "");
+	RotatePropToSpeed("heavyshield_1", 0.5f, 0.5f, 0.0f, -1.0f, 0.0f, false, "");
+	RotatePropToSpeed("heavyshield_1", 0.5f, 0.5f, 0.0f, -1.0f, 0.0f, false, "");
+	RotatePropToSpeed("fireaxe_1", 0.5f, 0.5f, 0.0f, -1.0f, 0.0f, false, "");
+	
+	if(GetGlobalVarInt("SetTheme") == 1)
+	{
+		PartyStarter();
+	}
+
+	if(GetGlobalVarInt("PurchasedCompanion") == 1)
+	{
+		SetEnemyDisableTriggers("servant_bitch_1", false);
+		AddTimer("a", 0.3f, "CompanionLoop");
+	}
+	if(GetGlobalVarInt("PurchasedFloppa") == 1)
+	{
+		SetEnemyDisableTriggers("hideout_bingus_1", false);
+		SetEnemyDisableTriggers("hideout_caracal_1", false);
+		AddTimer("a", 0.3f, "FloppaLoop");
+	}
+	
+	switch(GetLocalVarInt("ChosenMap"))
+	{
+		case 1:
+			SetEntityPos("mapreview_menson_1", -239.912f, 2.994f, -3.922f);
+			break;
+		case 2:
+			SetEntityPos("mapreview_prison_1", -239.912f, 2.994f, -3.922f);
+			break;
+		default:
+			SetEntityPos("mapreview_menson_1", -239.912f, 2.994f, -3.922f);
+			break;
+	}
+}
+
+///////////COPY FROM ST_MainMapsSettings/////////////
+void PartyStarter()
+{
+	ChooseTune();
+	AddTimer("b", 0.5f, "PartyLights");
+}
+void ChooseTune()
+{
+	StopMusic(1, 1);
+	StopMusic(1, 2);
+	StopMusic(1, 3);
+	bool IsAny = false;
+	int Random;
+	if(GetGlobalVarInt("PlaylistActive") == 1)
+	{
+		AddDebugMessage("Script works", false);
+		for(int x = 1; x <= 15; x++)
+		{
+			if(GetGlobalVarString("CustomSong_" + x) != "None") IsAny = true;
+		}
+		if(IsAny)
+		{
+			while(true)
+			{
+				Random = RandInt(1, 15);
+				if(GetGlobalVarString("CustomSong_" + Random) != "None")
+				{
+					PlayMusic(GetGlobalVarString("CustomSong_" + Random), true, 1, 1, 1, false);
+					break;
+				}
+			}
+			return;
+		}
+	}
+	PlayMusic("PartyMusic_" + RandInt(1, GetGlobalVarInt("SongAmount")), true, 1, 1, 1, false);
+}
+void PartyLights(string &in asTimer)
+{
+	float ColorR = RandFloat(0.0f, 1.0f);
+	float ColorG = RandFloat(0.0f, 1.0f);
+	float ColorB = RandFloat(0.0f, 1.0f);
+	float SkyR = RandFloat(0.0f, 1.0f);
+	float SkyG = RandFloat(0.0f, 1.0f);
+	float SkyB = RandFloat(0.0f, 1.0f);
+
+	for(int x = 1; x <= 100; x++)
+	{
+		FadeLightTo("BoxLight_" + x, ColorR, ColorG, ColorB, 1.0f, -1, 0.5f);
+		FadeLightTo("PointLight_" + x, RandFloat(0.0f, 1.0f), RandFloat(0.0f, 1.0f), RandFloat(0.0f, 1.0f), 1.0f, -1, 0.5f);
+	}
+
+	AddTimer("b", 0.5f, "PartyLights");
+}
+void Song(string &in asEntity)
+{
+	ChooseTune();
+}
+
+void PartyEnder()
+{
+	RemoveTimer("b");
+	for(int x = 1; x <= 50; x++)
+	{
+		FadeLightTo("BoxLight_" + x, 1.0f, 1.0f, 1.0f, 1.0f, -1, 0.5f);
+		FadeLightTo("PointLight_" + x, 1.0f, 1.0f, 1.0f, 1.0f, -1, 0.5f);
+	}
+	SetSkyBoxColor(0.22f, 0.9f, 0.85f, 1.0f);
+	StopMusic(1, 1);
+	StopMusic(1, 2);
+	StopMusic(1, 3);
+	PlayMusic("modderstheme.ogg", true, 1, 1, 1, false);
+}

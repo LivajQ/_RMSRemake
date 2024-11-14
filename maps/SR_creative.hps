@@ -1,0 +1,83 @@
+void OnStart()
+{
+	SetEntityPlayerInteractCallback("level_hub_1", "Leaving", false);
+	AddEntityCollideCallback("painter_brush_1", "Red", "ColorPicker", false, 1);
+	AddEntityCollideCallback("painter_brush_1", "Blue", "ColorPicker", false, 1);
+	AddEntityCollideCallback("painter_brush_1", "Green", "ColorPicker", false, 1);
+	AddEntityCollideCallback("painter_brush_1", "Yellow", "ColorPicker", false, 1);
+	AddEntityCollideCallback("painter_brush_1", "Pink", "ColorPicker", false, 1);
+	AddEntityCollideCallback("painter_brush_1", "Brown", "ColorPicker", false, 1);
+}
+void OnEnter()
+{
+	GridGenerator();
+	SetLocalVarInt("Num", 1);
+	SetLocalVarString("ChosenColor", "None");
+	AddTimer("a", 1.0f, "SuperLooper");
+	PlayMusic("artisticsoul.ogg", true, 1, 1, 1, false);
+}
+void OnLeave()
+{
+	
+}
+void Leaving(string &in asEntity)
+{
+	ChangeMap("SR_spawn.map", "PlayerStartArea_7", "", "");
+}
+void GridGenerator() //z = 1.26f x = 1.78f y = 3.48f
+{
+	int Index = 1;
+	for(int x = 1; x <= 40; x++)
+	{
+		for(int y = 1; y <= 40; y++)
+		{
+			SetEntityPos("Zone_" + Index, 1.78f - (y * 0.08512f), 3.48f - (x * 0.08512f), 1.58f);
+			AddEntityCollideCallback("PaintBrush_Tip", "Zone_" + Index, "Paint", false, 1);
+			AddEntityCollideCallback("painter_eraser_1", "Zone_" + Index, "Erase", false, 1);
+			SetLocalVarString("ZoneColorID_" + Index, "None");
+			Index++;
+		}
+	}
+}
+void Paint(string &in asParent, string &in asChild, int AlState)
+{
+	AddDebugMessage("" + asChild, false);
+	string Index = StringSub(asChild, 5, 6);
+	string Name = "Pixel_" + Index + "_" + GetLocalVarInt("Num");
+	string Color = GetLocalVarString("ChosenColor");
+	SetEntityActive(GetLocalVarString("ZoneColorID_" + Index), false);
+	CreateEntityAtArea(Name, Color, asChild, true);
+	SetPropStaticPhysics(Name, true);
+	SetEntityPos(Name, GetEntityPosX(asChild), GetEntityPosY(asChild), GetEntityPosZ(asChild) - 0.45f);
+	SetLocalVarString("ZoneColorID_" + Index, Name);
+	AddLocalVarInt("Num", 1);
+}
+void Erase(string &in asParent, string &in asChild, int AlState)
+{
+	string Index = StringSub(asChild, 5, 6);
+	SetEntityActive(GetLocalVarString("ZoneColorID_" + Index), false);
+	SetLocalVarString("ZoneColorID_" + Index, "None");
+}
+void SuperLooper(string &in asTimer)
+{
+	PlaceEntityAtEntity("PaintBrush_Tip", "painter_brush_1", "Body_1", true);
+	AddTimer("a", 0.01f, "SuperLooper");
+}
+void ColorPicker(string &in asParent, string &in asChild, int alState)
+{
+	if(asChild == "Green")
+	{
+		CheckPoint("ded", "PlayerStartArea_1", "CreativeColor", "DeathHint", "NotCreative");
+		GivePlayerDamage(999.0f, "BloodSplat", true, true);
+	}
+	PlayGuiSound("general_water_drip.snt", 1);
+	if(asChild == "Red") SetLocalVarString("ChosenColor", "painter_color_red");
+	else if(asChild == "Blue") SetLocalVarString("ChosenColor", "painter_color_blue");
+	else if(asChild == "Yellow") SetLocalVarString("ChosenColor", "painter_color_yellow");
+	else if(asChild == "Pink") SetLocalVarString("ChosenColor", "painter_color_pink");
+	else if(asChild == "Brown") SetLocalVarString("ChosenColor", "painter_color_brown");
+}
+void CreativeColor(string &in asName, int alCount)
+{
+	PlayMusic("artisticsoul.ogg", true, 1, 1, 1, false);
+}

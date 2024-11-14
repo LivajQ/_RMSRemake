@@ -1,0 +1,145 @@
+<Entity>
+    <EditorSession>
+        <Performance CamClipPlanes="0.05 1000" LightsActive="true" PSActive="true" ShowFog="true" ShowSkybox="true" WorldReflection="true" />
+        <ViewportConfig BGColor="0.2 0.2 0.2 1" GAmbientLight="true" GPointLight="true" GridSnap="true" GridSnapSeparation="0.25" SelectedViewport="3" UsingEnlargedViewport="true">
+            <Viewport CameraPosition="0 0 180" CameraTarget="0 0 0" CameraZoom="0" GridHeight="0" GridPlane="2" Preset="0" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="false" />
+            <Viewport CameraPosition="180 0 0" CameraTarget="0 0 0" CameraZoom="0" GridHeight="0" GridPlane="0" Preset="1" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="false" />
+            <Viewport CameraPosition="0 180 0" CameraTarget="0 0 0" CameraZoom="0" GridHeight="0" GridPlane="1" Preset="2" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="false" />
+            <Viewport CameraPosition="0.949897 -0.502995 -2.40201" CameraTarget="0.0194192 -0.226136 -0.000176065" CameraZoom="2.96013" GridHeight="0" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="true" UsingLTCam="false" />
+        </ViewportConfig>
+    </EditorSession>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/AA/disco_ball/disco_ball.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="outerFBXASC046080" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="1" Material="" Name="inner" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="2" Material="" Name="outerFBXASC046001" Rotation="0 0 0" Scale="1 1 1" SubMeshID="2" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="3" Material="" Name="outerFBXASC046002" Rotation="0 0 0" Scale="1 1 1" SubMeshID="3" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="4" Material="" Name="outerFBXASC046003" Rotation="0 0 0" Scale="1 1 1" SubMeshID="4" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="5" Material="" Name="outerFBXASC046004" Rotation="0 0 0" Scale="1 1 1" SubMeshID="5" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="6" Material="" Name="outerFBXASC046005" Rotation="0 0 0" Scale="1 1 1" SubMeshID="6" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="7" Material="" Name="outerFBXASC046006" Rotation="0 0 0" Scale="1 1 1" SubMeshID="7" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="8" Material="" Name="outerFBXASC046007" Rotation="0 0 0" Scale="1 1 1" SubMeshID="8" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="9" Material="" Name="outerFBXASC046008" Rotation="0 0 0" Scale="1 1 1" SubMeshID="9" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="10" Material="" Name="outerFBXASC046009" Rotation="0 0 0" Scale="1 1 1" SubMeshID="10" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="11" Material="" Name="outerFBXASC046010" Rotation="0 0 0" Scale="1 1 1" SubMeshID="11" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="12" Material="" Name="outerFBXASC046011" Rotation="0 0 0" Scale="1 1 1" SubMeshID="12" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="13" Material="" Name="outerFBXASC046012" Rotation="0 0 0" Scale="1 1 1" SubMeshID="13" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="14" Material="" Name="outerFBXASC046013" Rotation="0 0 0" Scale="1 1 1" SubMeshID="14" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="15" Material="" Name="outerFBXASC046014" Rotation="0 0 0" Scale="1 1 1" SubMeshID="15" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="16" Material="" Name="outerFBXASC046015" Rotation="0 0 0" Scale="1 1 1" SubMeshID="16" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="17" Material="" Name="outerFBXASC046016" Rotation="0 0 0" Scale="1 1 1" SubMeshID="17" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="18" Material="" Name="outerFBXASC046017" Rotation="0 0 0" Scale="1 1 1" SubMeshID="18" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="19" Material="" Name="outerFBXASC046018" Rotation="0 0 0" Scale="1 1 1" SubMeshID="19" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="20" Material="" Name="outerFBXASC046019" Rotation="0 0 0" Scale="1 1 1" SubMeshID="20" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="21" Material="" Name="outerFBXASC046020" Rotation="0 0 0" Scale="1 1 1" SubMeshID="21" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="22" Material="" Name="outerFBXASC046021" Rotation="0 0 0" Scale="1 1 1" SubMeshID="22" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="23" Material="" Name="outerFBXASC046022" Rotation="0 0 0" Scale="1 1 1" SubMeshID="23" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="24" Material="" Name="outerFBXASC046023" Rotation="0 0 0" Scale="1 1 1" SubMeshID="24" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="25" Material="" Name="outerFBXASC046024" Rotation="0 0 0" Scale="1 1 1" SubMeshID="25" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="26" Material="" Name="outerFBXASC046025" Rotation="0 0 0" Scale="1 1 1" SubMeshID="26" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="27" Material="" Name="outerFBXASC046026" Rotation="0 0 0" Scale="1 1 1" SubMeshID="27" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="28" Material="" Name="outerFBXASC046027" Rotation="0 0 0" Scale="1 1 1" SubMeshID="28" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="29" Material="" Name="outerFBXASC046028" Rotation="0 0 0" Scale="1 1 1" SubMeshID="29" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="30" Material="" Name="outerFBXASC046029" Rotation="0 0 0" Scale="1 1 1" SubMeshID="30" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="31" Material="" Name="outerFBXASC046030" Rotation="0 0 0" Scale="1 1 1" SubMeshID="31" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="32" Material="" Name="outerFBXASC046031" Rotation="0 0 0" Scale="1 1 1" SubMeshID="32" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="33" Material="" Name="outerFBXASC046032" Rotation="0 0 0" Scale="1 1 1" SubMeshID="33" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="34" Material="" Name="outerFBXASC046033" Rotation="0 0 0" Scale="1 1 1" SubMeshID="34" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="35" Material="" Name="outerFBXASC046034" Rotation="0 0 0" Scale="1 1 1" SubMeshID="35" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="36" Material="" Name="outerFBXASC046035" Rotation="0 0 0" Scale="1 1 1" SubMeshID="36" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="37" Material="" Name="outerFBXASC046036" Rotation="0 0 0" Scale="1 1 1" SubMeshID="37" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="38" Material="" Name="outerFBXASC046037" Rotation="0 0 0" Scale="1 1 1" SubMeshID="38" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="39" Material="" Name="outerFBXASC046038" Rotation="0 0 0" Scale="1 1 1" SubMeshID="39" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="40" Material="" Name="outerFBXASC046039" Rotation="0 0 0" Scale="1 1 1" SubMeshID="40" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="41" Material="" Name="outerFBXASC046040" Rotation="0 0 0" Scale="1 1 1" SubMeshID="41" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="42" Material="" Name="outerFBXASC046041" Rotation="0 0 0" Scale="1 1 1" SubMeshID="42" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="43" Material="" Name="outerFBXASC046042" Rotation="0 0 0" Scale="1 1 1" SubMeshID="43" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="44" Material="" Name="outerFBXASC046043" Rotation="0 0 0" Scale="1 1 1" SubMeshID="44" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="45" Material="" Name="outerFBXASC046044" Rotation="0 0 0" Scale="1 1 1" SubMeshID="45" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="46" Material="" Name="outerFBXASC046045" Rotation="0 0 0" Scale="1 1 1" SubMeshID="46" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="47" Material="" Name="outerFBXASC046046" Rotation="0 0 0" Scale="1 1 1" SubMeshID="47" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="48" Material="" Name="outerFBXASC046047" Rotation="0 0 0" Scale="1 1 1" SubMeshID="48" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="49" Material="" Name="outerFBXASC046048" Rotation="0 0 0" Scale="1 1 1" SubMeshID="49" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="50" Material="" Name="outerFBXASC046049" Rotation="0 0 0" Scale="1 1 1" SubMeshID="50" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="51" Material="" Name="outerFBXASC046050" Rotation="0 0 0" Scale="1 1 1" SubMeshID="51" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="52" Material="" Name="outerFBXASC046051" Rotation="0 0 0" Scale="1 1 1" SubMeshID="52" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="53" Material="" Name="outerFBXASC046052" Rotation="0 0 0" Scale="1 1 1" SubMeshID="53" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="54" Material="" Name="outerFBXASC046053" Rotation="0 0 0" Scale="1 1 1" SubMeshID="54" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="55" Material="" Name="outerFBXASC046054" Rotation="0 0 0" Scale="1 1 1" SubMeshID="55" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="56" Material="" Name="outerFBXASC046055" Rotation="0 0 0" Scale="1 1 1" SubMeshID="56" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="57" Material="" Name="outerFBXASC046056" Rotation="0 0 0" Scale="1 1 1" SubMeshID="57" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="58" Material="" Name="outerFBXASC046057" Rotation="0 0 0" Scale="1 1 1" SubMeshID="58" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="59" Material="" Name="outerFBXASC046058" Rotation="0 0 0" Scale="1 1 1" SubMeshID="59" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="60" Material="" Name="outerFBXASC046059" Rotation="0 0 0" Scale="1 1 1" SubMeshID="60" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="61" Material="" Name="outerFBXASC046060" Rotation="0 0 0" Scale="1 1 1" SubMeshID="61" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="62" Material="" Name="outerFBXASC046061" Rotation="0 0 0" Scale="1 1 1" SubMeshID="62" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="63" Material="" Name="outerFBXASC046062" Rotation="0 0 0" Scale="1 1 1" SubMeshID="63" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="64" Material="" Name="outerFBXASC046063" Rotation="0 0 0" Scale="1 1 1" SubMeshID="64" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="65" Material="" Name="outerFBXASC046064" Rotation="0 0 0" Scale="1 1 1" SubMeshID="65" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="66" Material="" Name="outerFBXASC046065" Rotation="0 0 0" Scale="1 1 1" SubMeshID="66" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="67" Material="" Name="outerFBXASC046066" Rotation="0 0 0" Scale="1 1 1" SubMeshID="67" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="68" Material="" Name="outerFBXASC046067" Rotation="0 0 0" Scale="1 1 1" SubMeshID="68" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="69" Material="" Name="outerFBXASC046068" Rotation="0 0 0" Scale="1 1 1" SubMeshID="69" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="70" Material="" Name="outerFBXASC046069" Rotation="0 0 0" Scale="1 1 1" SubMeshID="70" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="71" Material="" Name="outerFBXASC046070" Rotation="0 0 0" Scale="1 1 1" SubMeshID="71" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="72" Material="" Name="outerFBXASC046071" Rotation="0 0 0" Scale="1 1 1" SubMeshID="72" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="73" Material="" Name="outerFBXASC046072" Rotation="0 0 0" Scale="1 1 1" SubMeshID="73" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="74" Material="" Name="outerFBXASC046073" Rotation="0 0 0" Scale="1 1 1" SubMeshID="74" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="75" Material="" Name="outerFBXASC046074" Rotation="0 0 0" Scale="1 1 1" SubMeshID="75" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="76" Material="" Name="outerFBXASC046075" Rotation="0 0 0" Scale="1 1 1" SubMeshID="76" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="77" Material="" Name="outerFBXASC046076" Rotation="0 0 0" Scale="1 1 1" SubMeshID="77" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="78" Material="" Name="outerFBXASC046077" Rotation="0 0 0" Scale="1 1 1" SubMeshID="78" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="79" Material="" Name="outerFBXASC046078" Rotation="0 0 0" Scale="1 1 1" SubMeshID="79" Tag="" WorldPos="0 0 0" />
+            <SubMesh Active="true" ID="80" Material="" Name="outerFBXASC046079" Rotation="0 0 0" Scale="1 1 1" SubMeshID="80" Tag="" WorldPos="0 0 0" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="82" Name="Shape_1" RelativeRotation="0 -0 0" RelativeScale="0.5 0.5 0.5" RelativeTranslation="0 0 0" Rotation="0 0 0" Scale="0.5 0.5 0.5" ShapeType="Sphere" Tag="" WorldPos="0 0 0" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="83" LinearDamping="0" Mass="0" Material="Default" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_1" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0 0 0">
+                <Children>
+                    <Child ID="14" />
+                </Children>
+                <Shape ID="82" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntitySubType="Static" EntityType="Object">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MaxFocusDistance" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="false" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="100" />
+        <Var Name="BreakEntity" Value="" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakParticleSystem" Value="" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="IsFood" Value="false" />
+    </UserDefinedVariables>
+</Entity>

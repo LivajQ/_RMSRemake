@@ -1,0 +1,620 @@
+void OnStart()
+{
+	SetEntityPlayerInteractCallback("button_simple_1", "ChangeSpeed", false);
+	SetEntityPlayerInteractCallback("button_simple_2", "ChangeSpawn", false);
+	SetEntityPlayerInteractCallback("button_simple_5", "ChangeHealth", false);
+	SetEntityPlayerInteractCallback("button_simple_3", "Leaving", false);
+	SetEntityPlayerInteractCallback("button_simple_4", "StartFire", false);
+	
+	SetEntityPlayerInteractCallback("lmg_1", "Firing", false);
+	SetEntityPlayerInteractCallback("lmg_2", "Firing", false);
+	SetEntityPlayerInteractCallback("lmg_3", "Firing", false);
+	SetEntityPlayerInteractCallback("lmg_4", "Firing", false);
+	
+	for(int x = 1; x <= 48; x++)
+	{
+		AddEntityCollideCallback("battleknife_*", "servant_Fighter_" + x, "KillerKnife", false, 1);
+		AddEntityCollideCallback("sawslicer_1", "servant_Fighter_" + x, "KillerSaw", false, 1);
+		AddEntityCollideCallback("sawslicer_2", "servant_Fighter_" + x, "KillerSaw", false, 1);
+		AddEntityCollideCallback("ScriptArea_1", "servant_Fighter_" + x, "KillerFire", false, 1);
+		AddEntityCollideCallback("ScriptArea_2", "servant_Fighter_" + x, "KillerFire", false, 1);
+	}
+	AddEntityCollideCallback("Player", "sawslicer_1", "DieSaw", false, 1);
+	AddEntityCollideCallback("Player", "sawslicer_2", "DieSaw", false, 1);
+	for(int x = 1; x <= 5; x++)
+	{
+		AddEntityCollideCallback("servant_Super_" + x, "sawslicer_1", "BreakSaw", false, 1);
+		AddEntityCollideCallback("servant_Super_" + x, "sawslicer_2", "BreakSaw", false, 1);
+	}
+	AddEntityCollideCallback("Player", "ScriptArea_1", "DieFire", false, 1);
+	AddEntityCollideCallback("Player", "ScriptArea_2", "DieFire", false, 1);
+	AddEntityCollideCallback("Player", "WaterArea_1", "HealWater", false, 1);
+	AddEntityCollideCallback("Player", "WaterArea_2", "HealWater", false, 1);
+	AddEntityCollideCallback("Player", "WaterArea_3", "HealWater", false, 1);
+	AddEntityCollideCallback("Player", "WaterArea_4", "HealWater", false, 1);
+}	
+void OnEnter()
+{
+	SetEnemySanityDecreaseActive("servant_*", false);
+	
+	SetLocalVarInt("Speed", 4);
+	SetLocalVarInt("SpawnRate", 3);
+	SetLocalVarInt("Health", 3);
+	
+	SetLocalVarFloat("SpawnMultiplier", 1.0f);
+	SetLocalVarInt("EnemyCap", 10);
+	SetLocalVarInt("ActiveEnemies", 0);
+	SetLocalVarInt("Kills", 0);
+	SetLocalVarInt("Settings", 1);
+	for(int x = 1; x <= 48; x++)
+	{
+		SetLocalVarInt("DeadEnemy_" + x, 1);
+	}
+	
+	SetLocalVarInt("Saw1Health", 15);
+	SetLocalVarInt("Saw2Health", 15);
+	SetLocalVarInt("NodeAmount", 1891);
+	SetLocalVarInt("LmgBullets1", 0);
+	SetLocalVarInt("LmgBullets2", 0);
+	SetLocalVarInt("LmgBullets3", 0);
+	SetLocalVarInt("LmgBullets4", 0);
+	SetLocalVarInt("BulletIndex", 1);
+	SetLocalVarInt("HunterIndex", 1);
+	SetLocalVarInt("FireCooldown", 0);
+	SetLocalVarInt("WaterCooldown", 0);
+	PlayMusic("killingmania.ogg", true, 1, 1, 1, false);
+	
+	RotatePropToSpeed("sawslicer_1", 20.0f, 20.0f, 0.0f, -1.0f, 0.0f, false, "");
+	RotatePropToSpeed("sawslicer_2", 20.0f, 20.0f, 0.0f, -1.0f, 0.0f, false, "");
+	
+	for(int x = 10; x >= 1; x--)
+	{
+		AddTimer("Num" + x, 11 - x, "Countdown");
+	}
+	AddTimer("", 11.0f, "Countstart");
+	AddTimer("a", 15.0f, "Focuser");
+	AddTimer("a", 30.0f, "Settinger");
+	AddTimer("", 0.5f, "AmmoLoop");
+	
+	CheckPoint("Respawner", "PlayerStartArea_1", "Respawn", "DeathHint", "DeathMessage" + RandInt(1, 5));
+}
+void OnLeave()
+{
+	RemoveTimer("a");
+	for(int x = 0; x <= 50; x++)
+	{
+		RemoveEntityCollideCallback("Bullet_*", "servant_Fighter_" + x);
+	}
+}
+void Leaving(string &in asEntity)
+{
+	ChangeMap("SR_spawn.map", "PlayerStartArea_5", "", "");
+}
+void Respawn(string &in asName, int alCount)
+{
+	RemoveTimer("a");
+	ResetProp("*");
+	SetEnemySanityDecreaseActive("servant_*", false);
+	for(int x = 10; x >= 1; x--)
+	{
+		AddTimer("Num" + x, 11 - x, "Countdown");
+	}
+	AddTimer("", 11.0f, "Countstart");
+	AddTimer("a", 15.0f, "Focuser");
+	AddTimer("a", 30.0f, "Settinger");
+	PlayMusic("killingmania.ogg", true, 1, 1, 1, false);
+	
+	SetEntityActive("sawslicer_1", true);
+	SetEntityActive("sawslicer_2", true);
+	SetEntityActive("ScriptArea_1", false);
+	SetEntityActive("ScriptArea_2", false);
+	SetEntityActive("ammobox_*", true);
+	RotatePropToSpeed("sawslicer_1", 20.0f, 20.0f, 0.0f, -1.0f, 0.0f, false, "");
+	RotatePropToSpeed("sawslicer_2", 20.0f, 20.0f, 0.0f, -1.0f, 0.0f, false, "");
+	StopSound("FireSound", 1.0f);
+	DestroyParticleSystem("FireBoi");
+	
+	SetLocalVarInt("EnemyCap", 10);
+	SetLocalVarInt("ActiveEnemies", 0);
+	SetLocalVarInt("Kills", 0);
+	SetLocalVarInt("Settings", 1);
+	SetLocalVarInt("FireCooldown", 0);
+	SetLocalVarInt("HunterIndex", 1);
+	SetLocalVarInt("Saw1Health", 15);
+	SetLocalVarInt("Saw2Health", 15);
+	SetLocalVarInt("WaterCooldown", 0);
+	for(int x = 1; x <= 48; x++)
+	{
+		SetLocalVarInt("DeadEnemy_" + x, 1);
+	}
+	
+	SetLocalVarInt("LmgBullets1", 0);
+	SetLocalVarInt("LmgBullets2", 0);
+	SetLocalVarInt("LmgBullets3", 0);
+	SetLocalVarInt("LmgBullets4", 0);
+	
+	switch(GetLocalVarInt("Health"))
+	{
+		case 1:
+			SetPlayerHealth(1.0f);
+			break;
+		case 2:
+			SetPlayerHealth(50.0f);
+			break;
+		case 3:
+			SetPlayerHealth(100.0f);
+			break;
+		case 4:
+			SetPlayerHealth(250.0f);
+			break;
+		case 5:
+			SetPlayerHealth(500.0f);
+			break;
+		default:
+			SetPlayerHealth(100.0f);
+			break;
+	}
+}
+void ChangeSpeed(string &in asEntity)
+{
+	if(GetLocalVarInt("Settings") == 0) 
+	{
+		SetMessage("Info", "GruntExpired", 4.0f);
+		return;
+	}
+	
+	switch(GetLocalVarInt("Speed"))
+	{
+		case 1:
+			AddLocalVarInt("Speed", 1);
+			SetMessage("Info", "GruntSpeed1", 3.0f);
+			SetPlayerMoveSpeedMul(0.65f);
+			SetPlayerRunSpeedMul(0.65f);
+			break;
+		case 2:
+			AddLocalVarInt("Speed", 1);
+			SetMessage("Info", "GruntSpeed2", 3.0f);
+			SetPlayerMoveSpeedMul(0.85f);
+			SetPlayerRunSpeedMul(0.85f);
+			break;
+		case 3:
+			AddLocalVarInt("Speed", 1);
+			SetMessage("Info", "GruntSpeed3", 3.0f);
+			SetPlayerMoveSpeedMul(1.0f);
+			SetPlayerRunSpeedMul(1.0f);
+			break;
+		case 4:
+			AddLocalVarInt("Speed", 1);
+			SetMessage("Info", "GruntSpeed4", 3.0f);
+			SetPlayerMoveSpeedMul(1.2f);
+			SetPlayerRunSpeedMul(1.2f);
+			break;
+		case 5:
+			AddLocalVarInt("Speed", 1);
+			SetMessage("Info", "GruntSpeed5", 3.0f);
+			SetPlayerMoveSpeedMul(1.5f);
+			SetPlayerRunSpeedMul(1.5f);
+			break;
+		case 6:
+			SetLocalVarInt("Speed", 1);
+			SetMessage("Info", "GruntSpeed6", 3.0f);
+			SetPlayerMoveSpeedMul(0.0f);
+			SetPlayerRunSpeedMul(0.0f);
+			break;
+	}
+}
+void ChangeSpawn(string &in asEntity)
+{
+	if(GetLocalVarInt("Settings") == 0) 
+	{
+		SetMessage("Info", "GruntExpired", 4.0f);
+		return;
+	}
+	
+	switch(GetLocalVarInt("SpawnRate"))
+	{
+		case 1:
+			AddLocalVarInt("SpawnRate", 1);
+			SetMessage("Info", "GruntRate1", 3.0f);
+			SetLocalVarFloat("SpawnMultiplier", 1.5f);
+			break;
+		case 2:
+			AddLocalVarInt("SpawnRate", 1);
+			SetMessage("Info", "GruntRate2", 3.0f);
+			SetLocalVarFloat("SpawnMultiplier", 1.0f);
+			break;
+		case 3:
+			AddLocalVarInt("SpawnRate", 1);
+			SetMessage("Info", "GruntRate3", 3.0f);
+			SetLocalVarFloat("SpawnMultiplier", 0.7f);
+			break;
+		case 4:
+			AddLocalVarInt("SpawnRate", 1);
+			SetMessage("Info", "GruntRate4", 3.0f);
+			SetLocalVarFloat("SpawnMultiplier", 0.5f);
+			break;
+		case 5:
+			AddLocalVarInt("SpawnRate", 1);
+			SetMessage("Info", "GruntRate5", 3.0f);
+			SetLocalVarFloat("SpawnMultiplier", 0.25f);
+			break;
+		case 6:
+			SetLocalVarInt("SpawnRate", 1);
+			SetMessage("Info", "GruntRate6", 3.0f);
+			SetLocalVarFloat("SpawnMultiplier", 2.0f);
+			break;
+	}
+}
+void ChangeHealth(string &in asEntity)
+{
+	if(GetLocalVarInt("Settings") == 0) 
+	{
+		SetMessage("Info", "GruntExpired", 4.0f);
+		return;
+	}
+	
+	switch(GetLocalVarInt("Health"))
+	{
+		case 1:
+			AddLocalVarInt("Health", 1);
+			SetMessage("Info", "GruntHealth1", 3.0f);
+			SetPlayerHealth(50.0f);
+			break;
+		case 2:
+			AddLocalVarInt("Health", 1);
+			SetMessage("Info", "GruntHealth2", 3.0f);
+			SetPlayerHealth(100.0f);
+			break;
+		case 3:
+			AddLocalVarInt("Health", 1);
+			SetMessage("Info", "GruntHealth3", 3.0f);
+			SetPlayerHealth(250.0f);
+			break;
+		case 4:
+			AddLocalVarInt("Health", 1);
+			SetMessage("Info", "GruntHealth4", 3.0f);
+			SetPlayerHealth(500.0f);
+			break;
+		case 5:
+			SetLocalVarInt("Health", 1);
+			SetMessage("Info", "GruntHealth5", 3.0f);
+			SetPlayerHealth(1.0f);
+			break;
+	}
+}
+void Countdown(string &in asTimer)
+{
+	SetMessage("Info", "GruntCount" + asTimer, 1.0f);
+}
+void Countstart(string &in asTimer)
+{
+	SetMessage("Info", "GruntStart", 1.0f);
+	AddTimer("a", 1.0f, "SpawnerAlgorithm");
+	AddTimer("a", RandFloat(60.0f, 120.0f), "HunterLoop");
+}
+void SpawnerAlgorithm(string &in asTimer)
+{
+	float BaseSpawnRate = 1.0f;
+	float SpawnMult = GetLocalVarFloat("SpawnMultiplier");
+	AddTimer("a", BaseSpawnRate * SpawnMult, "SpawnerAlgorithm");
+	ChooseCap();
+	if(GetLocalVarInt("ActiveEnemies") < GetLocalVarInt("EnemyCap"))
+	{	
+		for(int x = 1; x <= 48; x++)
+		{
+			if(GetLocalVarInt("DeadEnemy_" + x) == 1)
+			{
+				SpawnEnemy("servant_Fighter_" + x);
+				SetLocalVarInt("DeadEnemy_" + x, 0);
+				break;
+				}
+		}
+	}
+	AddDebugMessage("Active Enemies: " + GetLocalVarInt("ActiveEnemies"), false);
+	AddDebugMessage("Kills: " + GetLocalVarInt("Kills"), false);
+	AddDebugMessage("Enemy Cap: " + GetLocalVarInt("EnemyCap"), false);
+}
+void ChooseCap()
+{
+	if(GetLocalVarInt("SpawnRate") == 6) 
+	{
+		SetLocalVarInt("EnemyCap", 48);
+		return;
+	}
+	float multiplier;
+	switch(GetLocalVarInt("SpawnRate"))
+	{
+		case 1:
+			multiplier = 0.25f;
+			break;
+		case 2:
+			multiplier = 0.6f;
+			break;
+		case 3:
+			multiplier = 1.0f;
+			break;
+		case 4:
+			multiplier = 1.5f;
+			break;
+		case 5:
+			multiplier = 2.0f;
+			break;
+	}
+	int KillCount = GetLocalVarInt("Kills");
+	int[] Thresholds = {0, 10, 20, 30, 45, 60, 80, 100, 120, 150, 175, 200, 250, 300};
+	int[] Caps = {10, 12, 14, 16, 18, 20, 22, 26, 30, 33, 36, 40, 44, 48};
+	for(int x = 0; x < Thresholds.length(); x++)
+	{
+		if(KillCount >= Thresholds[x])
+		{
+			if(Caps[x] * multiplier > 48) SetLocalVarInt("EnemyCap", 48);
+			else SetLocalVarInt("EnemyCap", Caps[x] * multiplier);
+		}
+	}
+}
+void SpawnEnemy(string Enemy)
+{
+	SetEntityActive(Enemy, true);
+	AddLocalVarInt("ActiveEnemies", 1);
+	float DistanceX;
+	float DistanceZ;
+	float Distance;
+	while(true)
+	{
+		TeleportEnemyToNode(Enemy, "PathNodeArea_" + RandInt(1, GetLocalVarInt("NodeAmount")), true);
+		DistanceX = MathAbs(GetPlayerPosX() - GetEntityPosX(Enemy));
+		DistanceZ = MathAbs(GetPlayerPosZ() - GetEntityPosZ(Enemy));
+		Distance = MathSqrt((DistanceX * DistanceX) + (DistanceZ * DistanceZ));
+		if(Distance >= 15.0f) break;
+	}
+}
+void Focuser(string &in asTimer)
+{
+	AddTimer("a", 10.0f, "Focuser");
+	ShowEnemyPlayerPosition("servant_*");
+}
+void Settinger(string &in asTimer)
+{
+	SetLocalVarInt("Settings", 0);
+}
+void Reload1(string asParent, string asChild)
+{
+	SetLocalVarInt("LmgBullets1", 100);
+	SetEntityPos(asChild, 0.0f, 100.0f, 0.0f);
+	SetEntityActive(asChild, false);
+	PlaySoundAtEntity("", "reloadmoment.snt", asParent, 0.01f, false);
+}
+void Reload2(string asParent, string asChild)
+{
+	SetLocalVarInt("LmgBullets2", 100);
+	SetEntityPos(asChild, 0.0f, 100.0f, 0.0f);
+	SetEntityActive(asChild, false);
+	PlaySoundAtEntity("", "reloadmoment.snt", asParent, 0.01f, false);
+}
+void Reload3(string asParent, string asChild)
+{
+	SetLocalVarInt("LmgBullets3", 100);
+	SetEntityPos(asChild, 0.0f, 100.0f, 0.0f);
+	SetEntityActive(asChild, false);
+	PlaySoundAtEntity("", "reloadmoment.snt", asParent, 0.01f, false);
+}
+void Reload4(string asParent, string asChild)
+{
+	SetLocalVarInt("LmgBullets4", 100);
+	SetEntityPos(asChild, 0.0f, 100.0f, 0.0f);
+	SetEntityActive(asChild, false);
+	PlaySoundAtEntity("", "reloadmoment.snt", asParent, 0.01f, false);
+}
+void Firing(string &in asEntity)
+{
+	string x = StringSub(asEntity, 4, 1);
+	if(GetLocalVarInt("LmgBullets" + x) <= 0) PlaySoundAtEntity("", "imout.snt", asEntity, 0.01f, false);
+	else
+	{
+		RemoveTimer(asEntity);
+		for(int y = 1; y <= GetLocalVarInt("LmgBullets" + x); y++)
+		{
+			AddTimer(asEntity, 0.15f * y, "Shoot");
+		}
+	}
+}
+void Shoot(string &in asTimer)
+{
+	int Index = GetLocalVarInt("BulletIndex");
+	CreateEntityAtArea("Bullet_" + Index, "556x45_bp_gs.ent", "BulletSpawner", false);
+	CreateEntityAtArea("Casing_" + Index, "556x45_casing.ent", "BulletSpawner", false);
+	PlaceEntityAtEntity("Bullet_" + Index, asTimer, "Body_2", true);
+	PlaceEntityAtEntity("Casing_" + Index, asTimer, "Body_2", true);
+	AddPropForce("Bullet_" + Index, 0.0f, 500.0f, 40000.0f, "local");
+	AddPropForce("Casing_" + Index, -1000.0f, 1000.0f, 0.0f, "local");
+	PlaySoundAtEntity("", "fullautobitch.snt", asTimer, 0.01f, false);
+	
+	for(int x = 1; x <= 48; x++)
+	{
+		AddEntityCollideCallback("Bullet_" + Index, "servant_Fighter_" + x, "KillerBullet", true, 1);
+	}
+	
+	AddLocalVarInt("LmgBullets" + StringSub(asTimer, 4, 1), -1);
+	AddLocalVarInt("BulletIndex", 1);
+}
+void AmmoLoop(string &in asTimer)
+{
+	AddTimer("", 0.5f, "AmmoLoop");
+	
+	if(ShouldFire("lmg_1", "ammobox_1")) Reload1("lmg_1", "ammobox_1");
+	if(ShouldFire("lmg_1", "ammobox_2")) Reload1("lmg_1", "ammobox_2");
+	if(ShouldFire("lmg_1", "ammobox_3")) Reload1("lmg_1", "ammobox_3");
+	if(ShouldFire("lmg_1", "ammobox_4")) Reload1("lmg_1", "ammobox_4");
+	if(ShouldFire("lmg_2", "ammobox_5")) Reload2("lmg_2", "ammobox_5");
+	if(ShouldFire("lmg_2", "ammobox_6")) Reload2("lmg_2", "ammobox_6");
+	if(ShouldFire("lmg_2", "ammobox_7")) Reload2("lmg_2", "ammobox_7");
+	if(ShouldFire("lmg_2", "ammobox_8")) Reload2("lmg_2", "ammobox_8");
+	if(ShouldFire("lmg_3", "ammobox_13")) Reload3("lmg_3", "ammobox_13");
+	if(ShouldFire("lmg_3", "ammobox_14")) Reload3("lmg_3", "ammobox_14");
+	if(ShouldFire("lmg_3", "ammobox_15")) Reload3("lmg_3", "ammobox_15");
+	if(ShouldFire("lmg_3", "ammobox_16")) Reload3("lmg_3", "ammobox_16");
+	if(ShouldFire("lmg_4", "ammobox_9")) Reload4("lmg_4", "ammobox_9");
+	if(ShouldFire("lmg_4", "ammobox_10")) Reload4("lmg_4", "ammobox_10");
+	if(ShouldFire("lmg_4", "ammobox_11")) Reload4("lmg_4", "ammobox_11");
+	if(ShouldFire("lmg_4", "ammobox_12")) Reload4("lmg_4", "ammobox_12");
+}
+bool ShouldFire(string LMG, string Box)
+{
+	float Distance;
+	Distance = CountDistance(LMG, Box);
+	if(Distance <= 0.75f) return true;
+	else return false;
+	return false;
+}
+float CountDistance(string LMG, string Box)
+{
+	float DistX = MathAbs(GetEntityPosX(LMG) - GetEntityPosX(Box));
+	float DistY = MathAbs(GetEntityPosY(LMG) - GetEntityPosY(Box));
+	float DistZ = MathAbs(GetEntityPosZ(LMG) - GetEntityPosZ(Box));
+	float Dist = MathSqrt((DistX * DistX) + (DistY * DistY) + (DistZ * DistZ));
+	return Dist;
+}
+void KillerBullet(string &in asParent, string &in asChild, int alState)
+{
+	KillEnemy(asChild);
+}
+void KillerKnife(string &in asParent, string &in asChild, int alState)
+{
+	KillEnemy(asChild);
+}
+void KillerSaw(string &in asParent, string &in asChild, int alState)
+{
+	string x = StringSub(asParent, 10, 1);
+	if(x == "1") AddLocalVarInt("Saw1Health", -1);
+	else AddLocalVarInt("Saw2Health", -1);
+	KillEnemy(asChild);
+	if(GetLocalVarInt("Saw1Health") <= 0) 
+	{
+		PlaySoundAtEntity("", "break_wood_metal.snt", "sawslicer_1", 0.01f, false);
+		SetEntityActive("sawslicer_1", false);
+	}
+	if(GetLocalVarInt("Saw2Health") <= 0) 
+	{
+		PlaySoundAtEntity("", "break_wood_metal.snt", "sawslicer_2", 0.01f, false);
+		SetEntityActive("sawslicer_2", false);
+	}
+}
+void BreakSaw(string &in asParent, string &in asChild, int alState)
+{
+	string x = StringSub(asChild, 10, 1);
+	if(x == "1")
+	{
+		PlaySoundAtEntity("", "break_wood_metal.snt", "sawslicer_1", 0.01f, false);
+		SetEntityActive("sawslicer_1", false);
+	}
+	else
+	{
+		PlaySoundAtEntity("", "break_wood_metal.snt", "sawslicer_2", 0.01f, false);
+		SetEntityActive("sawslicer_2", false);
+	}
+}
+void KillerFire(string &in asParent, string &in asChild, int alState)
+{
+	KillEnemy(asChild);
+}
+void KillEnemy(string Enemy)
+{
+	AddLocalVarInt("ActiveEnemies", -1);
+	AddLocalVarInt("Kills", 1);
+	CreateParticleSystemAtEntity("Bloody", "moderblood.ps", Enemy, false);
+	PlaySoundAtEntity("", "winnersounds.snt", Enemy, 0.01f, false);
+	string Index = StringSub(Enemy, 16, 2);
+	SetLocalVarInt("DeadEnemy_" + Index, 1);
+	SetEntityActive(Enemy, false);
+}
+void StartFire(string &in asEntity)
+{
+	if(GetLocalVarInt("FireCooldown") == 0)
+	{
+		for(int x = 1; x <= 40; x++)
+		{
+			CreateParticleSystemAtEntity("FireBoi", "burningmoder.ps", "FireZone_" + x, false);
+			PlaySoundAtEntity("FireSound", "general_fire_burning.snt", "ScriptArea_" + x, 0.01f, false);
+		}
+		PlaySoundAtEntity("FireSound", "fireinmehole.snt", "FireZone_2", 0.01f, false);
+		PlaySoundAtEntity("FireSound", "fireinmehole.snt", "FireZone_21", 0.01f, false);
+		SetEntityActive("ScriptArea_1", true);
+		SetEntityActive("ScriptArea_2", true);
+		SetLocalVarInt("FireCooldown", 1);
+		AddTimer("a", 10.0f, "StopFire");
+		AddTimer("a", 60.0f, "ResetFire");
+	}
+	else SetMessage("Info", "FireCool", 4.0f);
+}
+void StopFire(string &in asTimer)
+{
+	SetEntityActive("ScriptArea_1", false);
+	SetEntityActive("ScriptArea_2", false);
+	StopSound("FireSound", 1.0f);
+	DestroyParticleSystem("FireBoi");
+}
+void ResetFire(string &in asTimer)
+{
+	SetLocalVarInt("FireCooldown", 0);
+}
+void DieFire(string &in asParent, string &in asChild, int alState)
+{
+	GivePlayerDamage(9999.0f, "BloodSplat", false, true);
+}
+void DieSaw(string &in asParent, string &in asChild, int alState)
+{
+	GivePlayerDamage(9999.0f, "Slash", false, true);
+}
+void HealWater(string &in asParent, string &in asChild, int alState)
+{
+	if(GetLocalVarInt("WaterCooldown") == 0)
+	{
+		switch(GetLocalVarInt("Health"))
+		{
+			case 1:
+				SetPlayerHealth(2.0f);
+				break;
+			case 2:
+				SetPlayerHealth(75.0f);
+				break;
+			case 3:
+				SetPlayerHealth(150.0f);
+				break;
+			case 4:
+				SetPlayerHealth(400.0f);
+				break;
+			case 5:
+				SetPlayerHealth(750.0f);
+				break;
+		}
+		GiveSanityDamage(1.0f, true);
+		AddPlayerSanity(1.0f);
+		SetLocalVarInt("WaterCooldown", 1);
+		AddTimer("a", 30.0f, "WaterReset");
+	}
+	else SetMessage("Info", "WaterCool", 4.0f);
+}
+void WaterReset(string &in asTimer)
+{
+	SetLocalVarInt("WaterCooldown", 0);
+}
+void HunterLoop(string &in asTimer)
+{
+	AddTimer("a", RandFloat(60.0f, 120.0f), "HunterLoop");
+	if(GetLocalVarInt("HunterIndex") > 10) return;
+	string Enemy = "servant_Super_" + GetLocalVarInt("HunterIndex");
+	SetEntityActive(Enemy, true);
+	float DistanceX;
+	float DistanceZ;
+	float Distance;
+	while(true)
+	{
+		TeleportEnemyToNode(Enemy, "PathNodeArea_" + RandInt(1, GetLocalVarInt("NodeAmount")), true);
+		DistanceX = MathAbs(GetPlayerPosX() - GetEntityPosX(Enemy));
+		DistanceZ = MathAbs(GetPlayerPosZ() - GetEntityPosZ(Enemy));
+		Distance = MathSqrt((DistanceX * DistanceX) + (DistanceZ * DistanceZ));
+		if(Distance >= 15.0f) break;
+	}
+	AddLocalVarInt("HunterIndex", 1);
+	SetMessage("Info", "HunterAttack", 4.0f);
+}

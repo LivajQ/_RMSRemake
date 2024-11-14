@@ -1,0 +1,364 @@
+void TravelChecker(string &in asTimer)
+{
+        float DistanceX = MathAbs(GetLocalVarFloat("PlayerX") - GetPlayerPosX());
+        float DistanceY = MathAbs(GetLocalVarFloat("PlayerY") - GetPlayerPosY());
+        float DistanceZ = MathAbs(GetLocalVarFloat("PlayerZ") - GetPlayerPosZ());
+		float ActualDistance = MathSqrt((DistanceX * DistanceX) + (DistanceY * DistanceY) + (DistanceZ * DistanceZ));
+		if(ActualDistance > GetLocalVarFloat("DistanceTraveled")) SetLocalVarFloat("DistanceTraveled", ActualDistance);
+		string ShowHighestDistance = GetLocalVarFloat("DistanceTraveled");
+		AddDebugMessage(ShowHighestDistance, false);
+		AddTimer("c", 1.0f, "TravelChecker");
+}
+void Reward(string &in asTimer)
+{
+	if(GetLocalVarFloat("DistanceTraveled") > GetLocalVarFloat("DistanceReward"))
+	{
+		CalculateReward(false);
+		switch(GetGlobalVarInt("SetDifficulty"))
+		{
+		    case 1:
+				AddPlayerHealth(200.0f);
+				AddPlayerLampOil(100.0f);
+			    break;
+            case 2:
+				AddPlayerHealth(75.0f);
+				AddPlayerLampOil(5.0f);
+				break;
+		    case 3:
+				AddPlayerHealth(50.0f);
+				AddPlayerLampOil(5.0f);
+				break;
+		    case 4:
+				AddPlayerHealth(35.0f);
+				AddPlayerLampOil(2.5f);
+				break;
+			case 5:
+				AddPlayerHealth(25.0f);
+				AddPlayerLampOil(1.5f); 
+				break;
+			case 6:
+				AddPlayerHealth(15.0f);
+				AddPlayerLampOil(0.5f);
+				break;
+		}
+	}
+	else SetMessage("Info", "AntiCamping", 4.0f);
+	
+	SetLocalVarFloat("PlayerX", GetPlayerPosX());
+	SetLocalVarFloat("PlayerY", GetPlayerPosY());
+	SetLocalVarFloat("PlayerZ", GetPlayerPosZ());
+	SetLocalVarFloat("DistanceTraveled", 0.0f);
+	AddTimer("c", 60.0f, "Reward");
+}
+void CalculateReward(bool IsWinner)
+{
+	float ShieldMultiplier = 1.0f;
+	float SeizureMultiplier = 1.0f;
+	float SpeedMultiplier = 1.0f;
+	float RespawnsMultiplier = 1.0f;
+	float AggressiveMultiplier = 1.0f;
+	float CrazyMagicianMultiplier = 1.0f;
+	float TooManyMinesMultiplier = 1.0f;
+	float EnemiesMultiplier = 1.0f;
+	float DifficultyMultiplier = 1.0f;
+	if(GetGlobalVarInt("SetInvincible") == 1) SetMessage("Info", "NoCashInvincible", 4.0f);
+	else if(GetLocalVarInt("EnemyCount") < 4) SetMessage("Info", "NoCashEnemies", 4.0f);
+	else
+	{	
+		SetMessage("Info", "CashArrived", 4.0f);
+		
+		if(GetGlobalVarInt("SetShield") == 1) ShieldMultiplier = 0.5f;
+		if(GetGlobalVarInt("SetSeizure") == 1) SeizureMultiplier = 5.0f;
+		if(GetGlobalVarInt("SetSpeed") == 1) SpeedMultiplier = 0.25f;
+		if(GetGlobalVarInt("SetRespawns") == 1) RespawnsMultiplier = 0.4f;
+		if(GetGlobalVarInt("SetAggressive") == 1) RespawnsMultiplier = 2.0f;
+		if(GetGlobalVarInt("SetAggressive") == 2) RespawnsMultiplier = 4.0f;
+		if(GetGlobalVarInt("SetMagician") == 1 && GetGlobalVarInt("ActiveMagician") == 1) CrazyMagicianMultiplier = 2.5f;
+		if(GetGlobalVarInt("SetMines") == 1 && GetGlobalVarInt("ActiveRafalala") == 1) TooManyMinesMultiplier = 2.0f;
+		EnemiesMultiplier = GetLocalVarInt("EnemyCount") * 0.15f;
+		DifficultyMultiplier = GetGlobalVarInt("SetDifficulty") * 0.3f;
+		float TotalReward = 10 * ShieldMultiplier * SeizureMultiplier * SpeedMultiplier * RespawnsMultiplier * AggressiveMultiplier
+							* CrazyMagicianMultiplier * TooManyMinesMultiplier * EnemiesMultiplier * DifficultyMultiplier;
+		
+		if(IsWinner) TotalReward *= 8;
+
+		else
+		{
+			
+		}
+		AddGlobalVarInt("Cash", TotalReward);
+	}
+}
+void MoneyUpdate()
+{
+	string CashString = GetGlobalVarInt("Cash");
+	int CashSimple = GetGlobalVarInt("Cash");
+	AddDebugMessage(CashString, false);
+	if(GetGlobalVarInt("Cash") > 9999999)
+	{
+		for(int x = 1; x <= 7; x++)
+		{
+			DigitDisplay(x, 9);
+		}
+	}
+	else
+	{
+		/*I wanted the displayed amount to be aligned to the right side, so depending on
+		the amount of digits in the CashSimple variable, the output will be moved x positions to 
+		the right (6[7] - CashSimple digit amount)*/
+		
+		int Corrector = GetCorrector(CashSimple);	
+
+		for(int x = 1; x <= 7; x++)
+		{
+			string Pos = StringSub(CashString, x - 1, 1);
+			int PosInt = StringToInt(Pos);
+			AddDebugMessage(Pos, false);
+			DigitDisplay(x + Corrector, PosInt);
+		}
+		
+		GetNull(CashSimple);
+	}
+}
+int GetCorrector(int Value)
+{
+	if(Value <= 9) return 6;
+	else if(Value <= 99) return 5;
+	else if(Value <= 999) return 4;
+	else if(Value <= 9999) return 3;
+	else if(Value <= 99999) return 2;
+	else if(Value <= 999999) return 1;
+	return 0;
+}
+void GetNull(int Value)
+{
+	if(Value <= 9) SetNull(6);
+	else if(Value <= 99) SetNull(5);
+	else if(Value <= 999) SetNull(4);
+	else if(Value <= 9999) SetNull(3);
+	else if(Value <= 99999) SetNull(2);
+	else if(Value <= 999999) SetNull(1);
+}
+void SetNull(int Position)  //simply deletes redundant zeros on the left side
+{
+	for(int x = 1; x <= Position; x++)
+	{
+		DigitDisplay(x, -1);
+	}
+}
+void DigitDisplay(int Position, int Number)
+{
+	for(int x = 0; x < 7; x++)
+	{
+		bool Digit = DigitSetter(Number, x);
+		SetEntityActive("l" + Position + "_" + (x + 1), Digit);
+	}
+}
+bool DigitSetter(int Number, int Index)
+{
+	bool[] Number1 = {false, false, true, false, false, true, false};
+	bool[] Number2 = {true, false, true, true, true, false, true};
+	bool[] Number3 = {true, false, true, true, false, true, true};
+	bool[] Number4 = {false, true, true, true, false, true, false};
+	bool[] Number5 = {true, true, false, true, false, true, true};
+	bool[] Number6 = {true, true, false, true, true, true, true};
+	bool[] Number7 = {true, false, true, false, false, true, false};
+	bool[] Number8 = {true, true, true, true, true, true, true};
+	bool[] Number9 = {true, true, true, true, false, true, true};
+	bool[] Number0 = {true, true, true, false, true, true, true};
+	bool[] Default = {false, false, false, false, false, false, false};
+	
+	switch(Number)
+	{
+		case 1: return Number1[Index];
+		case 2: return Number2[Index];
+		case 3: return Number3[Index];
+		case 4: return Number4[Index];
+		case 5: return Number5[Index];
+		case 6: return Number6[Index];
+		case 7: return Number7[Index];
+		case 8: return Number8[Index];
+		case 9: return Number9[Index];
+		case 0: return Number0[Index];
+		default: return Default[Index];
+	}
+		
+	return Default[3];
+}
+///////////////CALCULATOR///////////////////
+void PressButton(string &in asEntity)
+{
+	string Type = StringSub(asEntity, 7, 1);
+	string[] TypesList = {"D", "T", "M", "P"};
+	bool IsDigit = true;
+	if(Type == "C")
+	{	
+		Clear();
+		return;
+	}
+	if(Type == "E") 
+	{
+		Equals();
+		return;
+	}
+	for(int x = 0; x < TypesList.length(); x++)
+	{
+		if(Type == TypesList[x])
+		{
+			AddOperator(TypesList[x]);
+			IsDigit = false;
+		}
+	}
+	
+	if(IsDigit)
+	{
+		AddLocalVarString("DigitChain", Type);
+		AddDebugMessage(GetLocalVarString("DigitChain"), false);
+	}
+}
+void AddOperator(string Type)
+{
+	if(Type == "D") SetLocalVarString("CurrentOperator", "Divide");
+	if(Type == "T") SetLocalVarString("CurrentOperator", "Times");
+	if(Type == "M") SetLocalVarString("CurrentOperator", "Minus");
+	if(Type == "P") SetLocalVarString("CurrentOperator", "Plus");
+	
+	if(GetLocalVarInt("HardReset") == 1) 
+	{
+		SetLocalVarFloat("FirstValue", TurnStringToNumber(GetLocalVarString("DigitChain")));
+		AddLocalVarInt("HardReset", 1);
+		SetLocalVarString("DigitChain", "");
+	}
+	else if(GetLocalVarInt("HardReset") == 2)
+	{
+		Equals();
+		AddLocalVarInt("HardReset", 1);
+		SetLocalVarString("DigitChain", "");
+	}
+	else
+	{
+		SetLocalVarFloat("FirstValue", GetLocalVarFloat("AddedValue"));
+		Equals();
+		SetLocalVarString("DigitChain", "");
+	}
+}
+void Equals()
+{
+	if(GetLocalVarInt("HardReset") == 1 || GetLocalVarString("CurrentOperator") == "None")
+	SetMessage("Info", "MissingNumOp", 3.0f);
+	else
+	{
+		SetLocalVarFloat("SecondValue", TurnStringToNumber(GetLocalVarString("DigitChain")));
+		float Final = DoMath(GetLocalVarFloat("FirstValue"), GetLocalVarFloat("SecondValue"), GetLocalVarString("CurrentOperator"));
+		
+		SetLocalVarFloat("AddedValue", Final);
+		int DecimalPoint = DecimalPointFinder(GetLocalVarFloat("AddedValue"));
+		int FinalInt = GetLocalVarFloat("AddedValue") * MathPow(10, DecimalPoint);
+		string FinalString = FinalInt;
+		int Corrector = GetCorrector(FinalInt);	
+		
+		for(int x = 1; x <= 7; x++)
+		{
+			string Pos = StringSub(FinalString, x - 1, 1);
+			int PosInt = StringToInt(Pos);
+			AddDebugMessage(Pos, false);
+			DigitDisplay(x + Corrector, PosInt);
+		}
+		DecimalPointDisplay(DecimalPoint);
+		
+		GetNull(FinalInt);
+	}
+}
+int DecimalPointFinder(float Value)
+{
+	int Position = 0;
+	while(true)
+	{
+		if(Value % 1 != 0.0f)
+		{
+			Value *= 10;
+			Position++;
+		}
+		else break;
+	}
+	return Position;
+}
+void DecimalPointDisplay(int Value)
+{
+	if(Value != 0)
+	{
+		SetEntityActive("D_" + Value, true);
+	}
+}
+float DoMath(float FirstValue, float SecondValue, string Operator)
+{
+	int Type;
+	if(Operator == "Plus") Type = 1; 
+	if(Operator == "Minus") Type = 2; 
+	if(Operator == "Times") Type = 3; 
+	if(Operator == "Divide") Type = 4; 
+	
+	if(Type == 4 && SecondValue == 0)
+	{
+		EndWorld();
+		return 696969;
+	}
+	switch(Type)
+	{
+		case 1:
+			return FirstValue + SecondValue;
+		case 2:
+			return FirstValue - SecondValue;
+		case 3:
+			return FirstValue * SecondValue;
+		case 4:
+			return FirstValue / SecondValue;
+	}
+	return 0;
+}
+float TurnStringToNumber(string Value)
+{
+	float ToReturn = StringToFloat(Value);
+	AddDebugMessage("Returned Float: " + ToReturn, false);
+	return ToReturn;
+}
+void Clear()
+{
+	SetLocalVarInt("FirstValue", 0);
+	SetLocalVarInt("SecondValue", 0);
+	SetLocalVarInt("Value1Added", 0);
+	SetLocalVarInt("Value2Added", 0);
+	SetLocalVarInt("HardReset", 1);
+	SetLocalVarFloat("AddedValue", 0.0f);
+	SetLocalVarString("CurrentOperator", "None");
+	SetLocalVarString("DigitChain", "");
+	for(int x = 1; x <= 7; x++)
+	{
+		DigitDisplay(x, 0);
+	}
+	SetNull(6);
+	SetEntityActive("D_*", false);
+}
+void EndWorld()
+{
+	
+}
+///////////////REWARD SYSTEM///////////////
+void YouWin()
+{
+	CalculateReward(true);
+	SetGlobalVarInt("WinnerEnemies", GetLocalVarInt("EnemyCount"));
+	SetGlobalVarInt("WinnerDeaths", GetLocalVarInt("DeathCount"));
+	SetGlobalVarInt("WinnerDifficulty", GetGlobalVarInt("SetDifficulty"));
+	SetGlobalVarInt("WinnerInvincible", GetGlobalVarInt("SetInvincible"));
+	SetGlobalVarInt("WinnerShield", GetGlobalVarInt("SetShield"));
+	SetGlobalVarInt("WinnerSeizure", GetGlobalVarInt("SetSeizure"));
+	SetGlobalVarInt("WinnerSpeed", GetGlobalVarInt("SetSpeed"));
+	SetGlobalVarInt("WinnerRespawns", GetGlobalVarInt("SetRespawns"));
+	SetGlobalVarInt("WinnerAggressive", GetGlobalVarInt("SetAggressive"));
+	if(GetGlobalVarInt("SetMagician") == 1 && GetGlobalVarInt("ActiveMagician") == 1) SetGlobalVarInt("WinnerMagician", 1);
+	else SetGlobalVarInt("WinnerMagician", 0);
+	if(GetGlobalVarInt("SetMines") == 1 && GetGlobalVarInt("ActiveRafalala") == 1) SetGlobalVarInt("WinnerMines", 1);
+	else SetGlobalVarInt("WinnerMines", 0);
+	ChangeMap("SR_chickendinner.map", "PlayerStartArea_1", "", "");
+}

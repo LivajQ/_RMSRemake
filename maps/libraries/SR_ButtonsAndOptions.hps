@@ -1,0 +1,375 @@
+void Enabler(string &in asEntity)              
+{
+	string entity = StringSub(asEntity, 6, 15);
+	if(GetGlobalVarInt("Active" + entity) == 1)
+	{
+		SetGlobalVarInt("Active" + entity, 0);
+		SetMessage("Info", entity + "Off", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("Active" + entity, 1);
+		SetMessage("Info", entity + "On", 3.0f);
+	}
+}
+void ChangeTheme(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetTheme") == 1)
+	{
+		SetGlobalVarInt("SetTheme", 0);
+		PartyEnder();
+		SetMessage("Info", "ThemeNormal", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("SetTheme", 1);
+		PartyStarter();
+		SetMessage("Info", "ThemeParty", 3.0f);
+	}
+}
+void ChangeMusic(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetTheme") == 0) SetMessage("Info", "OnlyParty", 4.0f);
+	else ChooseTune();
+}
+void ChangeDifficulty(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetDifficulty") >= 6) SetGlobalVarInt("SetDifficulty", 1);
+	else AddGlobalVarInt("SetDifficulty", 1);
+	switch(GetGlobalVarInt("SetDifficulty"))
+	{
+		case 1:
+			SetMessage("Info", "DifficultyCrybaby", 4.0f);
+			break;
+		case 2:
+			SetMessage("Info", "DifficultyEasy", 4.0f);
+			break;
+		case 3:
+			SetMessage("Info", "DifficultyMedium", 4.0f);
+			break;
+		case 4:
+			SetMessage("Info", "DifficultyHard", 4.0f);
+			break;
+		case 5:
+			SetMessage("Info", "DifficultyExtreme", 4.0f);
+			break;
+		case 6:
+			SetMessage("Info", "DifficultyMom", 4.0f);
+			break;
+	}
+}
+													/* So I merged enemy enabler functions into one but not so sure about this one.
+													here it's not so consistent, buttons like for music and difficulty follow their own
+													logic. it might not be worth it to introduce confusion and merging only a few options
+													while handling the rest manually, especially when that involves specific naming convention. */
+void ChangeInvincible(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetInvincible") == 0)
+	{	
+		SetGlobalVarInt("SetInvincible", 1);
+		SetMessage("Info", "Enabled", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("SetInvincible", 0);
+		SetMessage("Info", "Disabled", 3.0f);
+	}
+}
+void ChangeSpeed(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetSpeed") == 0)
+	{	
+		SetGlobalVarInt("SetSpeed", 1);
+		SetMessage("Info", "Enabled", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("SetSpeed", 0);
+		SetMessage("Info", "Disabled", 3.0f);
+	}
+}
+void ChangeMines(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetMines") == 0)
+	{	
+		SetGlobalVarInt("SetMines", 1);
+		SetMessage("Info", "Enabled", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("SetMines", 0);
+		SetMessage("Info", "Disabled", 3.0f);
+	}
+}
+void ChangeMagician(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetMagician") == 0)
+	{	
+		SetGlobalVarInt("SetMagician", 1);
+		SetMessage("Info", "Enabled", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("SetMagician", 0);
+		SetMessage("Info", "Disabled", 3.0f);
+	}
+}
+void ChangeShield(string &in asEntity)
+{
+	if(GetGlobalVarInt("PurchasedShieldL") == 0 && GetGlobalVarInt("PurchasedShieldH") == 0)
+	{
+		SetMessage("Info", "NoShield", 4.0f);
+	}
+	else if(GetGlobalVarInt("SetShield") == 0)
+	{	
+		SetGlobalVarInt("SetShield", 1);
+		SetMessage("Info", "Enabled", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("SetShield", 0);
+		SetMessage("Info", "Disabled", 3.0f);
+	}
+}
+void ChangeSeizure(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetSeizure") == 0)
+	{	
+		SetGlobalVarInt("SetSeizure", 1);
+		SetMessage("Info", "Enabled", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("SetSeizure", 0);
+		SetMessage("Info", "Disabled", 3.0f);
+	}
+}
+void ChangeRespawns(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetRespawns") == 0)
+	{	
+		SetGlobalVarInt("SetRespawns", 1);
+		SetMessage("Info", "Enabled", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("SetRespawns", 0);
+		SetMessage("Info", "Disabled", 3.0f);
+	}
+}
+void ChangeOverload(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetOverload") == 0)
+	{	
+		SetGlobalVarInt("SetOverload", 1);
+		SetMessage("Info", "Enabled", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("SetOverload", 0);
+		SetMessage("Info", "Disabled", 3.0f);
+	}
+}
+void ChangeOverEnemy(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetOverload") == 0)
+	{	
+		SetMessage("Info", "NeedOverload", 4.0f);
+	}
+	else
+	{
+		string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Trensletor", "Illusioner", "Bull", "Krabs"};
+		for(int x = 0; x < EnemyList.length(); x++)
+		{
+			if(GetGlobalVarString("OverloadEnemy") == EnemyList[x])
+			{
+				if(GetGlobalVarString("OverloadEnemy") == EnemyList[EnemyList.length() - 1]) SetGlobalVarString("OverloadEnemy", "Magician");
+				else SetGlobalVarString("OverloadEnemy", EnemyList[x + 1]);
+				DisplayOverloadMessage(GetGlobalVarString("OverloadEnemy"));
+				AddDebugMessage(GetGlobalVarString("OverloadEnemy"), false);
+				break;
+			}
+		}
+	}
+}
+void ChangeAggressive(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetAggressive") == 0)
+	{	
+		SetGlobalVarInt("SetAggressive", 1);
+		SetMessage("Info", "Aggressive1", 3.0f);
+	}
+	else if(GetGlobalVarInt("SetAggressive") == 1)
+	{	
+		SetGlobalVarInt("SetAggressive", 2);
+		SetMessage("Info", "Aggressive2", 3.0f);
+	}
+	else
+	{	
+		SetGlobalVarInt("SetAggressive", 0);
+		SetMessage("Info", "Aggressive0", 3.0f);
+	}
+	
+}
+void DisplayOverloadMessage(string Enemy)
+{
+	if(Enemy == "Magician") SetMessage("Info", "OverloadingMagician", 4.0f);
+	if(Enemy == "Ninja") SetMessage("Info", "OverloadingNinja", 4.0f);
+	if(Enemy == "Athlete") SetMessage("Info", "OverloadingAthlete", 4.0f);
+	if(Enemy == "Rafalala") SetMessage("Info", "OverloadingRafalala", 4.0f);
+	if(Enemy == "Beholder") SetMessage("Info", "OverloadingBeholder", 4.0f);
+	if(Enemy == "Jackal") SetMessage("Info", "OverloadingJackal", 4.0f);
+	if(Enemy == "Charger") SetMessage("Info", "OverloadingCharger", 4.0f);
+	if(Enemy == "Trensletor") SetMessage("Info", "OverloadingTrensletor", 4.0f);
+	if(Enemy == "Illusioner") SetMessage("Info", "OverloadingIllusioner", 4.0f);
+	if(Enemy == "Bull") SetMessage("Info", "OverloadingBull", 4.0f);
+	if(Enemy == "Krabs") SetMessage("Info", "OverloadingKrabs", 4.0f);
+}
+void ChooserUp(string &in asEntity)
+{
+	if(GetLocalVarInt("ChosenMap") >= GetGlobalVarInt("MapAmount")) SetLocalVarInt("ChosenMap", 1);
+	else AddLocalVarInt("ChosenMap", 1);
+	MapChooser();
+}
+void ChooserDown(string &in asEntity)
+{
+	if(GetLocalVarInt("ChosenMap") <= 1) SetLocalVarInt("ChosenMap", GetGlobalVarInt("MapAmount"));
+	else AddLocalVarInt("ChosenMap", -1);
+	MapChooser();
+}
+void MapChooser()
+{
+	ResetProp("mapreview_*");
+	switch(GetLocalVarInt("ChosenMap"))
+	{
+		case 1:
+			SetEntityPos("mapreview_menson_1", -239.912f, 2.994f, -3.922f);
+			break;
+		case 2:
+			SetEntityPos("mapreview_prison_1", -239.912f, 2.994f, -3.922f);
+			break;
+		default:
+			SetEntityPos("mapreview_menson_1", -239.912f, 2.994f, -3.922f);
+			break;
+	}
+}
+void PartyMap(string &in asEntity)
+{
+	if(GetGlobalVarInt("IsPartyMap") == 1) 
+	{
+		SetGlobalVarInt("IsPartyMap", 0);
+		SetMessage("Info", "PartyMapOff", 3.0f);
+	}
+	else
+	{
+		SetGlobalVarInt("IsPartyMap", 1);
+		SetMessage("Info", "PartyMapOn", 3.0f);
+	}
+}
+void StartSurvival(string &in asEntity)
+{
+	switch(GetLocalVarInt("ChosenMap"))
+	{
+		case 1:
+			ChangeMap("SR_menson.map", "PlayerStartArea_1", "", "");
+			break;
+		case 2:
+			ChangeMap("SR_prison.map", "PlayerStartArea_1", "", "");
+			break;
+		default:
+			ChangeMap("SR_menson.map", "PlayerStartArea_1", "", "");
+			break;
+	}
+}
+void StartMini(string &in asParent, string &in asChild, int alState)
+{
+	int Value;
+	if(StringSub(asChild, 5, 15) == "Hockey") Value = 1;
+	if(StringSub(asChild, 5, 15) == "Whaca") Value = 2;
+	if(StringSub(asChild, 5, 15) == "Calc") Value = 3;
+	if(StringSub(asChild, 5, 15) == "Creat") Value = 4;
+	
+	switch(Value)
+	{
+		case 1:
+			ChangeMap("SR_airhockey.map", "PlayerStartArea_1", "", "");
+			break;
+		case 2:
+			ChangeMap("SR_gruntole.map", "PlayerStartArea_1", "", "");
+			break;
+		case 3:
+			ChangeMap("SR_calcoolator.map", "PlayerStartArea_1", "", "");
+			break;
+		case 4:
+			ChangeMap("SR_creative.map", "PlayerStartArea_1", "", "");
+			break;
+	}
+}
+void ResetPlaylist(string &in asTimer)
+{
+	for(int x = 1; x <= 15; x++)
+	{
+		SetGlobalVarString("CustomSong_" + x, "None");
+	}
+	SetGlobalVarInt("PlaylistActive", 0);
+	ChooseTune();
+}
+void StartPlaylist(string &in asTimer)
+{
+	bool Empty = true;
+	for(int x = 1; x <= 15; x++)
+	{
+		if(GetGlobalVarString("CustomSong_" + x) != "None")
+		{
+			Empty = false;
+			break;
+		}
+	}
+	if(Empty)
+	{
+		SetMessage("Info", "PlaylistEmpty", 3.0f);
+		return;
+	}
+	if(GetGlobalVarInt("PlaylistActive") == 0)
+	{	
+		SetGlobalVarInt("PlaylistActive", 1);
+		SetMessage("Info", "PlaylistEnabled", 3.0f);
+		for(int x = 1; x <= 15; x++)
+		if(GetGlobalVarString("CustomSong_" + x) != "None") AddDebugMessage(GetGlobalVarString("CustomSong_" + x), false);
+	}
+	else 
+	{
+		SetGlobalVarInt("PlaylistActive", 0);
+		SetMessage("Info", "PlaylistDisabled", 3.0f);
+	}
+	ChooseTune();
+}
+void GoNextPlaylist(string &in asTimer)
+{
+	StopMusic(1, 1);
+	StopMusic(1, 2);
+	StopMusic(1, 3);
+	if(GetGlobalVarInt("PlaylistIndex") == 30) SetGlobalVarInt("PlaylistIndex", 1);
+	else AddGlobalVarInt("PlaylistIndex", 1);
+	PlayMusic("PartyMusic_" + GetGlobalVarInt("PlaylistIndex"), true, 1, 1, 1, false);
+}
+void AddPlaylist(string &in asTimer)
+{
+	for(int x = 1; x <= 15; x++)
+	{
+		if(GetGlobalVarString("CustomSong_" + x) == "PartyMusic_" + GetGlobalVarInt("PlaylistIndex"))
+		{
+			SetGlobalVarString("CustomSong_" + x, "None");
+			SetMessage("Info", "PlaylistRemoved", 3.0f);
+			return;
+		}
+		else if(GetGlobalVarString("CustomSong_" + x) == "None")
+		{
+			SetGlobalVarString("CustomSong_" + x, "PartyMusic_" + GetGlobalVarInt("PlaylistIndex"));
+			SetMessage("Info", "PlaylistAdded", 3.0f);
+			AddDebugMessage(GetGlobalVarString("CustomSong_" + x), false);
+			return;
+		}
+	}
+	SetMessage("Info", "PlaylistFull", 3.0f);
+}

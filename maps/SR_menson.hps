@@ -1,0 +1,365 @@
+#import "SR_EnemyFuncs.hps"
+#import "SR_MainMapsSettings.hps"
+#import "SR_Maths.hps"
+
+void OnStart()
+{
+	SetEntityPlayerInteractCallback("ButtonMusic", "Song", false);
+	SetEntityPlayerInteractCallback("ButtonLeave", "Leaving", false);
+	SetEntityPlayerInteractCallback("ItemPick_Crowbar", "GimmeItem", false);
+	SetEntityPlayerInteractCallback("ItemPick_Hammer", "GimmeItem", false);
+	SetEntityPlayerInteractCallback("ItemPick_KeyRusty", "GimmeItem", false);
+	SetEntityPlayerInteractCallback("ItemPick_KeyLeave", "GimmeItem", false);
+	SetEntityPlayerInteractCallback("ItemPick_Jar", "GimmeItem", false);
+	SetEntityPlayerLookAtCallback("servant_Illusioner", "IllusionerEffect", false);
+	for(int x = 1; x <= 10; x++)
+	{	
+		SetEntityPlayerLookAtCallback("servant_Overload_Illusioner_" + x, "IllusionerEffect", false);
+	}
+	SetLocalVarInt("SpawnNodes", 20);
+	SetLocalVarInt("NodeAmount", 637);
+	SetLocalVarInt("SeizureState", 1);
+	SetLocalVarFloat("DistanceReward", 20.0f);
+	
+	for(int x = 1; x <= 100; x++)
+	{
+		SetEntityCallbackFunc("cellar_wood01_" + x, "BreakReset");
+		SetEntityCallbackFunc("mansion_" + x, "BreakReset");
+		SetEntityCallbackFunc("cabinetbreakable_nice_" + x, "BreakReset");
+		SetEntityCallbackFunc("cabinetbreakable_simple_" + x, "BreakReset");
+		SetEntityCallbackFunc("cabinetbreakable_metal_" + x, "BreakReset");
+	}
+	
+	//Quest
+	SetEntityPlayerInteractCallback("ScriptArea_3", "AcidLid", false);
+	SetEntityPlayerInteractCallback("ScriptArea_5", "CanOil", false);
+	SetEntityPlayerInteractCallback("ScriptArea_2", "CheckPlanks", false);
+	SetEntityPlayerInteractCallback("ScriptArea_6", "VertDoor", false);
+	SetEntityPlayerInteractCallback("cellar_wood01_1", "ToolsDoor", false);
+	SetEntityPlayerInteractCallback("level_wood_double_1", "CanLeave", false);
+	SetEntityPlayerInteractCallback("lever_nice01_1", "TryLever", false);
+	AddUseItemCallback("LidRemover", "InventoryCrowbar", "ScriptArea_3", "LidGone", false);
+	AddUseItemCallback("KeyFix", "InventoryKeyRusty", "ScriptArea_4", "FixKey", false);
+	AddUseItemCallback("Sheddar", "InventoryKeyClean", "cellar_wood01_1", "OpenTools", false);
+	AddUseItemCallback("Pourer", "InventoryJar", "ScriptArea_5", "GetOil", false);
+	AddUseItemCallback("HammerTime", "InventoryHammer", "ScriptArea_2", "BreakPlanks", false);
+	AddUseItemCallback("Masterz", "InventoryKeyLeave", "level_wood_double_1", "OpenMaster", false);
+	AddUseItemCallback("Unstucker", "InventoryJarOil", "lever_nice01_1", "Moisturizer", false);
+	SetEntityConnectionStateChangeCallback("lever_nice01_1", "VertOpen");
+}
+void OnEnter()
+{
+	SetLocalVarInt("IllusionerCooldown", 0);
+	for(int x = 1; x <= 10; x++)
+	{
+		SetLocalVarInt("Illusioner_Overload_" + x + "_Cooldown", 0);
+	}
+	SetLocalVarInt("KrabsCooldown", 0);
+	for(int x = 1; x <= 10; x++)
+	{
+		SetLocalVarInt("Krabs_Overload_" + x + "_Cooldown", 0);
+	}
+	PlaySoundAtEntity("BestSound", "krabwalker.snt", "servant_Krabs", 0.1f, false);
+	for(int x = 1; x <= 10; x++)
+	{
+		PlaySoundAtEntity("BestSound", "krabwalker.snt", "servant_Overload_Krabs_" + x, 0.1f, false);
+	}
+	
+	CheckPoint("SuperCheckpoint", "PlayerStartArea_1", "Respawn", "DeathHint", "DeathMessage" + RandInt(1, 5));
+	SetEnemySanityDecreaseActive("servant_*", false);
+	SetMapDisplayNameEntry("menson");
+	SetLocalVarInt("EnemyCount", 0);
+	SetLocalVarInt("DeathCount", 0);
+	SetLocalVarInt("MineIndex", 1);
+	SetLocalVarInt("TrensletorSkin", RandInt(1, 6));
+	SetLocalVarFloat("DistanceTraveled", 0.0f);
+	SetLocalVarFloat("PlayerX", GetPlayerPosX());
+	SetLocalVarFloat("PlayerY", GetPlayerPosY());
+	SetLocalVarFloat("PlayerZ", GetPlayerPosZ());
+
+	if(GetGlobalVarInt("SetSpeed") == 1) SetLocalVarFloat("Multiplier", 2.0f);
+	else SetLocalVarFloat("Multiplier", 1.0f);
+	DifficultySetter(GetGlobalVarInt("SetDifficulty"));
+	
+	if(GetGlobalVarInt("SetInvincible") == 1) SetEnemyDisableTriggers("servant_*", true);
+	
+	if(GetGlobalVarInt("IsPartyMap") == 1) 
+	{
+		PartyStarter();
+		SetEntityActive("ButtonMusic", true);
+	}
+	else PlayMusic("10_amb.ogg", true, 1, 1, 1, false);
+	
+	if(GetGlobalVarInt("SetShield") == 1)
+	{
+		if(GetGlobalVarInt("PurchasedShieldL") == 1) SetEntityActive("ballisticshield_1", true);
+		if(GetGlobalVarInt("PurchasedShieldH") == 1) SetEntityActive("heavyshield_1", true);
+	}
+	else 
+	{
+		SetEntityActive("ballisticshield_1", false);
+		SetEntityActive("heavyshield_1", false);
+	}
+	
+	if(GetGlobalVarInt("SetSeizure") == 1)
+	{
+		AddTimer("a", 1.0f, "SeizureMoment");
+	}
+	else 
+	{
+		SetEntityActive("ballisticshield_1", false);
+		SetEntityActive("heavyshield_1", false);
+	}
+	if(GetGlobalVarInt("SetMagician") == 1)
+	{
+		AddTimer("a", 3.0f, "MagicianTeleport");
+	}
+	else
+	{
+		AddTimer("a", 30.0f, "MagicianTeleport");
+	}
+	
+	if(GetGlobalVarInt("SetMines") == 1) AddTimer("a", 5.0f, "RafalalaMine");
+    else AddTimer("a", 35.0f, "RafalalaMine");
+	
+	
+	for(int x = 1; x <= GetLocalVarInt("SpawnNodes"); x++)
+	{
+		SetLocalVarInt("CanSpawnAtPos" + x, 1);
+	}
+	
+	if(GetGlobalVarInt("SetOverload") == 1)
+	{
+		SetLocalVarInt("EnemyCount", 10);
+		SpawnOverload();
+	}
+	else
+	{
+		CheckEnemyCount();
+		SpawnEnemies();
+	}
+	
+	if(GetGlobalVarInt("SetAggressive") != 0)
+	{
+		AddTimer("b", 0.5f, "AggressiveLoop");
+		if(GetGlobalVarInt("SetAggressive") == 2) PlayMusic("ripbozo.ogg", true, 1, 1, 10, false);
+	}
+	
+	SpawnItems();
+	
+	AddTimer("c", 1.0f, "AggroReset");
+	AddTimer("c", 1.0f, "TravelChecker");
+	AddTimer("c", 60.0f, "Reward");
+	AddTimer("c", 1.0f, "MonsterFallPreventer");
+	AddTimer("c", 1.0f, "ItemPickSafe");
+	AddTimer("c", 1.0f, "KrabsLoop");
+	AddTimer("c", 1.0f, "JackalDetect");
+	
+	//Quest
+	SetLocalVarInt("VertDown", 1);
+	SetLocalVarInt("CanLever", 0);
+	SetLocalVarInt("PlanksRemoved", 0);
+	SetLocalVarInt("MasterOpened", 0);
+	SetLeverStuckState("lever_nice01_1", -1, true);
+	
+	AutoSave();
+}
+void OnLeave()
+{
+	MapLeaver();
+}
+void Respawn(string &in asName, int alCount)
+{
+	RespawnGeneric();
+	SpawnItems();
+	SetLocalVarInt("VertDown", 1);
+	SetLocalVarInt("CanLever", 0);
+	RemoveItem("InventoryCrowbar");
+	RemoveItem("InventoryHammer");
+	RemoveItem("InventoryKeyLeave");
+	RemoveItem("InventoryKeyRusty");
+	RemoveItem("InventoryJar");
+	RemoveItem("InventoryKeyClean");
+	RemoveItem("InventoryJarOil");
+	RemoveItem("Crowbar");
+	RemoveItem("Hammer");
+	RemoveItem("KeyLeave");
+	RemoveItem("KeyRusty");
+	RemoveItem("Jar");
+	RemoveItem("KeyClean");
+	RemoveItem("JarOil");
+	SetEntityActive("ScriptArea_3", true);
+	SetSwingDoorLocked("cellar_wood01_1", true, false);
+	SetEntityActive("wooden_boards_block_1", true);
+	SetEntityActive("wooden_boards_block_2", false);
+	SetEntityActive("ScriptArea_2", true);
+	SetLocalVarInt("PlanksRemoved", 0);
+	SetLocalVarInt("MasterOpened", 0);
+	SetLeverStuckState("lever_nice01_1", -1, true);
+	SetEntityActive("ScriptArea_6", true);
+	SetEntityActive("safety_normal_vert_1", true);
+}
+void SpawnItems()
+{
+	int NormalSlots = 10;
+	int SpecialSlots = 2;
+	for(int x = 1; x <= NormalSlots; x++)
+	{
+		SetLocalVarInt("NormalSlot" + x, 1);
+	}
+	for(int x = 1; x <= SpecialSlots; x++)
+	{
+		SetLocalVarInt("SpecialSlot" + x, 1);
+	}
+	
+	string[] NormalItems = {"KeyRusty", "Crowbar", "Jar"};
+	string[] SpecialItems = {"Hammer", "KeyLeave"};
+	
+	for(int x = 0; x < NormalItems.length(); x++)
+	{
+		while(true)
+		{
+			int Slot = RandInt(1, NormalSlots);
+			if(GetLocalVarInt("NormalSlot" + Slot) == 0) continue;
+			PlaceEntityAtEntity(NormalItems[x], "ItemNormal_" + Slot, "", false);
+			PlaceEntityAtEntity("ItemPick_" + NormalItems[x], NormalItems[x], "", false);
+			SetLocalVarInt("NormalSlot" + Slot, 0);
+			break;
+		}
+	}
+	for(int x = 0; x < SpecialItems.length(); x++)
+	{
+		while(true)
+		{
+			int Slot = RandInt(1, SpecialSlots);
+			if(GetLocalVarInt("SpecialSlot" + Slot) == 0) continue;
+			PlaceEntityAtEntity(SpecialItems[x], "ItemSpecial_" + Slot, "", false);
+			PlaceEntityAtEntity("ItemPick_" + SpecialItems[x], SpecialItems[x], "", false);
+			SetLocalVarInt("SpecialSlot" + Slot, 0);
+			break;
+		}
+	}
+	
+	//height correctors
+	string[] ToHeighten = {"Crowbar", "Hammer", "KeyLeave", "KeyRusty", "Jar"};
+	float[] Values = {0.02f, 0.045f, 0.01f, 0.01f, 0.23f};
+	for(int x = 0; x < ToHeighten.length(); x++)
+	{
+		SetEntityPos(ToHeighten[x], GetEntityPosX(ToHeighten[x]), GetEntityPosY(ToHeighten[x]) + Values[x], GetEntityPosZ(ToHeighten[x]));
+		PlaceEntityAtEntity("ItemPick_" + ToHeighten[x], ToHeighten[x], "", false);
+	}
+}
+void GimmeItem(string &in asEntity)
+{
+	string Item = StringSub(asEntity, 9, 15);
+	GiveItem("Inventory" + Item, "Puzzle", "Inv" + Item, ImageGetter(Item), 1);
+	SetEntityPos(Item, 0.0f, 100.0f, 0.0f);
+	SetEntityPos("ItemPick_" + Item, 0.0f, 100.0f, 0.0f);
+	PlayGuiSound("pick_generic.snt", 1);
+}
+string ImageGetter(string Item)
+{
+	if(Item == "Crowbar") return "crowbar.tga";
+	else if(Item == "Hammer") return "stone_hammer.tga";
+	else if(Item == "KeyLeave") return "key_study.tga";
+	else if(Item == "KeyRusty") return "key_tomb_rusty.tga";
+	else if(Item == "Jar") return "glass_container_empty.tga";
+	return "";
+}
+void ItemPickSafe(string &in asTimer)
+{
+	string[] Items = {"KeyRusty", "Crowbar", "Jar", "Hammer", "KeyLeave"};
+	for(int x = 0; x < Items.length(); x++)
+	{
+		PlaceEntityAtEntity("ItemPick_" + Items[x], Items[x], "", false);
+	}
+	AddTimer("c", 1.0f, "ItemPickSafe");
+}
+
+//Quest part
+void AcidLid(string &in asEntity)
+{
+	SetMessage("Mono", "RemoveLid", 5.0f);
+}
+void LidGone(string &in asItem, string &in asEntity)
+{
+	SetEntityPos("elevator_machine_hatch_1", 0.0f, 100.0f, 0.0f);
+	SetEntityActive(asEntity, false);
+	RemoveItem(asItem);
+	PlayGuiSound("impact_metal_high.snt", 1);
+}
+void FixKey(string &in asItem, string &in asEntity)
+{
+    RemoveItem(asItem);
+    GiveItem("InventoryKeyClean", "key_tomb.ent", "InvKeyClean", "key_tomb.tga", 1);	
+	PlayGuiSound("puzzle_acid.snt", 1);
+}
+void ToolsDoor(string &in asEntity)
+{
+	if(GetSwingDoorLocked(asEntity)) SetMessage("Mono", "ToolsNo", 5.0f);
+}
+void OpenTools(string &in asItem, string &in asEntity)
+{
+    SetSwingDoorLocked(asEntity, false, true);
+	RemoveItem(asItem);
+	PlayGuiSound("unlock_door.snt", 1);
+}
+void CanOil(string &in asEntity)
+{
+	SetMessage("Mono", "CanPour", 5.0f);
+}
+void GetOil(string &in asItem, string &in asEntity)
+{
+    RemoveItem(asItem);
+	GiveItem("InventoryJarOil", "chemical_container_oil.ent", "InvJarOil", "glass_container_oil.tga", 1);
+	PlayGuiSound("12_epoxy_fill.snt", 1);
+}
+void CheckPlanks(string &in asEntity)
+{
+	SetMessage("Mono", "PlankDestroyer", 5.0f);
+}
+void CanLeave(string &in asEntity)
+{
+	if(GetLocalVarInt("PlanksRemoved") == 0 && GetLocalVarInt("MasterOpened") == 0) SetMessage("Mono", "LongRoad", 5.0f);
+	else if(GetLocalVarInt("PlanksRemoved") == 0 && GetLocalVarInt("MasterOpened") == 1) SetMessage("Mono", "StillPlanks", 5.0f);
+	else if(GetLocalVarInt("PlanksRemoved") == 1 && GetLocalVarInt("MasterOpened") == 0) SetMessage("Mono", "StillMaster", 5.0f);
+	else YouWin();
+}
+void TryLever(string &in asEntity)
+{
+	if(GetLocalVarInt("CanLever") == 0) SetMessage("Mono", "LeverStuck", 4.0f);
+}
+void VertDoor(string &in asEntity)
+{
+	SetMessage("Mono", "DoorMechanical", 4.0);
+}
+void Moisturizer(string &in asItem, string &in asEntity)
+{
+    SetLeverStuckState("lever_nice01_1", 0, true);
+	RemoveItem(asItem);
+	SetLocalVarInt("CanLever", 1);
+	SetEntityActive("ScriptArea_6", false);
+}
+void VertOpen(string &in asEntity, int alState)
+{
+	if(alState == 1)
+	{
+	    SetEntityActive("safety_normal_vert_1", false);
+		PlayGuiSound("unlock_door.snt", 1);
+	}
+}
+void BreakPlanks(string &in asItem, string &in asEntity)
+{
+    SetEntityActive("wooden_boards_block_1", false);
+	SetEntityActive("wooden_boards_block_2", true);
+	SetEntityActive("ScriptArea_2", false);
+	SetLocalVarInt("PlanksRemoved", 1);
+	RemoveItem(asItem);
+	PlayGuiSound("break_wood.snt", 1);
+}
+void OpenMaster(string &in asItem, string &in asEntity)
+{
+    PlayGuiSound("unlock_door.snt", 1);
+	RemoveItem(asItem);
+	SetLocalVarInt("MasterOpened", 1);
+}

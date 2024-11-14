@@ -1,0 +1,19 @@
+<Material>
+    <Main BlendMode="Add" DepthTest="true" PhysicsMaterial="Glass" Type="water" UseAlpha="false" />
+    <TextureUnits>
+        <Diffuse AnimFrameTime="0" AnimMode="None" File="mirror.dds" MipMaps="false" Type="2D" Wrap="ClampToEdge" />
+    </TextureUnits>
+    <SpecificVariables>
+        <Var Name="RefractionScale" Value="0" />
+        <Var Name="FrenselBias" Value="1" />
+        <Var Name="FrenselPow" Value="1" />
+        <Var Name="WaveSpeed" Value="0" />
+        <Var Name="WaveAmplitude" Value="0" />
+        <Var Name="WaveFreq" Value="0" />
+        <Var Name="ReflectionFadeStart" Value="0" />
+        <Var Name="ReflectionFadeEnd" Value="0" />
+        <Var Name="HasReflection" Value="true" />
+        <Var Name="OcclusionCullWorldReflection" Value="false" />
+        <Var Name="LargeSurface" Value="false" />
+    </SpecificVariables>
+</Material>

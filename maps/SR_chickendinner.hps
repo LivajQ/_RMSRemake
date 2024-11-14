@@ -1,0 +1,282 @@
+void OnStart()
+{
+
+}
+void OnEnter()
+{
+	FadeOut(0.01f);
+	SetPlayerActive(false);
+	AddTimer("a", 3.0f, "BeginSequence");
+	AddTimer("a", 1.0f, "FallPrevent");
+	SetLocalVarInt("FinalRank", 1);
+	SetEnemySanityDecreaseActive("servant_*", false);
+	AutoSave();
+}
+void OnLeave()
+{
+	RemoveTimer("a");
+}
+void FallPrevent(string &in asTimer)
+{
+	if(GetPlayerPosY() <= -20.0f) TeleportPlayer("PlayerStartArea_1");
+	AddTimer("a", 1.0f, "FallPrevent");
+}
+void BeginSequence(string &in asTimer)
+{
+	FadeIn(0.01f);
+	SetPlayerActive(true);
+	PlayMusic("omgyouwon", true, 1, 0.01f, 1, false);
+	for(int x = 1; x <= 4; x++)
+	{
+		SetEntityActive("servant_bitch_" + x, true);
+		AddEnemyPatrolNode("servant_bitch_" + x, "PathNodeArea_" + x, 0.001f, "Idle");
+	}
+	SetMessage("WinMess", "Congrats", 4.0f);
+	AddTimer("a", 5.0f, "Sequence");
+}
+void Sequence(string &in asTimer)
+{
+	SetMessage("WinMess", "RankingTime", 3.0f);
+	AddTimer("a", 4.0f, "Sequence2");
+}
+void Sequence2(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerInvincible") == 1)
+	{
+		SetMessage("WinMess", "InvincibleOn", 2.0f);
+		SetLocalVarInt("FinalRank", 1);
+		AddTimer("a", 3.0f, "ShowRewards");
+	}
+	else
+	{
+		SetMessage("WinMess", "InvincibleOff", 2.0f);
+		AddTimer("a", 3.0f, "Sequence3");
+	}
+}
+void Sequence3(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerEnemies") <= 0)
+	{
+		SetMessage("WinMess", "EnemiesNone", 2.0f);
+		SetLocalVarInt("FinalRank", 1);
+		AddTimer("a", 3.0f, "ShowRewards");
+	}
+	else
+	{
+		SetMessage("WinMess", "Enemies" + GetGlobalVarInt("WinnerEnemies"), 2.0f);
+		AddTimer("a", 3.0f, "Sequence4");
+	}
+}
+void Sequence4(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerShield") == 0)
+	{
+		SetMessage("WinMess", "ShieldNo", 2.0f);
+		AddTimer("a", 3.0f, "Sequence5");
+	}
+	else
+	{
+		SetMessage("WinMess", "ShieldYes", 2.0f);
+		AddTimer("a", 3.0f, "Sequence5");
+	}
+}
+void Sequence5(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerSpeed") == 0)
+	{
+		SetMessage("WinMess", "SpeedNo", 2.0f);
+		AddTimer("a", 3.0f, "Sequence6");
+	}
+	else
+	{
+		SetMessage("WinMess", "SpeedYes", 2.0f);
+		AddTimer("a", 3.0f, "Sequence6");
+	}
+}
+void Sequence6(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerRespawns") == 0)
+	{
+		SetMessage("WinMess", "RespawnsNo", 2.0f);
+		AddTimer("a", 3.0f, "Sequence66");
+	}
+	else
+	{
+		SetMessage("WinMess", "RespawnsYes", 2.0f);
+		AddTimer("a", 3.0f, "Sequence66");
+	}
+}
+void Sequence66(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerAggressive") == 0)
+	{
+		SetMessage("WinMess", "AggressiveNo", 2.0f);
+		AddTimer("a", 3.0f, "Sequence7");
+	}
+	else if(GetGlobalVarInt("WinnerAggressive") == 1)
+	{
+		SetMessage("WinMess", "AggressiveYes", 2.0f);
+		AddTimer("a", 3.0f, "Sequence7");
+	}
+	else
+	{
+		SetMessage("WinMess", "AggressiveYesYes", 2.0f);
+		AddTimer("a", 3.0f, "Sequence7");
+	}
+}
+void Sequence7(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerSeizure") == 0)
+	{
+		SetMessage("WinMess", "SeizureNo", 2.0f);
+		AddTimer("a", 3.0f, "Sequence8");
+	}
+	else
+	{
+		SetMessage("WinMess", "SeizureYes", 2.0f);
+		AddTimer("a", 3.0f, "Sequence8");
+	}
+}
+void Sequence8(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerMagician") == 0)
+	{
+		SetMessage("WinMess", "MagicianNo", 2.0f);
+		AddTimer("a", 3.0f, "Sequence9");
+	}
+	else
+	{
+		SetMessage("WinMess", "MagicianYes", 2.0f);
+		AddTimer("a", 3.0f, "Sequence9");
+	}
+}
+void Sequence9(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerMines") == 0)
+	{
+		SetMessage("WinMess", "MinesNo", 2.0f);
+		AddTimer("a", 3.0f, "Sequence10");
+	}
+	else
+	{
+		SetMessage("WinMess", "MinesYes", 2.0f);
+		AddTimer("a", 3.0f, "Sequence10");
+	}
+}
+void Sequence10(string &in asTimer)
+{
+	SetMessage("WinMess", "Difficulty" + GetGlobalVarInt("WinnerDifficulty"), 2.0f);
+	AddTimer("a", 3.0f, "CalculateReward");
+}
+void CalculateReward(string &in asTimer)
+{
+	int Enemies = GetGlobalVarInt("WinnerEnemies");
+	int Difficulty = GetGlobalVarInt("WinnerDifficulty");
+	int Shield = GetGlobalVarInt("WinnerShield");
+	int Seizure = GetGlobalVarInt("WinnerSeizure");
+	int Speed = GetGlobalVarInt("WinnerSpeed");
+	int Respawns = GetGlobalVarInt("WinnerRespawns");
+	int Aggressive = GetGlobalVarInt("WinnerAggressive");
+	int Magician = GetGlobalVarInt("WinnerMagician");
+	int Mines = GetGlobalVarInt("WinnerMines");
+	int[] BoolCollection = {Shield, Seizure, Speed, Respawns, Magician, Mines};
+	int[] PointsForEach = {-4, 8, -6, -3, 3, 2}; 
+	int PointsEnemy = Enemies;
+	int PointsDifficulty = ((Difficulty - 1)* 2) + 1; 
+	int PointsAggressive = Aggressive * 3; 
+	int BoolPoints = 0;
+	for(int x = 0; x < BoolCollection.length(); x++)
+	{
+		if(BoolCollection[x] == 1) BoolCollection[x] = PointsForEach[x];
+		else BoolCollection[x] = 0;
+		BoolPoints += BoolCollection[x];
+	}
+	int FinalScore = PointsEnemy + PointsDifficulty + BoolPoints + PointsAggressive;
+	string DebugScore = FinalScore;
+	AddDebugMessage(DebugScore, false);
+	SetLocalVarInt("FinalRank", ChooseRank(FinalScore));
+	AddTimer("a", 2.0f, "ShowRewards");
+}
+int ChooseRank(int Score)
+{
+	int[] Thresholds = {0, 3, 7, 10, 14, 17, 20, 22, 24, 26};
+	for (int x = Thresholds.length(); x > 0; x--)
+    {
+        if(Score >= Thresholds[x - 1]) return x;
+    }
+    return 1;
+}
+void ShowRewards(string &in asTimer)
+{
+	string Image;
+	switch(GetLocalVarInt("FinalRank"))
+	{
+		case 1:
+			Image = "ImageUninstall";
+			PlayGuiSound("iaredisgust.snt", 1);
+			SetMessage("WinMess", "RankUninstall", 4.0f);
+			break;
+		case 2:
+			Image = "ImageHope";
+			PlayGuiSound("iaredisgust.snt", 1);
+			SetMessage("WinMess", "RankHope", 4.0f);
+			break;
+		case 3:
+			Image = "ImageGolf";
+			PlayGuiSound("iaredisgust.snt", 1);
+			SetMessage("WinMess", "RankGolf", 4.0f);
+			break;
+		case 4:
+			Image = "ImageBuySkill";
+			PlayGuiSound("iaredisgust.snt", 1);
+			SetMessage("WinMess", "RankBuySkill", 4.0f);
+			break;
+		case 5:
+			Image = "ImageNormie";
+			PlayGuiSound("waldek.snt", 1);
+			SetMessage("WinMess", "RankNormie", 4.0f);
+			break;
+		case 6:
+			Image = "ImageGood";
+			PlayGuiSound("waldek.snt", 1);
+			SetMessage("WinMess", "RankGood", 4.0f);
+			break;
+		case 7:
+			Image = "ImageChad";
+			PlayGuiSound("hoehoehoe.snt", 1);
+			SetMessage("WinMess", "RankChad", 4.0f);
+			break;
+		case 8:
+			Image = "ImageMaster";
+			PlayGuiSound("hoehoehoe.snt", 1);
+			SetMessage("WinMess", "RankMaster", 4.0f);
+			break;
+		case 9:
+			Image = "ImageGigachad";
+			PlayGuiSound("hoehoehoe.snt", 1);
+			SetMessage("WinMess", "RankGigachad", 4.0f);
+			break;
+		case 10:
+			Image = "ImageGod";
+			PlayGuiSound("hoehoehoe.snt", 1);
+			SetMessage("WinMess", "RankGod", 4.0f);
+			break;
+		default:
+			Image = "ImageUninstall";
+			PlayGuiSound("iaredisgust.snt", 1);
+			SetMessage("WinMess", "RankUninstall", 4.0f);
+			break;
+	}
+	SetEntityPos(Image, 0.5f, 2.0f, 4.5f);
+	StartPlayerLookAt("ScriptArea_1", 1.5f, 1.5f, "");
+	AddTimer("a", 2.5, "PostRewards");
+}
+void PostRewards(string &in asTimer)
+{
+	StopPlayerLookAt();
+	AddTimer("a", 3.0f, "Returner");
+}
+void Returner(string &in asTimer)
+{
+	ChangeMap("SR_spawn.map", "PlayerStartArea_3", "", "");
+}
