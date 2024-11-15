@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author/>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments/>
+    </contributor>
+    <created>2024-04-06T19:46:49Z</created>
+    <keywords/>
+    <modified>2024-04-06T19:46:49Z</modified>
+    <revision/>
+    <subject/>
+    <title/>
+    <unit meter="1.000000" name="centimeter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_animations>
+    <animation id="mrkrabs-anim" name="mrkrabs">
+      <animation>
+        <source id="mrkrabs-Matrix-animation-input">
+          <float_array id="mrkrabs-Matrix-animation-input-array" count="2">
+
+0.000000 0.041667</float_array>
+          <technique_common>
+            <accessor source="#mrkrabs-Matrix-animation-input-array" count="2">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="mrkrabs-Matrix-animation-output-transform">
+          <float_array id="mrkrabs-Matrix-animation-output-transform-array" count="32">
+
+1.000000 0.000000 0.000000 0.000000 0.000000 -0.000000 1.000000 0.000000 0.000000 -1.000000 -0.000000 0.000000 0.000000 0.000000 0.000000 1.000000
+1.000000 0.000000 0.000000 0.000000 0.000000 -0.000000 1.000000 0.000000 0.000000 -1.000000 -0.000000 0.000000 0.000000 0.000000 0.000000 1.000000</float_array>
+          <technique_common>
+            <accessor source="#mrkrabs-Matrix-animation-output-transform-array" count="2" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="mrkrabs-Interpolations">
+          <Name_array id="mrkrabs-Interpolations-array" count="2">
+ LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#mrkrabs-Interpolations-array" count="2">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="mrkrabs-Matrix-animation-transform">
+          <input semantic="INPUT" source="#mrkrabs-Matrix-animation-input"/>
+          <input semantic="OUTPUT" source="#mrkrabs-Matrix-animation-output-transform"/>
+          <input semantic="INTERPOLATION" source="#mrkrabs-Interpolations"/>
+        </sampler>
+        <channel source="#mrkrabs-Matrix-animation-transform" target="mrkrabs/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Bone-anim" name="Bone">
+      <animation>
+        <source id="Bone-Matrix-animation-input">
+          <float_array id="Bone-Matrix-animation-input-array" count="2">
+
+0.000000 0.041667</float_array>
+          <technique_common>
+            <accessor source="#Bone-Matrix-animation-input-array" count="2">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Bone-Matrix-animation-output-transform">
+          <float_array id="Bone-Matrix-animation-output-transform-array" count="32">
+
+1.000000 0.000000 0.000000 0.000000 0.000000 -0.000000 -1.000000 0.000000 0.000000 1.000000 -0.000000 0.000000 0.000000 0.000000 0.000000 1.000000
+1.000000 0.000000 0.000000 0.000000 0.000000 -0.000000 -1.000000 0.000000 0.000000 1.000000 -0.000000 0.000000 0.000000 0.000000 0.000000 1.000000</float_array>
+          <technique_common>
+            <accessor source="#Bone-Matrix-animation-output-transform-array" count="2" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Bone-Interpolations">
+          <Name_array id="Bone-Interpolations-array" count="2">
+ LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#Bone-Interpolations-array" count="2">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Bone-Matrix-animation-transform">
+          <input semantic="INPUT" source="#Bone-Matrix-animation-input"/>
+          <input semantic="OUTPUT" source="#Bone-Matrix-animation-output-transform"/>
+          <input semantic="INTERPOLATION" source="#Bone-Interpolations"/>
+        </sampler>
+        <channel source="#Bone-Matrix-animation-transform" target="Bone/matrix"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="idle" name="idle">
+      <node name="mrkrabs" id="mrkrabs" sid="mrkrabs">
+        <matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 -0.000000 1.000000 0.000000 0.000000 -1.000000 -0.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix>
+        <extra>
+          <technique profile="FCOLLADA">
+            <visibility>1.000000</visibility>
+          </technique>
+        </extra>
+        <node name="Bone" id="Bone" sid="Bone" type="JOINT">
+          <matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 -0.000000 -1.000000 0.000000 0.000000 1.000000 -0.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix>
+          <extra>
+            <technique profile="FCOLLADA">
+              <visibility>1.000000</visibility>
+            </technique>
+          </extra>
+          <node name="Bone_end" id="Bone_end" sid="Bone_end" type="JOINT">
+            <matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 1.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix>
+            <extra>
+              <technique profile="FCOLLADA">
+                <visibility>1.000000</visibility>
+              </technique>
+            </extra>
+          </node>
+        </node>
+      </node>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>24.000000</frame_rate>
+        </technique>
+        <technique profile="FCOLLADA">
+          <start_time>0.000000</start_time>
+          <end_time>1.000000</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#idle"/>
+  </scene>
+</COLLADA>

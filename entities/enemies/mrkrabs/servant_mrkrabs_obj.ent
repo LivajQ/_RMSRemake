@@ -1,0 +1,98 @@
+<Entity>
+    <EditorSession>
+        <Performance CamClipPlanes="0.05 1000" LightsActive="true" PSActive="true" ShowFog="true" ShowSkybox="true" WorldReflection="true" />
+        <ViewportConfig BGColor="0.2 0.2 0.2 1" GAmbientLight="true" GPointLight="true" GridSnap="false" GridSnapSeparation="0.25" SelectedViewport="3" UsingEnlargedViewport="true">
+            <Viewport CameraPosition="0 0 20" CameraTarget="0 0 0" CameraZoom="0.916291" GridHeight="0" GridPlane="2" Preset="0" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+            <Viewport CameraPosition="20 0 0" CameraTarget="0 0 0" CameraZoom="0.916291" GridHeight="0" GridPlane="0" Preset="1" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+            <Viewport CameraPosition="0 20 0" CameraTarget="0 0 0" CameraZoom="0.916291" GridHeight="0" GridPlane="1" Preset="2" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+            <Viewport CameraPosition="0.124936 1.60889 4.20569" CameraTarget="-0.111803 0.627765 -0.488257" CameraZoom="2.34315" GridHeight="0" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+        </ViewportConfig>
+    </EditorSession>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/servant_mrkrabs.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="krabs" Rotation="0 0 0" Scale="0.5 0.5 0.5" SubMeshID="0" Tag="" WorldPos="0 0 0" />
+        </Mesh>
+        <Bones>
+            <Bone ID="1" Name="krabs" />
+            <Bone ID="2" Name="mrkrabs" />
+            <Bone ID="3" Name="Bone" />
+            <Bone ID="4" Name="Bone_end" />
+        </Bones>
+        <Shapes>
+            <BodyShape Active="true" ID="5" Name="Shape_1" RelativeRotation="0 -0 0" RelativeScale="1 2.15 1" RelativeTranslation="0 0 0" Rotation="0 0 0" Scale="0.700061 1.29 1" ShapeType="Box" Tag="" WorldPos="-0.0148065 0.685725 -0.0405042" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="5" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="6" LinearDamping="5" Mass="5" Material="Default" MaxAngularSpeed="5" MaxLinearSpeed="5" Name="Body_1" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="0.700061 0.6 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.0148065 0.685725 -0.0405042">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="5" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations>
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="Idle" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="Run" SpecialEventTime="0" Speed="0.2" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="Walk" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="SwingClaws01" SpecialEventTime="0.5" Speed="1.1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="SwingClaws02" SpecialEventTime="0.5" Speed="1.1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="SwingLaunch" SpecialEventTime="0.45" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="BreakDoor" SpecialEventTime="0.5" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="Flinch" SpecialEventTime="0" Speed="0.75" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="IdleExtra1" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="IdleExtra2" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="IdleExtra3" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="Notice1" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/mrkrabs/animations/idle.dae_anim" Name="Notice2" SpecialEventTime="0" Speed="1" />
+        </Animations>
+    </ModelData>
+    <UserDefinedVariables EntitySubType="Grab" EntityType="Object">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MaxFocusDistance" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="false" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="100" />
+        <Var Name="BreakEntity" Value="" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakParticleSystem" Value="" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="IsFood" Value="false" />
+        <Var Name="GrabUseDepth" Value="false" />
+        <Var Name="GrabDepth" Value="1.5" />
+        <Var Name="GrabDepthInc" Value="0.15" />
+        <Var Name="GrabMinDepth" Value="1.0" />
+        <Var Name="GrabMaxDepth" Value="2.2" />
+        <Var Name="GrabUseOffset" Value="false" />
+        <Var Name="GrabPositionOffset" Value="0" />
+        <Var Name="GrabRotationOffset" Value="0" />
+        <Var Name="GrabThrowImpulse" Value="10" />
+        <Var Name="GrabMassMul" Value="0.1" />
+        <Var Name="GrabForceMul" Value="1" />
+        <Var Name="GrabTorqueMul" Value="1" />
+        <Var Name="GrabUseRotation" Value="true" />
+        <Var Name="GrabSkipNonOuterBodies" Value="false" />
+    </UserDefinedVariables>
+</Entity>

@@ -1,0 +1,144 @@
+<Entity>
+    <EditorSession>
+        <Performance CamClipPlanes="0.05 1000" LightsActive="true" PSActive="true" ShowFog="true" ShowSkybox="true" WorldReflection="true" />
+        <ViewportConfig BGColor="0.2 0.2 0.2 1" GAmbientLight="true" GPointLight="true" GridSnap="false" GridSnapSeparation="0.25" SelectedViewport="3" UsingEnlargedViewport="true">
+            <Viewport CameraPosition="0 0 20" CameraTarget="0 0 0" CameraZoom="0.916291" GridHeight="0" GridPlane="2" Preset="0" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+            <Viewport CameraPosition="20 0 0" CameraTarget="0 0 0" CameraZoom="0.916291" GridHeight="0" GridPlane="0" Preset="1" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+            <Viewport CameraPosition="0 20 0" CameraTarget="0 0 0" CameraZoom="0.916291" GridHeight="0" GridPlane="1" Preset="2" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+            <Viewport CameraPosition="0.0725996 -0.0511646 0.218015" CameraTarget="-0.111803 0.627765 -0.488257" CameraZoom="3.91515" GridHeight="0" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+        </ViewportConfig>
+    </EditorSession>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/AA/enemies/plankton/servant_plankton.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="pCube1" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" />
+        </Mesh>
+        <Bones>
+            <Bone ID="1" Name="pCube1" />
+            <Bone ID="2" Name="Plankton" />
+            <Bone ID="3" Name="Bone" />
+            <Bone ID="4" Name="Bone_end" />
+        </Bones>
+        <Shapes />
+        <Bodies />
+        <Joints />
+        <Animations>
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="Idle" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="Run" SpecialEventTime="0" Speed="0.2" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="Walk" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="SwingClaws01" SpecialEventTime="0.5" Speed="1.1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="SwingClaws02" SpecialEventTime="0.5" Speed="1.1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="SwingLaunch" SpecialEventTime="0.45" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="BreakDoor" SpecialEventTime="0.5" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="Flinch" SpecialEventTime="0" Speed="0.75" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="IdleExtra1" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="IdleExtra2" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="IdleExtra3" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="Notice1" SpecialEventTime="0" Speed="1" />
+            <Animation File="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/entities/enemies/plankton/animations/idle.dae_anim" Name="Notice2" SpecialEventTime="0" Speed="1" />
+        </Animations>
+    </ModelData>
+    <UserDefinedVariables EntitySubType="" EntityType="Enemy_Grunt">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="AutoRemoveAtPathEnd" Value="false" />
+        <Var Name="SightRange" Value="999" />
+        <Var Name="DarknessSightRange" Value="999" />
+        <Var Name="HearVolume" Value="0.03" />
+        <Var Name="FOV" Value="360" />
+        <Var Name="FOVXMul" Value="1" />
+        <Var Name="ActivationDistance" Value="999" />
+        <Var Name="MaxRegenHealth" Value="100" />
+        <Var Name="RegenHealthSpeed" Value="5" />
+        <Var Name="DangerMusic" Value="" />
+        <Var Name="DangerMusicPrio" Value="0" />
+        <Var Name="SearchMusic" Value="" />
+        <Var Name="SearchMusicPrio" Value="0" />
+        <Var Name="AttackMusic" Value="" />
+        <Var Name="AttackMusicPrio" Value="0" />
+        <Var Name="PlayerSearchMaxAngle" Value="45" />
+        <Var Name="PlayerSearchMinDistMul" Value="0.5" />
+        <Var Name="PlayerSearchMaxDistMul" Value="2" />
+        <Var Name="PlayerSearchTime" Value="10" />
+        <Var Name="PlayerPatrolMaxAngle" Value="110" />
+        <Var Name="PlayerPatrolMinDist" Value="8" />
+        <Var Name="PlayerPatrolMaxDist" Value="999" />
+        <Var Name="Body_Size" Value="0.04 1.85 0.04" />
+        <Var Name="Body_Mass" Value="50" />
+        <Var Name="Body_AccurateClimbing" Value="true" />
+        <Var Name="Body_MaxNoSlideSlopeAngle" Value="45" />
+        <Var Name="Body_MaxPushMass" Value="40" />
+        <Var Name="Body_PushForce" Value="200" />
+        <Var Name="Body_CharacterMaxPushMass" Value="20" />
+        <Var Name="Body_CharacterPushForce" Value="100" />
+        <Var Name="Body_MaxStepSize" Value="0.5" />
+        <Var Name="Body_StepClimbSpeed" Value="6.0" />
+        <Var Name="Body_OffsetRot" Value="0 180 0" />
+        <Var Name="Body_OffsetTrans" Value="0 -0.02 0" />
+        <Var Name="Walk_ForwardSpeed" Value="7" />
+        <Var Name="Walk_BackwardSpeed" Value="0.4" />
+        <Var Name="Walk_ForwardAcc" Value="8" />
+        <Var Name="Walk_ForwardDeacc" Value="18.0" />
+        <Var Name="Run_ForwardSpeed" Value="10" />
+        <Var Name="Run_BackwardSpeed" Value="6" />
+        <Var Name="Run_ForwardAcc" Value="18" />
+        <Var Name="Run_ForwardDeacc" Value="8" />
+        <Var Name="TurnSpeedMul" Value="60" />
+        <Var Name="TurnMaxSpeed" Value="12" />
+        <Var Name="TurnMinBreakAngle" Value="100" />
+        <Var Name="TurnBreakMul" Value="0.01" />
+        <Var Name="MoveSpeedAnimMul" Value="1.2" />
+        <Var Name="StoppedToWalkSpeed" Value="0.15" />
+        <Var Name="WalkToStoppedSpeed" Value="0.1" />
+        <Var Name="WalkToRunSpeed" Value="3.2" />
+        <Var Name="RunToWalkSpeed" Value="2.8" />
+        <Var Name="WaterStepSpeedWalk" Value="3.0" />
+        <Var Name="WaterStepSpeedRun" Value="5.0" />
+        <Var Name="WaterStepSpeedMisc" Value="3.0" />
+        <Var Name="HitPS_Sword" Value="hit/blood.ps" />
+        <Var Name="HitSound_Sword" Value="grunt/hit_generic" />
+        <Var Name="HitPS_Club" Value="hit/blood.ps" />
+        <Var Name="HitSound_Club" Value="grunt/hit_generic" />
+        <Var Name="HitPS_Bullet" Value="hit/blood.ps" />
+        <Var Name="HitSound_Bullet" Value="grunt/hit_generic" />
+        <Var Name="HitPS_Dud" Value="" />
+        <Var Name="HitSound_Dud" Value="" />
+        <Var Name="AmbientSound_Idle" Value="DrJrSounds.snt" />
+        <Var Name="AmbientMinTime_Idle" Value="1" />
+        <Var Name="AmbientMaxTime_Idle" Value="3" />
+        <Var Name="AmbientSound_Alert" Value="DrJrSounds.snt" />
+        <Var Name="AmbientMinTime_Alert" Value="1" />
+        <Var Name="AmbientMaxTime_Alert" Value="3" />
+        <Var Name="AmbientSound_Hunt" Value="C:/Program Files (x86)/Steam/steamapps/common/Amnesia The Dark Descent/custom_stories/Amnesia-Experiments/sounds/DrJrSounds.snt" />
+        <Var Name="AmbientMinTime_Hunt" Value="1" />
+        <Var Name="AmbientMaxTime_Hunt" Value="3" />
+        <Var Name="NormalAttackDistance" Value="1.9" />
+        <Var Name="NormalDamageSize" Value="1 1.6 1.75" />
+        <Var Name="NormalDamageOffset" Value="0 0 1.2" />
+        <Var Name="NormalAttackHitSound" Value="grunt/attack_claw_hit" />
+        <Var Name="NormalAttackDamage" Value="1 2" />
+        <Var Name="NormalAttackForce" Value="30 5" />
+        <Var Name="NormalAttackStrength" Value="1" />
+        <Var Name="NormalDamageType" Value="Claws" />
+        <Var Name="BreakDoorAttackDamage" Value="26 26" />
+        <Var Name="BreakDoorAttackForce" Value="30 5" />
+        <Var Name="BreakDoorAttackStrength" Value="6" />
+        <Var Name="BreakDoorAttackHitSound" Value="grunt/attack_claw_hit" />
+        <Var Name="BreakDoorDamageType" Value="BloodSplat" />
+        <Var Name="NoticeSound" Value="" />
+        <Var Name="GiveUpNoticeSound" Value="" />
+        <Var Name="EnabledSound" Value="" />
+        <Var Name="GroggyDamageCount" Value="1" />
+        <Var Name="AlertToHuntDistance" Value="999" />
+        <Var Name="AlertToInstantHuntDistance" Value="-20" />
+        <Var Name="HuntPauseMinTime" Value="2.0" />
+        <Var Name="HuntPauseMaxTime" Value="4.5" />
+        <Var Name="IncreaseAlertSpeedDistance" Value="6" />
+        <Var Name="IncreasedAlertSpeedMul" Value="1.25" />
+        <Var Name="AlertRunTowardsToHuntLimit" Value="999" />
+        <Var Name="AlertRunTowardsCheckDistance" Value="6" />
+        <Var Name="IdleExtraTimeMin" Value="2" />
+        <Var Name="IdleExtraTimeMax" Value="6" />
+        <Var Name="IdleExtraNum" Value="3" />
+    </UserDefinedVariables>
+</Entity>
