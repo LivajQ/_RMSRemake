@@ -5,13 +5,13 @@
             <Viewport CameraPosition="0 0 180" CameraTarget="0 0 0" CameraZoom="0" GridHeight="0" GridPlane="2" Preset="0" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
             <Viewport CameraPosition="180 0 0" CameraTarget="0 0 0" CameraZoom="0" GridHeight="0" GridPlane="0" Preset="1" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
             <Viewport CameraPosition="0 180 0" CameraTarget="0 0 0" CameraZoom="0" GridHeight="0" GridPlane="1" Preset="2" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
-            <Viewport CameraPosition="5.19912 14.3694 4.98741" CameraTarget="-2.68711 10.5 3.12285" CameraZoom="1.71702" GridHeight="10.5" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="false" UsingLTCam="true" />
+            <Viewport CameraPosition="0.201288 13.7983 0.38433" CameraTarget="1.31652 10.5 4.57285" CameraZoom="2.21702" GridHeight="10.5" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="false" UsingLTCam="true" />
         </ViewportConfig>
         <Groups>
             <Group ID="0" Name="None" Visible="true" />
         </Groups>
     </EditorSession>
-    <MapData FogActive="false" FogColor="1 1 1 1" FogCulling="true" FogEnd="20" FogFalloffExp="1" FogStart="0" GlobalDecalMaxTris="300" Name="" SkyBoxActive="true" SkyBoxColor="1 1 1 1" SkyBoxTexture="custom_stories/Amnesia-Experiments/BACKUP/textures/pure_sky.dds">
+    <MapData FogActive="false" FogColor="1 1 1 1" FogCulling="true" FogEnd="20" FogFalloffExp="1" FogStart="0" GlobalDecalMaxTris="300" Name="" SkyBoxActive="true" SkyBoxColor="1 1 1 1" SkyBoxTexture="_RMSRemake/textures/pure_sky.dds">
         <MapContents>
             <FileIndex_StaticObjects NumOfFiles="0" />
             <FileIndex_Entities NumOfFiles="17">
@@ -19,8 +19,8 @@
                 <File Id="1" Path="entities/ABC/airhockey/airhockey_puck.ent" />
                 <File Id="2" Path="entities/ABC/airhockey/airhockey_fintex.ent" />
                 <File Id="3" Path="entities/AA/airhockey/airhockey.ent" />
-                <File Id="4" Path="entities/container/wood_box01/wood_box01.ent" />
-                <File Id="5" Path="entities/ornament/paintings/painting03/painting03_dynamic.ent" />
+                <File Id="4" Path="custom_stories/Voyage of Horror/entities/container/wood_box01/wood_box01.ent" />
+                <File Id="5" Path="custom_stories/Voyage of Horror/entities/ornament/paintings/painting03/painting03_dynamic.ent" />
                 <File Id="6" Path="entities/AA/enemies/Amnesia_Rebirth_GHOUL/ghoul.ent" />
                 <File Id="7" Path="entities/AA/enemies/flying_demon/flying_demon.ent" />
                 <File Id="8" Path="entities/AA/enemies/fp_monster_chubby/Monster Tutorial.ent" />

@@ -1,3 +1,5 @@
+#include "SR_Maths.hps"
+
 void OnStart()
 {
 	AddEntityCollideCallback("Airhockey_Fintex", "Bank_West", "BangZ", false, 1);
@@ -76,6 +78,10 @@ void BangZ(string &in asParent, string &in asChild, int alState)
 void Starter0(string & in asTimer)
 {
 	PlayMusic("hockeystart.ogg", true, 1, 1, 2, false);
+	SetEntityActive("l1_4", false);
+	SetEntityActive("l2_4", false);
+	SetEntityActive("l3_4", false);
+	SetEntityActive("l4_4", false);
 	AddTimer("", 3.5f, "Starter1");
 }
 void Starter1(string &in asTimer)
@@ -256,187 +262,6 @@ void NewRound(string &in asTimer)
 }
 void UpdateDisplay()
 {
-	int GoalYou = GetLocalVarInt("GoalsYou");
-	int GoalEnemy = GetLocalVarInt("GoalsEnemy");
-	string ScoreYou = GoalYou;
-	string ScoreEnemy = GoalEnemy;
-	int Digit1;
-	int Digit2;
-	
-	if(GoalYou <= 9) 
-	{	
-		NumberNull(1);
-		Digit2 = StringToInt(StringSub(ScoreYou, 0, 1));
-		FetchNumber(Digit2, 2);
-	}
-	else
-	{
-		Digit1 = StringToInt(StringSub(ScoreYou, 0, 1));
-		Digit2 = StringToInt(StringSub(ScoreYou, 1, 1));
-		FetchNumber(Digit1, 1);
-		FetchNumber(Digit2, 2);
-	}
-	
-	if(GoalEnemy <= 9) 
-	{	
-		NumberNull(3);
-		Digit2 = StringToInt(StringSub(ScoreEnemy, 0, 1));
-		FetchNumber(Digit2, 4);
-	}
-	else
-	{
-		Digit1 = StringToInt(StringSub(ScoreEnemy, 0, 1));
-		Digit2 = StringToInt(StringSub(ScoreEnemy, 1, 1));
-		FetchNumber(Digit1, 3);
-		FetchNumber(Digit2, 4);
-	}
-}
-void FetchNumber(int Digit, int Position)
-{
-	switch(Digit)
-	{
-		case 0:
-			NumberZero(Position);
-			break;
-		case 1:
-			NumberOne(Position);
-			break;
-		case 2:
-			NumberTwo(Position);
-			break;
-		case 3:
-			NumberThree(Position);
-			break;
-		case 4:
-			NumberFour(Position);
-			break;
-		case 5:
-			NumberFive(Position);
-			break;
-		case 6:
-			NumberSix(Position);
-			break;
-		case 7:
-			NumberSeven(Position);
-			break;
-		case 8:
-			NumberEight(Position);
-			break;
-		case 9:
-			NumberNine(Position);
-			break;
-		default:
-			NumberNull(Position);
-			break;
-	}
-}
-void NumberOne(int number)
-{
-	SetEntityActive("l" + number + "_1", false);
-	SetEntityActive("l" + number + "_2", false);
-	SetEntityActive("l" + number + "_3", true);
-	SetEntityActive("l" + number + "_4", false);
-	SetEntityActive("l" + number + "_5", false);
-	SetEntityActive("l" + number + "_6", true);
-	SetEntityActive("l" + number + "_7", false);
-}
-void NumberTwo(int number)
-{
-	SetEntityActive("l" + number + "_1", true);
-	SetEntityActive("l" + number + "_2", false);
-	SetEntityActive("l" + number + "_3", true);
-	SetEntityActive("l" + number + "_4", true);
-	SetEntityActive("l" + number + "_5", true);
-	SetEntityActive("l" + number + "_6", false);
-	SetEntityActive("l" + number + "_7", true);
-}
-void NumberThree(int number)
-{
-	SetEntityActive("l" + number + "_1", true);
-	SetEntityActive("l" + number + "_2", false);
-	SetEntityActive("l" + number + "_3", true);
-	SetEntityActive("l" + number + "_4", true);
-	SetEntityActive("l" + number + "_5", false);
-	SetEntityActive("l" + number + "_6", true);
-	SetEntityActive("l" + number + "_7", true);
-}
-void NumberFour(int number)
-{
-	SetEntityActive("l" + number + "_1", false);
-	SetEntityActive("l" + number + "_2", true);
-	SetEntityActive("l" + number + "_3", true);
-	SetEntityActive("l" + number + "_4", true);
-	SetEntityActive("l" + number + "_5", false);
-	SetEntityActive("l" + number + "_6", true);
-	SetEntityActive("l" + number + "_7", false);
-}
-void NumberFive(int number)
-{
-	SetEntityActive("l" + number + "_1", true);
-	SetEntityActive("l" + number + "_2", true);
-	SetEntityActive("l" + number + "_3", false);
-	SetEntityActive("l" + number + "_4", true);
-	SetEntityActive("l" + number + "_5", false);
-	SetEntityActive("l" + number + "_6", true);
-	SetEntityActive("l" + number + "_7", true);
-}
-void NumberSix(int number)
-{
-	SetEntityActive("l" + number + "_1", true);
-	SetEntityActive("l" + number + "_2", true);
-	SetEntityActive("l" + number + "_3", false);
-	SetEntityActive("l" + number + "_4", true);
-	SetEntityActive("l" + number + "_5", true);
-	SetEntityActive("l" + number + "_6", true);
-	SetEntityActive("l" + number + "_7", true);
-}
-void NumberSeven(int number)
-{
-	SetEntityActive("l" + number + "_1", true);
-	SetEntityActive("l" + number + "_2", false);
-	SetEntityActive("l" + number + "_3", true);
-	SetEntityActive("l" + number + "_4", false);
-	SetEntityActive("l" + number + "_5", false);
-	SetEntityActive("l" + number + "_6", true);
-	SetEntityActive("l" + number + "_7", false);
-}
-void NumberEight(int number)
-{
-	SetEntityActive("l" + number + "_1", true);
-	SetEntityActive("l" + number + "_2", true);
-	SetEntityActive("l" + number + "_3", true);
-	SetEntityActive("l" + number + "_4", true);
-	SetEntityActive("l" + number + "_5", true);
-	SetEntityActive("l" + number + "_6", true);
-	SetEntityActive("l" + number + "_7", true);
-}
-void NumberNine(int number)
-{
-	SetEntityActive("l" + number + "_1", true);
-	SetEntityActive("l" + number + "_2", true);
-	SetEntityActive("l" + number + "_3", true);
-	SetEntityActive("l" + number + "_4", true);
-	SetEntityActive("l" + number + "_5", false);
-	SetEntityActive("l" + number + "_6", true);
-	SetEntityActive("l" + number + "_7", true);
-}
-void NumberZero(int number)
-{
-	SetEntityActive("l" + number + "_1", true);
-	SetEntityActive("l" + number + "_2", true);
-	SetEntityActive("l" + number + "_3", true);
-	SetEntityActive("l" + number + "_4", false);
-	SetEntityActive("l" + number + "_5", true);
-	SetEntityActive("l" + number + "_6", true);
-	SetEntityActive("l" + number + "_7", true);
-}
-void NumberNull(int number)
-{
-	SetEntityActive("l" + number + "_1", false);
-	SetEntityActive("l" + number + "_2", false);
-	SetEntityActive("l" + number + "_3", false);
-	SetEntityActive("l" + number + "_4", false);
-	SetEntityActive("l" + number + "_5", false);
-	SetEntityActive("l" + number + "_6", false);
-	SetEntityActive("l" + number + "_7", false);
+	HockeyScoreUpdate(GetLocalVarInt("GoalsEnemy"), true);
+	HockeyScoreUpdate(GetLocalVarInt("GoalsYou"), false);
 }

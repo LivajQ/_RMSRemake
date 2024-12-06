@@ -362,3 +362,33 @@ void YouWin()
 	else SetGlobalVarInt("WinnerMines", 0);
 	ChangeMap("SR_chickendinner.map", "PlayerStartArea_1", "", "");
 }
+///////////////AIR HOCKEY///////////////
+void HockeyScoreUpdate(int Value, bool IsEnemy)
+{
+	string PointString = Value;
+	AddDebugMessage(PointString, false);
+	
+	int Offset = 0;
+	if(IsEnemy) Offset = 2;
+	int Corrector = GetCorrector(Value);	
+
+	for(int x = 1 + Offset; x <= 2 + Offset; x++)
+	{
+		string Pos = StringSub(PointString, x - 1 - Offset, 1);
+		int PosInt = StringToInt(Pos);
+		AddDebugMessage(Pos, false);
+		DigitDisplayHockey(x + Corrector - 5, PosInt, IsEnemy);
+	}
+}
+void DigitDisplayHockey(int Position, int Number, bool IsEnemy)
+{
+	int Offset = 0;
+	if(IsEnemy) Offset = 2;
+	
+	for(int x = 0; x < 7; x++)
+	{
+		bool Digit = DigitSetter(Number, x);
+		SetEntityActive("l" + Position + "_" + (x + 1), Digit);
+		AddDebugMessage("l" + Position + "_" + (x + 1), false);
+	}
+}

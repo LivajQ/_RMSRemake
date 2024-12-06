@@ -1,6 +1,6 @@
-#import "SR_EnemyFuncs.hps"
-#import "SR_MainMapsSettings.hps"
-#import "SR_Maths.hps"
+#include "SR_EnemyFuncs.hps"
+#include "SR_MainMapsSettings.hps"
+#include "SR_Maths.hps"
 
 void OnStart()
 {
