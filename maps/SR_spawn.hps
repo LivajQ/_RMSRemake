@@ -3,6 +3,7 @@
 #include "SR_ButtonsAndOptions.hps"
 #include "SR_Shop.hps"
 
+
 void OnStart()
 {
 	SetLocalVarInt("ChosenMap", 1);
@@ -23,6 +24,7 @@ void OnStart()
 	SetGlobalVarInt("ActiveIllusioner", 1);
 	SetGlobalVarInt("ActiveBull", 1);
 	SetGlobalVarInt("ActiveKrabs", 1);
+	SetGlobalVarInt("ActiveScp173", 1);
 	SetGlobalVarInt("SetTheme", 1);
 	SetGlobalVarInt("SetDifficulty", 3);
 	SetGlobalVarInt("SetInvincible", 0);
@@ -34,6 +36,7 @@ void OnStart()
 	SetGlobalVarInt("SetRespawns", 0);
 	SetGlobalVarInt("SetOverload", 0);
 	SetGlobalVarInt("SetAggressive", 0);
+	SetGlobalVarInt("SetUnfair", 0);
 	SetGlobalVarString("OverloadEnemy", "Magician");
 	SetGlobalVarInt("PurchasedShieldL", 0);
 	SetGlobalVarInt("PurchasedShieldH", 0);
@@ -78,6 +81,7 @@ void OnStart()
 	SetEntityPlayerInteractCallback("button_simple_23", "ChangeOverload", false);
 	SetEntityPlayerInteractCallback("button_simple_24", "ChangeOverEnemy", false);
 	SetEntityPlayerInteractCallback("button_simple_30", "ChangeAggressive", false);
+	SetEntityPlayerInteractCallback("button_simple_31", "ChangeUnfair", false);
 	SetEntityPlayerInteractCallback("button_simple_28", "ResetPlaylist", false);
 	SetEntityPlayerInteractCallback("button_simple_26", "StartPlaylist", false);
 	SetEntityPlayerInteractCallback("button_simple_25", "GoNextPlaylist", false);

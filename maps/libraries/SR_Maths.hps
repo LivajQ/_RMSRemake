@@ -61,6 +61,7 @@ void CalculateReward(bool IsWinner)
 	float TooManyMinesMultiplier = 1.0f;
 	float EnemiesMultiplier = 1.0f;
 	float DifficultyMultiplier = 1.0f;
+	float Unfair173Multiplier = 1.0f;
 	if(GetGlobalVarInt("SetInvincible") == 1) SetMessage("Info", "NoCashInvincible", 4.0f);
 	else if(GetLocalVarInt("EnemyCount") < 4) SetMessage("Info", "NoCashEnemies", 4.0f);
 	else
@@ -73,18 +74,19 @@ void CalculateReward(bool IsWinner)
 		if(GetGlobalVarInt("SetRespawns") == 1) RespawnsMultiplier = 0.4f;
 		if(GetGlobalVarInt("SetAggressive") == 1) RespawnsMultiplier = 2.0f;
 		if(GetGlobalVarInt("SetAggressive") == 2) RespawnsMultiplier = 4.0f;
+		if(GetGlobalVarInt("SetUnfair") == 1 && GetGlobalVarInt("ActiveScp173") == 1) Unfair173Multiplier = 2.0f;
 		if(GetGlobalVarInt("SetMagician") == 1 && GetGlobalVarInt("ActiveMagician") == 1) CrazyMagicianMultiplier = 2.5f;
 		if(GetGlobalVarInt("SetMines") == 1 && GetGlobalVarInt("ActiveRafalala") == 1) TooManyMinesMultiplier = 2.0f;
 		EnemiesMultiplier = GetLocalVarInt("EnemyCount") * 0.15f;
 		DifficultyMultiplier = GetGlobalVarInt("SetDifficulty") * 0.3f;
 		float TotalReward = 10 * ShieldMultiplier * SeizureMultiplier * SpeedMultiplier * RespawnsMultiplier * AggressiveMultiplier
-							* CrazyMagicianMultiplier * TooManyMinesMultiplier * EnemiesMultiplier * DifficultyMultiplier;
+							* CrazyMagicianMultiplier * TooManyMinesMultiplier * EnemiesMultiplier * DifficultyMultiplier * Unfair173Multiplier;
 		
-		if(IsWinner) TotalReward *= 8;
+		if(IsWinner) TotalReward *= 4;
 
 		else
 		{
-			
+		
 		}
 		AddGlobalVarInt("Cash", TotalReward);
 	}
@@ -356,6 +358,8 @@ void YouWin()
 	SetGlobalVarInt("WinnerSpeed", GetGlobalVarInt("SetSpeed"));
 	SetGlobalVarInt("WinnerRespawns", GetGlobalVarInt("SetRespawns"));
 	SetGlobalVarInt("WinnerAggressive", GetGlobalVarInt("SetAggressive"));
+	if(GetGlobalVarInt("SetUnfair") == 1 && GetGlobalVarInt("ActiveScp173") == 1) SetGlobalVarInt("WinnerUnfair", 1);
+	else SetGlobalVarInt("WinnerUnfair", 0);
 	if(GetGlobalVarInt("SetMagician") == 1 && GetGlobalVarInt("ActiveMagician") == 1) SetGlobalVarInt("WinnerMagician", 1);
 	else SetGlobalVarInt("WinnerMagician", 0);
 	if(GetGlobalVarInt("SetMines") == 1 && GetGlobalVarInt("ActiveRafalala") == 1) SetGlobalVarInt("WinnerMines", 1);

@@ -1,6 +1,6 @@
 void CheckEnemyCount()
 {
-	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Trensletor", "Illusioner", "Bull", "Krabs"};
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Trensletor", "Illusioner", "Bull", "Krabs", "Scp173"};
 	for(int x = 0; x < EnemyList.length(); x++)
 	{
 		if(GetGlobalVarInt("Active" + EnemyList[x]) == 1) AddLocalVarInt("EnemyCount", 1);
@@ -8,7 +8,7 @@ void CheckEnemyCount()
 }
 void SpawnEnemies()
 {
-	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs"};
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Scp173"};
 	for(int x = 0; x < EnemyList.length(); x++)
 	{
 		if(GetGlobalVarInt("Active" + EnemyList[x]) == 1) SetSpawn(EnemyList[x]);
@@ -17,7 +17,12 @@ void SpawnEnemies()
 }
 void SpawnOverload()
 {
-	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Trensletor", "Illusioner", "Bull", "Krabs"};
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Trensletor", "Illusioner", "Bull", "Krabs", "Scp173"};
+	for(int x = 0; x < EnemyList.length(); x++)
+	{
+		SetGlobalVarInt("Active" + EnemyList[x], 0);
+	}
+	SetGlobalVarInt("Active" + GetGlobalVarString("OverloadEnemy"), 1);
 	for(int x = 1; x <= 10; x++)
 	{
 		SetSpawn("Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x);
@@ -45,7 +50,7 @@ void SetSpawn(string enemy)
 void AggroReset(string &in asTimer)
 {
 		if(GetGlobalVarInt("SetAggressive") == 2) return;
-		string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Plankton"};
+		string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Plankton", "Scp173"};
 		ClearEnemyPatrolNodes("servant_*");
 		for(int x = 0; x < EnemyList.length(); x++)
 		{
@@ -92,7 +97,7 @@ void AggroReset(string &in asTimer)
 }
 void EnemyBoxes(string &in asTimer)
 {
-	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Plankton"};
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Plankton", "Scp173"};
 	string Enemy;	
 		for(int x = 0; x < EnemyList.length(); x++)
 		{
@@ -120,7 +125,7 @@ void AggroReset2(string &in asTimer)
 {
         SetEntityActive("servant_*", false);
 		ClearEnemyPatrolNodes("servant_*");
-		string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Plankton"};
+		string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Plankton", "Scp173"};
 		if(GetGlobalVarInt("SetOverload") == 1)
 		{
 			for(int x = 1; x <= 10; x++)
@@ -190,7 +195,7 @@ void AggroReset2(string &in asTimer)
 }
 void ChoosePath(string &in asTimer)
 {
-        string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs"};
+        string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Scp173"};
 		ClearEnemyPatrolNodes("servant_*");
 		for(int x = 1; x <= 10; x++)
 		{
@@ -207,7 +212,7 @@ void ChoosePath(string &in asTimer)
 }
 void MonsterFallPreventer(string &in asTimer)
 {
-        string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs"};
+        string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Scp173"};
 			for(int x = 0; x < EnemyList.length(); x++)
 			{
 				if(GetEntityPosY("servant_" + EnemyList[x]) < -30.0f) 
@@ -220,7 +225,7 @@ void MonsterFallPreventer(string &in asTimer)
 				if(GetEntityPosY("servant_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x) < -30.0f) 
 				TeleportEnemyToNode("servant_Overload_" + GetGlobalVarString("OverloadEnemy") + "_" + x, "NodeSpawn_" + RandInt(1, GetLocalVarInt("SpawnNodes")), true);
 			}
-			if(GetPlayerPosY() < -30.0f) TeleportPlayer("PlayerStartArea_1");
+			if(GetPlayerPosY() < -130.0f) TeleportPlayer("PlayerStartArea_1");
 
 		AddTimer("c", 1.0f, "MonsterFallPreventer");
 }
@@ -495,7 +500,7 @@ void BackToNormal(string &in asTimer)
 }
 void AggressiveLoop(string &in asTimer)
 {
-	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs"};
+	string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Illusioner", "Bull", "Krabs", "Scp173"};
 	
 	if(GetGlobalVarInt("SetAggressive") == 2) 
 	{
@@ -524,4 +529,110 @@ void AggressiveLoop(string &in asTimer)
 		}
 		AddTimer("b", 0.5f, "AggressiveLoop");
 	}
+}
+void Scp173Flow(string &in asTimer)
+{
+	SetLocalVarFloat("SanityCurrent", GetPlayerSanity());
+	if(GetGlobalVarInt("SetOverload") == 1) Scp173FlowOverload();
+	
+	else
+	{
+		float a = MathAbs(GetPlayerPosX() - GetEntityPosX("servant_Scp173"));
+		float b = MathAbs(GetPlayerPosZ() - GetEntityPosZ("servant_Scp173"));
+		float distance = MathSqrt((a * a) + (b * b));
+		
+		if(GetLocalVarFloat("SanityCurrent") < GetLocalVarFloat("SanityOld") && GetGlobalVarInt("SetUnfair") == 0)
+		{
+			SetEnemyDisabled("servant_Scp173", true);
+			
+			if(GetLocalVarInt("Scp173sound") == 1 && distance < 3.5f && GetLocalVarInt("BreakingLOS") == 0)
+			{
+				PlayGuiSound("maxispooky.snt", 1);
+				SetLocalVarInt("Scp173sound", 0);
+				AddTimer("d", 20.0f, "Reset173sound");
+			}
+			else if(GetLocalVarInt("Scp173sound") == 1 && distance < 6.0f)
+			{
+				PlayGuiSound("minispooky.snt", 1);
+				SetLocalVarInt("Scp173sound", 0);
+				AddTimer("d", 20.0f, "Reset173sound");
+			}
+			SetLocalVarInt("BreakingLOS", 1);
+		}
+		else
+		{
+			SetEnemyDisabled("servant_Scp173", false);
+			if(GetLocalVarInt("BreakingLOS") == 1)
+			{
+				//AlertEnemyOfPlayerPresence("servant_Scp173");
+				SetLocalVarInt("BreakingLOS", 0);
+			}
+	
+			if(MathAbs(GetPlayerPosY() - GetEntityPosY("servant_Scp173")) <= 1.0f)
+			{
+				if(distance <= 0.8f)
+				{
+					SetEntityPos("servant_Scp173", 100.0f, 100.0f, 100.0f);
+					SetEntityActive("servant_Scp173", false);
+					GivePlayerDamage(9999.0f, "BloodSplat", true, true);
+					PlayGuiSound("snapper.snt", 1);
+				}
+			}
+		}
+	}
+	
+	SetLocalVarFloat("SanityOld", GetLocalVarFloat("SanityCurrent"));
+	AddTimer("c", 0.02f, "Scp173Flow");
+}
+void Scp173FlowOverload()
+{
+	for(int x = 1; x <= 10; x++)
+	{
+		float a = MathAbs(GetPlayerPosX() - GetEntityPosX("servant_Overload_Scp173_" + x));
+		float b = MathAbs(GetPlayerPosZ() - GetEntityPosZ("servant_Overload_Scp173_" + x));
+		float distance = MathSqrt((a * a) + (b * b));
+		
+		if(GetLocalVarFloat("SanityCurrent") < GetLocalVarFloat("SanityOld") && GetGlobalVarInt("SetUnfair") == 0)
+		{
+			SetEnemyDisabled("servant_Overload_Scp173_*", true);
+			
+			if(GetLocalVarInt("Scp173sound") == 1 && distance < 3.5f && GetLocalVarInt("BreakingLOS") == 0)
+			{
+				PlayGuiSound("maxispooky.snt", 1);
+				SetLocalVarInt("Scp173sound", 0);
+				AddTimer("d", 20.0f, "Reset173sound");
+			}
+			else if(GetLocalVarInt("Scp173sound") == 1 && distance < 6.0f)
+			{
+				PlayGuiSound("minispooky.snt", 1);
+				SetLocalVarInt("Scp173sound", 0);
+				AddTimer("d", 20.0f, "Reset173sound");
+			}
+			SetLocalVarInt("BreakingLOS", 1);
+		}
+		else
+		{
+			SetEnemyDisabled("servant_Overload_Scp173_*", false);
+			if(GetLocalVarInt("BreakingLOS") == 1)
+			{
+				//AlertEnemyOfPlayerPresence("servant_Overload_Scp173_*");
+				SetLocalVarInt("BreakingLOS", 0);
+			}
+		
+			if(MathAbs(GetPlayerPosY() - GetEntityPosY("servant_Overload_Scp173_" + x)) <= 1.0f)
+			{
+				if(distance <= 0.8f)
+				{
+					SetEntityPos("servant_Overload_Scp173_*", 100.0f, 100.0f, 100.0f);
+					SetEntityActive("servant_Overload_Scp173_*", false);
+					GivePlayerDamage(9999.0f, "BloodSplat", true, true);
+					PlayGuiSound("snapper.snt", 1);
+				}
+			}
+		}
+	}
+}
+void Reset173sound(string &in asTimer)
+{
+	SetLocalVarInt("Scp173sound", 1);
 }

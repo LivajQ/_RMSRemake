@@ -183,6 +183,7 @@ void RespawnGeneric()
 	RemoveTimer("f");
 	ResetProp("*");
 	SetEnemySanityDecreaseActive("servant_*", false);
+	SetEnemySanityDecreaseActive("*_Scp173*", true);
 	for(int x = 1; x <= GetLocalVarInt("SpawnNodes"); x++)
 	{
 		SetLocalVarInt("CanSpawnAtPos" + x, 1);
@@ -199,7 +200,7 @@ void RespawnGeneric()
 	}
 	if(GetGlobalVarInt("SetAggressive") == 2) PlayMusic("ripbozo.ogg", true, 1, 1, 10, false);
 	if(GetGlobalVarInt("IsPartyMap") == 1) ChooseTune();
-	else PlayMusic("10_amb.ogg", true, 1, 1, 1, false);
+	else PlayMusic(GetLocalVarString("MapTheme"), true, 1, 1, 1, false);
 	AddTimer("d", 1.0f, "IllusionerFix");
 	SetLocalVarInt("IllusionerCooldown", 0);
 	for(int x = 1; x <= 10; x++)
@@ -207,6 +208,7 @@ void RespawnGeneric()
 		SetLocalVarInt("Illusioner_Overload_" + x + "_Cooldown", 0);
 	}
 	SetLocalVarInt("KrabsCooldown", 0);
+	SetLocalVarInt("Scp173sound", 1);
 	SetEnemyDisabled("servant_Plankton", false);
 	for(int x = 1; x <= 10; x++)
 	{

@@ -178,7 +178,7 @@ void ChangeOverEnemy(string &in asEntity)
 	}
 	else
 	{
-		string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Trensletor", "Illusioner", "Bull", "Krabs"};
+		string[] EnemyList = {"Magician", "Ninja", "Athlete", "Rafalala", "Beholder", "Jackal", "Charger", "Trensletor", "Illusioner", "Bull", "Krabs", "Scp173"};
 		for(int x = 0; x < EnemyList.length(); x++)
 		{
 			if(GetGlobalVarString("OverloadEnemy") == EnemyList[x])
@@ -211,6 +211,20 @@ void ChangeAggressive(string &in asEntity)
 	}
 	
 }
+void ChangeUnfair(string &in asEntity)
+{
+	if(GetGlobalVarInt("SetUnfair") == 0)
+	{	
+		SetGlobalVarInt("SetUnfair", 1);
+		SetMessage("Info", "Enabled", 3.0f);
+	}
+	else
+	{	
+		SetGlobalVarInt("SetUnfair", 0);
+		SetMessage("Info", "Disabled", 3.0f);
+	}
+	
+}
 void DisplayOverloadMessage(string Enemy)
 {
 	if(Enemy == "Magician") SetMessage("Info", "OverloadingMagician", 4.0f);
@@ -224,6 +238,7 @@ void DisplayOverloadMessage(string Enemy)
 	if(Enemy == "Illusioner") SetMessage("Info", "OverloadingIllusioner", 4.0f);
 	if(Enemy == "Bull") SetMessage("Info", "OverloadingBull", 4.0f);
 	if(Enemy == "Krabs") SetMessage("Info", "OverloadingKrabs", 4.0f);
+	if(Enemy == "Scp173") SetMessage("Info", "OverloadingScp173", 4.0f);
 }
 void ChooserUp(string &in asEntity)
 {

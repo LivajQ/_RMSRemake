@@ -1,17 +1,17 @@
 <Level>
     <EditorSession>
         <Performance CamClipPlanes="0.05 1000" LightsActive="true" PSActive="true" ShowFog="true" ShowSkybox="true" WorldReflection="true" />
-        <ViewportConfig BGColor="0.2 0.2 0.2 1" GAmbientLight="false" GPointLight="false" GridSnap="false" GridSnapSeparation="0.25" SelectedViewport="3" UsingEnlargedViewport="true">
+        <ViewportConfig BGColor="0.2 0.2 0.2 1" GAmbientLight="false" GPointLight="false" GridSnap="true" GridSnapSeparation="0.25" SelectedViewport="3" UsingEnlargedViewport="true">
             <Viewport CameraPosition="-32.75 2.5 -32.5" CameraTarget="-32.75 2.5 -212.5" CameraZoom="0" GridHeight="-212.5" GridPlane="2" Preset="0" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
             <Viewport CameraPosition="147.25 2.5 -212.5" CameraTarget="-32.75 2.5 -212.5" CameraZoom="0" GridHeight="-32.75" GridPlane="0" Preset="1" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
             <Viewport CameraPosition="-32.75 182.5 -212.5" CameraTarget="-32.75 2.5 -212.5" CameraZoom="0" GridHeight="2.5" GridPlane="1" Preset="2" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
-            <Viewport CameraPosition="-36.3607 2.87607 228.864" CameraTarget="-41.399 3.48557e-006 230.377" CameraZoom="2.121" GridHeight="5.96046e-008" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="false" UsingLTCam="true" />
+            <Viewport CameraPosition="-3.14955 4.07343 -262.058" CameraTarget="-2.62587 -10 -214.082" CameraZoom="0" GridHeight="-10" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="false" UsingLTCam="true" />
         </ViewportConfig>
         <Groups>
             <Group ID="0" Name="None" Visible="true" />
         </Groups>
     </EditorSession>
-    <MapData FogActive="true" FogColor="1 1 1 1" FogCulling="true" FogEnd="80" FogFalloffExp="1" FogStart="80" GlobalDecalMaxTris="300" Name="" SkyBoxActive="true" SkyBoxColor="0.0997849 0.725255 0.880859 1" SkyBoxTexture="custom_stories/Amnesia-Experiments/BACKUP/textures/pure_sky.dds">
+    <MapData FogActive="true" FogColor="1 1 1 1" FogCulling="true" FogEnd="80" FogFalloffExp="1" FogStart="80" GlobalDecalMaxTris="300" Name="" SkyBoxActive="true" SkyBoxColor="0.0997849 0.725255 0.880859 1" SkyBoxTexture="_RMSRemake/textures/pure_sky.dds">
         <MapContents>
             <FileIndex_StaticObjects NumOfFiles="29">
                 <File Id="0" Path="static_objects/debris/rock/stone_large01.dae" />
@@ -44,7 +44,7 @@
                 <File Id="27" Path="static_objects/castlebase/stairs/railing.dae" />
                 <File Id="28" Path="static_objects/castlebase/stairs/welder.dae" />
             </FileIndex_StaticObjects>
-            <FileIndex_Entities NumOfFiles="74">
+            <FileIndex_Entities NumOfFiles="76">
                 <File Id="0" Path="custom_stories/Voyage of Horror/entities/furniture/sofa/sofa.ent" />
                 <File Id="1" Path="custom_stories/Voyage of Horror/entities/furniture/table_nice02/table_nice02.ent" />
                 <File Id="2" Path="entities/ABC/quickportal/quickportal.ent" />
@@ -119,6 +119,8 @@
                 <File Id="71" Path="entities/AA/enemies/moders/servant_moder03.ent" />
                 <File Id="72" Path="entities/AA/enemies/moders/servant_moder04.ent" />
                 <File Id="73" Path="entities/AA/enemies/moders/servant_moder05.ent" />
+                <File Id="74" Path="entities/AA/lmg/556x45_bp_gs.ent" />
+                <File Id="75" Path="entities/AA/enemies/scp173/scp173.ent" />
             </FileIndex_Entities>
             <FileIndex_Decals NumOfFiles="0" />
             <StaticObjects>
@@ -800,7 +802,7 @@
                         <Var Name="IsAffectedByDecal" Value="true" />
                     </UserVariables>
                 </Entity>
-                <Area Active="true" AreaType="Script" Group="0" ID="68" Mesh="" Name="BurningArea_19" Rotation="5.68241e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-59.3917 -2.125 -6.9375">
+                <Area Active="true" AreaType="Script" Group="0" ID="68" Mesh="" Name="BurningArea_19" Rotation="6.53477e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-59.3917 -2.125 -6.9375">
                     <UserVariables>
                         <Var Name="PlayerLookAtCallback" Value="" />
                         <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
@@ -810,7 +812,7 @@
                         <Var Name="MaxFocusDistance" Value="-1" />
                     </UserVariables>
                 </Area>
-                <Area Active="true" AreaType="Script" Group="0" ID="69" Mesh="" Name="BurningArea_20" Rotation="5.68241e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-60.3828 -2.125 -7.22099">
+                <Area Active="true" AreaType="Script" Group="0" ID="69" Mesh="" Name="BurningArea_20" Rotation="6.53477e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-60.3828 -2.125 -7.22099">
                     <UserVariables>
                         <Var Name="PlayerLookAtCallback" Value="" />
                         <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
@@ -820,7 +822,7 @@
                         <Var Name="MaxFocusDistance" Value="-1" />
                     </UserVariables>
                 </Area>
-                <Area Active="true" AreaType="Script" Group="0" ID="70" Mesh="" Name="BurningArea_21" Rotation="5.68241e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-59.5167 -2.125 -6.72099">
+                <Area Active="true" AreaType="Script" Group="0" ID="70" Mesh="" Name="BurningArea_21" Rotation="6.53477e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-59.5167 -2.125 -6.72099">
                     <UserVariables>
                         <Var Name="PlayerLookAtCallback" Value="" />
                         <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
@@ -830,7 +832,7 @@
                         <Var Name="MaxFocusDistance" Value="-1" />
                     </UserVariables>
                 </Area>
-                <Area Active="true" AreaType="Script" Group="0" ID="71" Mesh="" Name="BurningArea_22" Rotation="5.68241e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-60.2913 -2.125 -6.87949">
+                <Area Active="true" AreaType="Script" Group="0" ID="71" Mesh="" Name="BurningArea_22" Rotation="6.53477e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-60.2913 -2.125 -6.87949">
                     <UserVariables>
                         <Var Name="PlayerLookAtCallback" Value="" />
                         <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
@@ -840,7 +842,7 @@
                         <Var Name="MaxFocusDistance" Value="-1" />
                     </UserVariables>
                 </Area>
-                <Area Active="true" AreaType="Script" Group="0" ID="72" Mesh="" Name="BurningArea_23" Rotation="5.68241e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-58.6172 -2.125 -6.779">
+                <Area Active="true" AreaType="Script" Group="0" ID="72" Mesh="" Name="BurningArea_23" Rotation="6.53477e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-58.6172 -2.125 -6.779">
                     <UserVariables>
                         <Var Name="PlayerLookAtCallback" Value="" />
                         <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
@@ -850,7 +852,7 @@
                         <Var Name="MaxFocusDistance" Value="-1" />
                     </UserVariables>
                 </Area>
-                <Area Active="true" AreaType="Script" Group="0" ID="73" Mesh="" Name="BurningArea_24" Rotation="5.68241e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-58.7422 -2.125 -6.5625">
+                <Area Active="true" AreaType="Script" Group="0" ID="73" Mesh="" Name="BurningArea_24" Rotation="6.53477e-015 -0.261801 2.38419e-007" Scale="0.25 0.25 0.25" Tag="" WorldPos="-58.7422 -2.125 -6.5625">
                     <UserVariables>
                         <Var Name="PlayerLookAtCallback" Value="" />
                         <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
@@ -2286,7 +2288,7 @@
                 <Area Active="true" AreaType="PathNode" Group="0" ID="381" Mesh="" Name="PathNodeArea_17" Rotation="0 0 0" Scale="0.5 0.5 0.5" Tag="" WorldPos="-26.5 0 -223.75">
                     <UserVariables />
                 </Area>
-                <Area Active="true" AreaType="PathNode" Group="0" ID="384" Mesh="" Name="PathNodeArea_18" Rotation="0 0 0" Scale="0.5 0.5 0.5" Tag="" WorldPos="-26.25 0 -219.25">
+                <Area Active="true" AreaType="PathNode" Group="0" ID="384" Mesh="" Name="PathNodeArea_26" Rotation="0 0 0" Scale="0.5 0.5 0.5" Tag="" WorldPos="-26.25 0 -216.867">
                     <UserVariables />
                 </Area>
                 <Entity Active="true" FileIndex="26" Group="0" ID="404" Name="sign_catalogs_1" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-31.75 2.25 -210.837">
@@ -5852,6 +5854,92 @@
                 </Area>
                 <Area Active="true" AreaType="PlayerStart" Group="0" ID="1601" Mesh="" Name="PlayerStartArea_7" Rotation="3.14159 4.44253e-006 3.14159" Scale="1 1 1" Tag="" WorldPos="-249 0.75 -70.25">
                     <UserVariables />
+                </Area>
+                <Entity Active="false" FileIndex="74" Group="0" ID="1602" Name="FunnyBullet" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="1.25 0.25 -3">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="13" Group="0" ID="1603" Name="ButtonScp173" Rotation="1.5708 1.5708 3.14159" Scale="1 1 1" Tag="" WorldPos="-27.25 0 -216.867">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="75" Group="0" ID="1604" Name="servant_scp173_1" Rotation="2.70211 -1.5708 2.01027" Scale="0.5 0.5 0.5" Tag="" WorldPos="-25.5844 2.59876e-005 -216.868">
+                    <UserVariables>
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="DisableTriggers" Value="true" />
+                        <Var Name="Hallucination" Value="false" />
+                        <Var Name="HallucinationEndDist" Value="3" />
+                    </UserVariables>
+                </Entity>
+                <Area Active="true" AreaType="PathNode" Group="0" ID="1605" Mesh="" Name="PathNodeArea_18" Rotation="0 0 0" Scale="0.5 0.5 0.5" Tag="" WorldPos="-26.25 0 -219.25">
+                    <UserVariables />
+                </Area>
+                <Area Active="true" AreaType="Sign" Group="0" ID="1606" Mesh="" Name="SignArea_49" Rotation="0 -1.5708 0" Scale="1.75 2.5 2" Tag="" WorldPos="-26 1.25 -216.75">
+                    <UserVariables>
+                        <Var Name="TextCat" Value="Info" />
+                        <Var Name="TextEntry" Value="SignScp173" />
+                    </UserVariables>
+                </Area>
+                <Entity Active="true" FileIndex="26" Group="0" ID="1607" Name="sign_catalogs_21" Rotation="0 1.5708 0" Scale="1 1 1" Tag="" WorldPos="-20.098 1.226 -212.506">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="IsAffectedByDecal" Value="true" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="13" Group="0" ID="1608" Name="button_simple_31" Rotation="-2.61561 -1.5708 2.61561" Scale="1 1 1" Tag="" WorldPos="-20.75 1 -212.5">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Area Active="true" AreaType="Sign" Group="0" ID="1609" Mesh="" Name="SignArea_50" Rotation="0 1.5708 0" Scale="1 0.5 0.25" Tag="" WorldPos="-20.75 1.5 -212.473">
+                    <UserVariables>
+                        <Var Name="TextCat" Value="Info" />
+                        <Var Name="TextEntry" Value="OptionUnfair" />
+                    </UserVariables>
                 </Area>
             </Entities>
             <Misc>

@@ -241,6 +241,7 @@
         <Entry Name="SignTrensletor">I are trensletor, where mode</Entry>
         <Entry Name="SignBull">That's the type of enemy nobody usually cares about unless he appears right in front of you whilst trying to escape. Slow, loud, but strong AF. Doors won't stop him, he will just rush through them. Barriers? He doesn't know what that is. Worth mentioning you will always be clapped in one hit</Entry>
         <Entry Name="SignIllusioner">If you felt like there's not enough randomness and magic in this mod, maybe the Illusioner can change your mind. Quite literally. Whenever you look at him, either purposely or by accident, you will be greeted with a random screen effect. Ain't so fun when you lose your sight while running away eh.</Entry>
+        <Entry Name="SignScp173">The most balanced and totally not broken corner camper and dream decimator. Will most likely instakill you whenever you try to open a door. Don't be surprised if he decides not to play by the rules</Entry>
         <Entry Name="MagicianOn">Magician has been enabled</Entry>
         <Entry Name="MagicianOff">Magician has been disabled</Entry>
 		<Entry Name="NinjaOn">Ninja has been enabled</Entry>
@@ -263,6 +264,8 @@
         <Entry Name="BullOff">Bull has been disabled</Entry>
 		<Entry Name="KrabsOn">Mr. Krabs has been enabled</Entry>
         <Entry Name="KrabsOff">Mr. Krabs has been disabled</Entry>
+        <Entry Name="Scp173On">Scp 173 has been enabled</Entry>
+        <Entry Name="Scp173Off">Scp 173 has been disabled</Entry>
 		<Entry Name="ChargerOn">Charger has been enabled</Entry>
         <Entry Name="ChargerOff">Charger has been disabled</Entry>
         <Entry Name="OptionDifficulty">Difficulty</Entry>
@@ -275,6 +278,7 @@
         <Entry Name="OptionShield">Shield Mode</Entry>
         <Entry Name="OptionSeizure">Seizure Mode</Entry>
         <Entry Name="OptionRespawns">Respawning Doors Mode</Entry>
+        <Entry Name="OptionUnfair">(Even More) Unfair 173 Mode</Entry>
         <Entry Name="OptionOverload">Enemy Overload Mode</Entry>
         <Entry Name="OptionOverEnemy">Enemy Type</Entry>
         <Entry Name="NeedOverload">Enable Enemy Overload Mode first</Entry>
@@ -289,6 +293,7 @@
         <Entry Name="OverloadingIllusioner">Overloading set to: Illusioner</Entry>
         <Entry Name="OverloadingBull">Overloading set to: Bull</Entry>
         <Entry Name="OverloadingKrabs">Overloading set to: Mr. Krabs</Entry>
+        <Entry Name="OverloadingScp173">Overloading set to: Scp 173 (buggy)</Entry>
         <Entry Name="ThemeNormal">Normal Theme</Entry>
         <Entry Name="ThemeParty">Party Theme</Entry>
         <Entry Name="OnlyParty">Only available in party mode</Entry>
@@ -441,6 +446,7 @@
 	    <Entry Name="Enemies9">Enemy Count: 9...</Entry>
 	    <Entry Name="Enemies10">Enemy Count: 10...</Entry>
 	    <Entry Name="Enemies11">Enemy Count: 11...</Entry>
+	    <Entry Name="Enemies12">Enemy Count: 12...</Entry>
 	    <Entry Name="ShieldNo">Shield: disabled...</Entry>
 	    <Entry Name="ShieldYes">Shield: enabled...</Entry>
 	    <Entry Name="SpeedNo">200% Speed: disabled...</Entry>
@@ -462,6 +468,19 @@
 		<Entry Name="AggressiveNo">Aggressive Mode: Disabled</Entry>
 		<Entry Name="AggressiveYes">Aggressive Mode: Enabled</Entry>
 		<Entry Name="AggressiveYesYes">Aggressive Mode: Endless Chase</Entry>
+		<Entry Name="UnfairNo">Unfair 173 Mode: disabled</Entry>
+		<Entry Name="UnfairYes">Unfair 173 Mode: enabled</Entry>
+	</CATEGORY>
+	
+	<CATEGORY Name="ScpCat">
+		<Entry Name="ButtonLocked">You pushed the button but nothing happened</Entry>
+		<Entry Name="YouNeedKeycard">A keycard is required to operate this door</Entry>
+		<Entry Name="KeycardNothingHappened">The keycard was inserted into the slot but nothing happened</Entry>
+		<Entry Name="YouNeedLvl1">A keycard with security clearance 1 or higher is required to operate this door</Entry>
+		<Entry Name="YouNeedLvl2">A keycard with security clearance 2 or higher is required to operate this door</Entry>
+		<Entry Name="YouNeedLvl3">A keycard with security clearance 3 or higher is required to operate this door</Entry>
+		<Entry Name="YouNeedLvl4">A keycard with security clearance 4 or higher is required to operate this door</Entry>
+		<Entry Name="YouNeedLvl5">A keycard with security clearance 5 or higher is required to operate this door</Entry>
 	</CATEGORY>
 	
 	<CATEGORY Name="Info2">

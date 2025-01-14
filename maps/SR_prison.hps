@@ -59,10 +59,13 @@ void OnEnter()
 	
 	CheckPoint("SuperCheckpoint", "PlayerStartArea_1", "Respawn", "DeathHint", "DeathMessage" + RandInt(1, 5));
 	SetEnemySanityDecreaseActive("servant_*", false);
+	SetEnemySanityDecreaseActive("*_Scp173*", true);
 	SetMapDisplayNameEntry("prison");
+	SetLocalVarString("MapTheme", "12_amb.ogg");
 	SetLocalVarInt("EnemyCount", 0);
 	SetLocalVarInt("DeathCount", 0);
 	SetLocalVarInt("MineIndex", 1);
+	SetLocalVarInt("Scp173sound", 1);
 	SetLocalVarInt("TrensletorSkin", RandInt(1, 6));
 	SetLocalVarFloat("DistanceTraveled", 0.0f);
 	SetLocalVarFloat("PlayerX", GetPlayerPosX());
@@ -80,7 +83,7 @@ void OnEnter()
 		PartyStarter();
 		SetEntityActive("ButtonMusic", true);
 	}
-	else PlayMusic("12_amb.ogg", true, 1, 1, 1, false);
+	else PlayMusic(GetLocalVarString("MapTheme"), true, 1, 1, 1, false);
 	
 	if(GetGlobalVarInt("SetShield") == 1)
 	{
@@ -146,7 +149,10 @@ void OnEnter()
 	AddTimer("c", 1.0f, "ItemPickSafe");
 	AddTimer("c", 1.0f, "KrabsLoop");
 	AddTimer("c", 1.0f, "JackalDetect");
+	AddTimer("c", 1.0f, "Scp173Flow");
 	
+	AddEnemyPatrolNode("servant_Scp173", "PathNodeArea_135", 1.0f, "");
+	AddEnemyPatrolNode("servant_Scp173", "PathNodeArea_136", 1.0f, "");
 	//Quest
 	SetLocalVarInt("BoomHappened", 0);
 	

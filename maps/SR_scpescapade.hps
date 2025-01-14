@@ -1,0 +1,272 @@
+#include "SR_EnemyFuncs.hps"
+#include "SR_MainMapsSettings.hps"
+#include "SR_Maths.hps"
+#include "SR_ScpStuff.hps"
+
+void OnStart()
+{
+	SetEntityPlayerInteractCallback("ButtonMusic", "Song", false);
+	SetEntityPlayerInteractCallback("button_simple_1", "test", false);
+	SetEntityPlayerInteractCallback("ButtonLeave", "Leaving", false);
+	SetEntityPlayerInteractCallback("ItemPick_Crowbar", "GimmeItem", false);
+	SetEntityPlayerInteractCallback("ItemPick_Hammer", "GimmeItem", false);
+	SetEntityPlayerInteractCallback("ItemPick_KeyRusty", "GimmeItem", false);
+	SetEntityPlayerInteractCallback("ItemPick_KeyLeave", "GimmeItem", false);
+	SetEntityPlayerInteractCallback("ItemPick_Jar", "GimmeItem", false);
+	SetEntityPlayerLookAtCallback("servant_Illusioner", "IllusionerEffect", false);
+	for(int x = 1; x <= 10; x++)
+	{	
+		SetEntityPlayerLookAtCallback("servant_Overload_Illusioner_" + x, "IllusionerEffect", false);
+	}
+	SetLocalVarInt("SpawnNodes", 20);
+	SetLocalVarInt("NodeAmount", 637);
+	SetLocalVarInt("SeizureState", 1);
+	SetLocalVarFloat("DistanceReward", 20.0f);
+	
+	for(int x = 1; x <= 100; x++)
+	{
+		SetEntityCallbackFunc("cellar_wood01_" + x, "BreakReset");
+		SetEntityCallbackFunc("mansion_" + x, "BreakReset");
+		SetEntityCallbackFunc("cabinetbreakable_nice_" + x, "BreakReset");
+		SetEntityCallbackFunc("cabinetbreakable_simple_" + x, "BreakReset");
+		SetEntityCallbackFunc("cabinetbreakable_metal_" + x, "BreakReset");
+	}
+	
+	//Quest
+	
+}
+void OnEnter()
+{
+	SetLocalVarInt("IllusionerCooldown", 0);
+	for(int x = 1; x <= 10; x++)
+	{
+		SetLocalVarInt("Illusioner_Overload_" + x + "_Cooldown", 0);
+	}
+	SetLocalVarInt("KrabsCooldown", 0);
+	for(int x = 1; x <= 10; x++)
+	{
+		SetLocalVarInt("Krabs_Overload_" + x + "_Cooldown", 0);
+	}
+	PlaySoundAtEntity("BestSound", "krabwalker.snt", "servant_Krabs", 0.1f, false);
+	for(int x = 1; x <= 10; x++)
+	{
+		PlaySoundAtEntity("BestSound", "krabwalker.snt", "servant_Overload_Krabs_" + x, 0.1f, false);
+	}
+	
+	CheckPoint("SuperCheckpoint", "PlayerStartArea_1", "Respawn", "DeathHint", "DeathMessage" + RandInt(1, 5));
+	SetEnemySanityDecreaseActive("servant_*", false);
+	SetEnemySanityDecreaseActive("*_Scp173*", true);
+	SetMapDisplayNameEntry("menson");
+	SetLocalVarString("MapTheme", "scariscp.ogg");
+	SetLocalVarInt("EnemyCount", 0);
+	SetLocalVarInt("DeathCount", 0);
+	SetLocalVarInt("MineIndex", 1);
+	SetLocalVarInt("Scp173sound", 1);
+	SetLocalVarInt("TrensletorSkin", RandInt(1, 6));
+	SetLocalVarFloat("DistanceTraveled", 0.0f);
+	SetLocalVarFloat("PlayerX", GetPlayerPosX());
+	SetLocalVarFloat("PlayerY", GetPlayerPosY());
+	SetLocalVarFloat("PlayerZ", GetPlayerPosZ());
+
+	if(GetGlobalVarInt("SetSpeed") == 1) SetLocalVarFloat("Multiplier", 2.0f);
+	else SetLocalVarFloat("Multiplier", 1.0f);
+	DifficultySetter(GetGlobalVarInt("SetDifficulty"));
+	
+	if(GetGlobalVarInt("SetInvincible") == 1) SetEnemyDisableTriggers("servant_*", true);
+	
+	if(GetGlobalVarInt("IsPartyMap") == 1) 
+	{
+		PartyStarter();
+		SetEntityActive("ButtonMusic", true);
+	}
+	else PlayMusic(GetLocalVarString("MapTheme"), true, 1, 1, 1, false);
+	
+	if(GetGlobalVarInt("SetShield") == 1)
+	{
+		if(GetGlobalVarInt("PurchasedShieldL") == 1) SetEntityActive("ballisticshield_1", true);
+		if(GetGlobalVarInt("PurchasedShieldH") == 1) SetEntityActive("heavyshield_1", true);
+	}
+	else 
+	{
+		SetEntityActive("ballisticshield_1", false);
+		SetEntityActive("heavyshield_1", false);
+	}
+	
+	if(GetGlobalVarInt("SetSeizure") == 1)
+	{
+		AddTimer("a", 1.0f, "SeizureMoment");
+	}
+	else 
+	{
+		SetEntityActive("ballisticshield_1", false);
+		SetEntityActive("heavyshield_1", false);
+	}
+	if(GetGlobalVarInt("SetMagician") == 1)
+	{
+		AddTimer("a", 3.0f, "MagicianTeleport");
+	}
+	else
+	{
+		AddTimer("a", 30.0f, "MagicianTeleport");
+	}
+	
+	if(GetGlobalVarInt("SetMines") == 1) AddTimer("a", 5.0f, "RafalalaMine");
+    else AddTimer("a", 35.0f, "RafalalaMine");
+	
+	
+	for(int x = 1; x <= GetLocalVarInt("SpawnNodes"); x++)
+	{
+		SetLocalVarInt("CanSpawnAtPos" + x, 1);
+	}
+	
+	if(GetGlobalVarInt("SetOverload") == 1)
+	{
+		SetLocalVarInt("EnemyCount", 10);
+		SpawnOverload();
+	}
+	else
+	{
+		CheckEnemyCount();
+		SpawnEnemies();
+	}
+	
+	if(GetGlobalVarInt("SetAggressive") != 0)
+	{
+		AddTimer("b", 0.5f, "AggressiveLoop");
+		if(GetGlobalVarInt("SetAggressive") == 2) PlayMusic("ripbozo.ogg", true, 1, 1, 10, false);
+	}
+	
+	SpawnItems();
+	DoorFunctionality();
+	
+	AddTimer("c", 1.0f, "AggroReset");
+	AddTimer("c", 1.0f, "TravelChecker");
+	AddTimer("c", 60.0f, "Reward");
+	AddTimer("c", 1.0f, "MonsterFallPreventer");
+	AddTimer("c", 1.0f, "ItemPickSafe");
+	AddTimer("c", 1.0f, "KrabsLoop");
+	AddTimer("c", 1.0f, "JackalDetect");
+	AddTimer("c", 1.0f, "Scp173Flow");
+	
+	//Quest
+	
+	AutoSave();
+}
+void OnLeave()
+{
+	MapLeaver();
+}
+void Respawn(string &in asName, int alCount)
+{
+	RespawnGeneric();
+	SpawnItems();
+	SetLocalVarInt("VertDown", 1);
+	SetLocalVarInt("CanLever", 0);
+	RemoveItem("InventoryCrowbar");
+	RemoveItem("InventoryHammer");
+	RemoveItem("InventoryKeyLeave");
+	RemoveItem("InventoryKeyRusty");
+	RemoveItem("InventoryJar");
+	RemoveItem("InventoryKeyClean");
+	RemoveItem("InventoryJarOil");
+	RemoveItem("Crowbar");
+	RemoveItem("Hammer");
+	RemoveItem("KeyLeave");
+	RemoveItem("KeyRusty");
+	RemoveItem("Jar");
+	RemoveItem("KeyClean");
+	RemoveItem("JarOil");
+	SetEntityActive("ScriptArea_3", true);
+	SetSwingDoorLocked("cellar_wood01_1", true, false);
+	SetEntityActive("wooden_boards_block_1", true);
+	SetEntityActive("wooden_boards_block_2", false);
+	SetEntityActive("ScriptArea_2", true);
+	SetLocalVarInt("PlanksRemoved", 0);
+	SetLocalVarInt("MasterOpened", 0);
+	SetLeverStuckState("lever_nice01_1", -1, true);
+	SetEntityActive("ScriptArea_6", true);
+	SetEntityActive("safety_normal_vert_1", true);
+}
+void SpawnItems()
+{
+	int NormalSlots = 10;
+	int SpecialSlots = 2;
+	for(int x = 1; x <= NormalSlots; x++)
+	{
+		SetLocalVarInt("NormalSlot" + x, 1);
+	}
+	for(int x = 1; x <= SpecialSlots; x++)
+	{
+		SetLocalVarInt("SpecialSlot" + x, 1);
+	}
+	
+	string[] NormalItems = {"KeyRusty", "Crowbar", "Jar"};
+	string[] SpecialItems = {"Hammer", "KeyLeave"};
+	
+	for(int x = 0; x < NormalItems.length(); x++)
+	{
+		while(true)
+		{
+			int Slot = RandInt(1, NormalSlots);
+			if(GetLocalVarInt("NormalSlot" + Slot) == 0) continue;
+			PlaceEntityAtEntity(NormalItems[x], "ItemNormal_" + Slot, "", false);
+			PlaceEntityAtEntity("ItemPick_" + NormalItems[x], NormalItems[x], "", false);
+			SetLocalVarInt("NormalSlot" + Slot, 0);
+			break;
+		}
+	}
+	for(int x = 0; x < SpecialItems.length(); x++)
+	{
+		while(true)
+		{
+			int Slot = RandInt(1, SpecialSlots);
+			if(GetLocalVarInt("SpecialSlot" + Slot) == 0) continue;
+			PlaceEntityAtEntity(SpecialItems[x], "ItemSpecial_" + Slot, "", false);
+			PlaceEntityAtEntity("ItemPick_" + SpecialItems[x], SpecialItems[x], "", false);
+			SetLocalVarInt("SpecialSlot" + Slot, 0);
+			break;
+		}
+	}
+	
+	//height correctors
+	string[] ToHeighten = {"Crowbar", "Hammer", "KeyLeave", "KeyRusty", "Jar"};
+	float[] Values = {0.02f, 0.045f, 0.01f, 0.01f, 0.23f};
+	for(int x = 0; x < ToHeighten.length(); x++)
+	{
+		SetEntityPos(ToHeighten[x], GetEntityPosX(ToHeighten[x]), GetEntityPosY(ToHeighten[x]) + Values[x], GetEntityPosZ(ToHeighten[x]));
+		PlaceEntityAtEntity("ItemPick_" + ToHeighten[x], ToHeighten[x], "", false);
+	}
+}
+void GimmeItem(string &in asEntity)
+{
+	string Item = StringSub(asEntity, 9, 15);
+	GiveItem("Inventory" + Item, "Puzzle", "Inv" + Item, ImageGetter(Item), 1);
+	SetEntityPos(Item, 0.0f, 100.0f, 0.0f);
+	SetEntityPos("ItemPick_" + Item, 0.0f, 100.0f, 0.0f);
+	PlayGuiSound("pick_generic.snt", 1);
+}
+string ImageGetter(string Item)
+{
+	if(Item == "Crowbar") return "crowbar.tga";
+	else if(Item == "Hammer") return "stone_hammer.tga";
+	else if(Item == "KeyLeave") return "key_study.tga";
+	else if(Item == "KeyRusty") return "key_tomb_rusty.tga";
+	else if(Item == "Jar") return "glass_container_empty.tga";
+	return "";
+}
+void ItemPickSafe(string &in asTimer)
+{
+	string[] Items = {"KeyRusty", "Crowbar", "Jar", "Hammer", "KeyLeave"};
+	for(int x = 0; x < Items.length(); x++)
+	{
+		PlaceEntityAtEntity("ItemPick_" + Items[x], Items[x], "", false);
+	}
+	AddTimer("c", 1.0f, "ItemPickSafe");
+}
+void test(string &in asEntity)
+{
+	SetMoveObjectState("scp_door_light_xa_1", 1.0f);
+	SetMoveObjectState("scp_door_light_xb_1", 1.0f);
+	SetMoveObjectState("scp_door_light_zb_1", 1.0f);
+	SetMoveObjectState("scp_door_light_za_1", 1.0f);
+}

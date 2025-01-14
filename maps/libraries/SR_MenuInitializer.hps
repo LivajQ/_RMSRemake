@@ -9,6 +9,7 @@ void LoadMenuMapStuff()
 	SetPlayerJumpForceMul(2.0f);
 	SetPlayerMoveSpeedMul(1.0f);
 	SetPlayerRunSpeedMul(1.0f);
+	SetPlayerSanity(100.0f);
 	SetPlayerHealth(100.0f);
 	SetPlayerLampOil(0.0f);
 	SetPlayerJumpDisabled(false);
@@ -58,6 +59,7 @@ void LoadMenuMapStuff()
 	AddEnemyPatrolNode("servant_magician_1", "PathNodeArea_3", 0.01f, "Idle");
 	AddEnemyPatrolNode("servant_magician_1", "PathNodeArea_4", 0.01f, "Idle");
 	AddEnemyPatrolNode("servant_ninja_2", "PathNodeArea_19", 3.0f, "Idle");
+	AddEnemyPatrolNode("servant_scp173_1", "PathNodeArea_26", 3.0f, "Idle");
 	AddEnemyPatrolNode("hideout_bingus_1", "PathNodeArea_24", 3.0f, "Idle");
 	AddEnemyPatrolNode("hideout_caracal_1", "PathNodeArea_25", 3.0f, "Idle");
 	

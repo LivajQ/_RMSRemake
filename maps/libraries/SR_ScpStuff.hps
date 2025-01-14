@@ -1,0 +1,152 @@
+void DoorFunctionality()
+{
+	for(int x = 1; x <= 200; x++)
+	{
+		string zeros;
+		if(x <= 9) zeros = "00";
+		else if(x >= 10 && x <= 99) zeros = "0";
+		else zeros = "";
+		SetEntityPlayerInteractCallback("Scp_DoorOpener_ButA_" + zeros + x, "OpenButton", false);
+		SetEntityPlayerInteractCallback("Scp_DoorOpener_ButB_" + zeros + x, "OpenButton", false);
+		SetEntityPlayerInteractCallback("Scp_DoorOpener_KeyA_" + zeros + x, "OpenKeycard", false);
+		SetEntityPlayerInteractCallback("Scp_DoorOpener_KeyB_" + zeros + x, "OpenKeycard", false);
+		for(int y = 0; y <= 5; y++)
+		{
+			AddUseItemCallback("WeOpening", "Keycard_" + y, "Scp_DoorOpener_KeyA_" + zeros + x, "OpenKeycardWithKey", false);
+			AddUseItemCallback("WeOpening", "Keycard_" + y, "Scp_DoorOpener_KeyB_" + zeros + x, "OpenKeycardWithKey", false);
+		}
+		SetLocalVarInt("DoorOpen_" + x, 0);
+	}
+	AddConditions();
+}
+void AddConditions()
+{
+	string[] ButtonLockedIndex = {"019", "0"};
+	for(int x = 0; x < ButtonLockedIndex.length(); x++)
+	{
+		SetLocalVarInt("ButtonLocked_" + ButtonLockedIndex[x], 1);
+	}
+	
+	string[] KeycardLockedIndex = {"0", "0"};
+	string[] KeycardLevelIndex = {"004", "011", "012", "013", "020", "021", "026", "034"};
+	int[] KeycardLevelRequired = {5, 1, 1, 1, 1, 2, 1, 1};
+	for(int x = 0; x < KeycardLockedIndex.length(); x++)
+	{
+		SetLocalVarInt("KeycardLocked_" + KeycardLockedIndex[x], 1);
+	}
+	for(int x = 0; x < KeycardLevelIndex.length(); x++)
+	{
+		SetLocalVarInt("WhichLevel_" + KeycardLevelIndex[x], KeycardLevelRequired[x]);
+	}
+}
+void OpenButton(string &in asEntity)
+{
+	string Index = StringSub(asEntity, 20, 3);
+	AddDebugMessage(Index, false);
+	if(GetLocalVarInt("ButtonLocked_" + Index) == 1)
+	{
+		SetMessage("ScpCat", "ButtonLocked", 4.0f);
+		PlaySoundAtEntity("doormane", "ButtonFail.snt", asEntity, 0.01f, false);
+	}
+	else if(GetLocalVarInt("DoorOpen_" + Index) == 0)
+	{
+		SetMoveObjectState("scp_door_*_" + Index, 1.0f);
+		SetLocalVarInt("DoorOpen_" + Index, 1);
+		PlaySoundAtEntity("doormane", "LightDoorOpen.snt", "scp_door_light_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "LightDoorOpen.snt", "scp_door_light_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "HeavyDoorOpen.snt", "scp_door_heavy_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "HeavyDoorOpen.snt", "scp_door_heavy_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorOpen.snt", "scp_door_big_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorOpen.snt", "scp_door_big_xb_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorOpen.snt", "scp_door_big_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorOpen.snt", "scp_door_big_zb_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "ButtonGood.snt", asEntity, 0.01f, false);
+	}
+	else
+	{
+		SetMoveObjectState("scp_door_*_" + Index, 0.0f);
+		SetLocalVarInt("DoorOpen_" + Index, 0);
+		PlaySoundAtEntity("doormane", "LightDoorClose.snt", "scp_door_light_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "LightDoorClose.snt", "scp_door_light_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "HeavyDoorClose.snt", "scp_door_heavy_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "HeavyDoorClose.snt", "scp_door_heavy_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorClose.snt", "scp_door_big_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorClose.snt", "scp_door_big_xb_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorClose.snt", "scp_door_big_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorClose.snt", "scp_door_big_zb_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "ButtonGood.snt", asEntity, 0.01f, false);
+	}
+}
+void OpenKeycard(string &in asEntity)
+{
+	string Index = StringSub(asEntity, 20, 3);
+	AddDebugMessage(Index, false);
+	SetMessage("ScpCat", "YouNeedKeycard", 4.0f);
+}
+void OpenKeycardWithKey(string &in asItem, string &in asEntity)
+{
+	string Index = StringSub(asEntity, 20, 3);
+	string YourKeycard = StringSub(asItem, 8, 1);
+	string NeededKeycard = GetLocalVarInt("WhichLevel_" + Index);
+	int YourKeycardInt = StringToInt(YourKeycard);
+	int NeededKeycardInt = GetLocalVarInt("WhichLevel_" + Index);
+	AddDebugMessage("Door Index - " + Index, false);
+	AddDebugMessage("Your Keycard - " + YourKeycard, false);
+	AddDebugMessage("NeededKeycard - " + NeededKeycard, false);
+	
+	if(GetLocalVarInt("KeycardLocked_" + Index) == 1)
+	{
+		SetMessage("ScpCat", "KeycardNothingHappened", 4.0f);
+		PlaySoundAtEntity("doormane", "KeycardFail.snt", asEntity, 0.01f, false);
+	}
+	else if(YourKeycardInt < NeededKeycardInt)
+	{
+		switch(NeededKeycardInt)
+		{
+			case 1:
+				SetMessage("ScpCat", "YouNeedLvl1", 4.0f);
+				break;
+			case 2:
+				SetMessage("ScpCat", "YouNeedLvl2", 4.0f);
+				break;
+			case 3:
+				SetMessage("ScpCat", "YouNeedLvl3", 4.0f);
+				break;
+			case 4:
+				SetMessage("ScpCat", "YouNeedLvl4", 4.0f);
+				break;
+			case 5:
+				SetMessage("ScpCat", "YouNeedLvl5", 4.0f);
+				break;
+		}
+		PlaySoundAtEntity("doormane", "KeycardFail.snt", asEntity, 0.01f, false);
+	}
+	else if(GetLocalVarInt("DoorOpen_" + Index) == 0)
+	{
+		SetMoveObjectState("scp_door_*_" + Index, 1.0f);
+		SetLocalVarInt("DoorOpen_" + Index, 1);
+		PlaySoundAtEntity("doormane", "LightDoorOpen.snt", "scp_door_light_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "LightDoorOpen.snt", "scp_door_light_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "HeavyDoorOpen.snt", "scp_door_heavy_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "HeavyDoorOpen.snt", "scp_door_heavy_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorOpen.snt", "scp_door_big_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorOpen.snt", "scp_door_big_xb_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorOpen.snt", "scp_door_big_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorOpen.snt", "scp_door_big_zb_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "KeycardGood.snt", asEntity, 0.01f, false);
+	}
+	else
+	{
+		SetMoveObjectState("scp_door_*_" + Index, 0.0f);
+		SetLocalVarInt("DoorOpen_" + Index, 0);
+		PlaySoundAtEntity("doormane", "LightDoorClose.snt", "scp_door_light_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "LightDoorClose.snt", "scp_door_light_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "HeavyDoorClose.snt", "scp_door_heavy_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "HeavyDoorClose.snt", "scp_door_heavy_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorClose.snt", "scp_door_big_xa_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorClose.snt", "scp_door_big_xb_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorClose.snt", "scp_door_big_za_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "BigDoorClose.snt", "scp_door_big_zb_" + Index, 0.3f, false);
+		PlaySoundAtEntity("doormane", "KeycardGood.snt", asEntity, 0.01f, false);
+	}
+}

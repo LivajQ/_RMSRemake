@@ -111,16 +111,29 @@ void Sequence66(string &in asTimer)
 	if(GetGlobalVarInt("WinnerAggressive") == 0)
 	{
 		SetMessage("WinMess", "AggressiveNo", 2.0f);
-		AddTimer("a", 3.0f, "Sequence7");
+		AddTimer("a", 3.0f, "Sequence666");
 	}
 	else if(GetGlobalVarInt("WinnerAggressive") == 1)
 	{
 		SetMessage("WinMess", "AggressiveYes", 2.0f);
-		AddTimer("a", 3.0f, "Sequence7");
+		AddTimer("a", 3.0f, "Sequence666");
 	}
 	else
 	{
 		SetMessage("WinMess", "AggressiveYesYes", 2.0f);
+		AddTimer("a", 3.0f, "Sequence666");
+	}
+}
+void Sequence666(string &in asTimer)
+{
+	if(GetGlobalVarInt("WinnerUnfair") == 0)
+	{
+		SetMessage("WinMess", "UnfairNo", 2.0f);
+		AddTimer("a", 3.0f, "Sequence7");
+	}
+	else
+	{
+		SetMessage("WinMess", "UnfairYes", 2.0f);
 		AddTimer("a", 3.0f, "Sequence7");
 	}
 }
@@ -179,8 +192,9 @@ void CalculateReward(string &in asTimer)
 	int Aggressive = GetGlobalVarInt("WinnerAggressive");
 	int Magician = GetGlobalVarInt("WinnerMagician");
 	int Mines = GetGlobalVarInt("WinnerMines");
-	int[] BoolCollection = {Shield, Seizure, Speed, Respawns, Magician, Mines};
-	int[] PointsForEach = {-4, 8, -6, -3, 3, 2}; 
+	int Unfair = GetGlobalVarInt("WinnerUnfair");
+	int[] BoolCollection = {Shield, Seizure, Speed, Respawns, Magician, Mines, Unfair};
+	int[] PointsForEach = {-4, 8, -6, -3, 3, 2, 3}; 
 	int PointsEnemy = Enemies;
 	int PointsDifficulty = ((Difficulty - 1)* 2) + 1; 
 	int PointsAggressive = Aggressive * 3; 
