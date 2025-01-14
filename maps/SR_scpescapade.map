@@ -1,78 +1,78 @@
 <Level>
     <EditorSession>
         <Performance CamClipPlanes="0.05 1000" LightsActive="true" PSActive="true" ShowFog="true" ShowSkybox="true" WorldReflection="true" />
-        <ViewportConfig BGColor="0.2 0.2 0.2 1" GAmbientLight="true" GPointLight="false" GridSnap="false" GridSnapSeparation="0.25" SelectedViewport="3" UsingEnlargedViewport="true">
-            <Viewport CameraPosition="55.3118 1.4891 150.936" CameraTarget="55.3118 1.4891 -29.0637" CameraZoom="0" GridHeight="-29.0637" GridPlane="2" Preset="0" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
-            <Viewport CameraPosition="235.312 1.4891 -29.0637" CameraTarget="55.3118 1.4891 -29.0637" CameraZoom="0" GridHeight="55.3118" GridPlane="0" Preset="1" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
-            <Viewport CameraPosition="55.3109 179.943 -29.0605" CameraTarget="55.3109 -0.0565291 -29.0605" CameraZoom="0" GridHeight="-0.0565291" GridPlane="1" Preset="2" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
-            <Viewport CameraPosition="-0.759585 1.8601 -35.4536" CameraTarget="3.00458 7.29911e-006 -37.6017" CameraZoom="2.361" GridHeight="0" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="false" UsingLTCam="true" />
+        <ViewportConfig BGColor="0.2 0.2 0.2 1" GAmbientLight="true" GPointLight="true" GridSnap="false" GridSnapSeparation="0.25" SelectedViewport="3" UsingEnlargedViewport="true">
+            <Viewport CameraPosition="-38.753 5.42275 149.911" CameraTarget="-38.753 5.42275 -30.0884" CameraZoom="4.1888" GridHeight="-30.0884" GridPlane="2" Preset="0" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+            <Viewport CameraPosition="141.247 5.42275 -30.0884" CameraTarget="-38.753 5.42275 -30.0884" CameraZoom="4.1888" GridHeight="-38.753" GridPlane="0" Preset="1" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+            <Viewport CameraPosition="-38.7533 185.337 -30.1629" CameraTarget="-38.7533 5.33792 -30.1629" CameraZoom="4.79045" GridHeight="5.33792" GridPlane="1" Preset="2" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="true" />
+            <Viewport CameraPosition="70.9618 2.29033 -34.2107" CameraTarget="68.7767 5.16625e-006 -30.6955" CameraZoom="2.35801" GridHeight="0" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="false" UsingLTCam="true" />
         </ViewportConfig>
         <Groups>
             <Group ID="0" Name="None" Visible="true" />
         </Groups>
     </EditorSession>
-    <MapData FogActive="true" FogColor="1 1 1 1" FogCulling="true" FogEnd="50" FogFalloffExp="1.49012e-008" FogStart="50" GlobalDecalMaxTris="300" Name="" SkyBoxActive="false" SkyBoxColor="1 1 1 1" SkyBoxTexture="">
+    <MapData FogActive="true" FogColor="1 1 1 1" FogCulling="true" FogEnd="50" FogFalloffExp="1.49012e-008" FogStart="50" GlobalDecalMaxTris="300" Name="" SkyBoxActive="false" SkyBoxColor="1 1 1 1" SkyBoxTexture="../../../../../../">
         <MapContents>
             <FileIndex_StaticObjects NumOfFiles="21">
-                <File Id="0" Path="static_objects/AA/scpassets/rooms/scp_room_venthallway.dae" />
-                <File Id="1" Path="static_objects/AA/scpassets/rooms/scp_room_storage.dae" />
-                <File Id="2" Path="static_objects/AA/scpassets/rooms/scp_room_4wayalt.dae" />
-                <File Id="3" Path="static_objects/AA/scpassets/rooms/scp_room_elevator.dae" />
-                <File Id="4" Path="static_objects/AA/scpassets/rooms/scp_room_173.dae" />
-                <File Id="5" Path="static_objects/AA/scpassets/rooms/scp_room_4way.dae" />
-                <File Id="6" Path="static_objects/AA/scpassets/rooms/scp_room_1025.dae" />
-                <File Id="7" Path="static_objects/AA/scpassets/rooms/scp_room_computers.dae" />
-                <File Id="8" Path="static_objects/AA/scpassets/rooms/scp_room_3way.dae" />
-                <File Id="9" Path="static_objects/AA/scpassets/rooms/scp_room_372.dae" />
-                <File Id="10" Path="static_objects/AA/scpassets/rooms/scp_room_1123.dae" />
-                <File Id="11" Path="static_objects/AA/scpassets/rooms/scp_room_cafeteria.dae" />
-                <File Id="12" Path="static_objects/AA/scpassets/rooms/scp_room_medbay.dae" />
-                <File Id="13" Path="static_objects/AA/scpassets/rooms/scp_room_hallwaylight.dae" />
-                <File Id="14" Path="static_objects/AA/scpassets/rooms/scp_room_hallwayalt.dae" />
+                <File Id="0" Path="static_objects/AAA/scpassets/rooms/scp_room_venthallway.dae" />
+                <File Id="1" Path="static_objects/AAA/scpassets/rooms/scp_room_storage.dae" />
+                <File Id="2" Path="static_objects/AAA/scpassets/rooms/scp_room_4wayalt.dae" />
+                <File Id="3" Path="static_objects/AAA/scpassets/rooms/scp_room_elevator.dae" />
+                <File Id="4" Path="static_objects/AAA/scpassets/rooms/scp_room_173.dae" />
+                <File Id="5" Path="static_objects/AAA/scpassets/rooms/scp_room_4way.dae" />
+                <File Id="6" Path="static_objects/AAA/scpassets/rooms/scp_room_1025.dae" />
+                <File Id="7" Path="static_objects/AAA/scpassets/rooms/scp_room_computers.dae" />
+                <File Id="8" Path="static_objects/AAA/scpassets/rooms/scp_room_3way.dae" />
+                <File Id="9" Path="static_objects/AAA/scpassets/rooms/scp_room_372.dae" />
+                <File Id="10" Path="static_objects/AAA/scpassets/rooms/scp_room_1123.dae" />
+                <File Id="11" Path="static_objects/AAA/scpassets/rooms/scp_room_cafeteria.dae" />
+                <File Id="12" Path="static_objects/AAA/scpassets/rooms/scp_room_medbay.dae" />
+                <File Id="13" Path="static_objects/AAA/scpassets/rooms/scp_room_hallwaylight.dae" />
+                <File Id="14" Path="static_objects/AAA/scpassets/rooms/scp_room_hallwayalt.dae" />
                 <File Id="15" Path="static_objects/castlebase/ceiling/welder_wood_middle.dae" />
-                <File Id="16" Path="static_objects/AA/scpassets/wallsnother/scp_stairs_light.dae" />
-                <File Id="17" Path="static_objects/AA/scpassets/rooms/scp_room_electrical.dae" />
-                <File Id="18" Path="static_objects/AA/scpassets/textures/scp_room_914.dae" />
-                <File Id="19" Path="static_objects/AA/scpassets/textures/scp_room_205.dae" />
-                <File Id="20" Path="static_objects/AA/scpassets/textures/scp_room_513.dae" />
+                <File Id="16" Path="static_objects/AAA/scpassets/wallsnother/scp_stairs_light.dae" />
+                <File Id="17" Path="static_objects/AAA/scpassets/rooms/scp_room_electrical.dae" />
+                <File Id="18" Path="static_objects/AAA/scpassets/rooms/scp_room_914.dae" />
+                <File Id="19" Path="static_objects/AAA/scpassets/rooms/scp_room_205.dae" />
+                <File Id="20" Path="static_objects/AAA/scpassets/textures/scp_room_513.dae" />
             </FileIndex_StaticObjects>
             <FileIndex_Entities NumOfFiles="36">
-                <File Id="0" Path="entities/AA/scpassets/doors/scp_door_light_xa.ent" />
-                <File Id="1" Path="entities/AA/scpassets/doors/scp_door_bigframe.ent" />
-                <File Id="2" Path="entities/AA/scpassets/doors/scp_door_light_xb.ent" />
-                <File Id="3" Path="entities/AA/enemies/scp173/scp173.ent" />
-                <File Id="4" Path="entities/AA/enemies/moders/servant_moder04.ent" />
-                <File Id="5" Path="entities/AA/enemies/moders/servant_moder03.ent" />
-                <File Id="6" Path="entities/AA/enemies/moders/servant_moder02.ent" />
-                <File Id="7" Path="entities/AA/enemies/moders/servant_moder01.ent" />
-                <File Id="8" Path="entities/AA/enemies/moders/servant_moder06.ent" />
-                <File Id="9" Path="entities/AA/enemybox/enemybox.ent" />
-                <File Id="10" Path="custom_stories/bjeda/entities/enemy/fp_monster_servant_buffy/fp_monster_servant_buffy.ent" />
-                <File Id="11" Path="entities/AA/enemies/fp_monster_servant_skinny/fp_monster_servant_skinny.ent" />
-                <File Id="12" Path="entities/AA/enemies/servant_beholder/servant_beholder.ent" />
-                <File Id="13" Path="entities/AA/enemies/fp_monster_chubby/Monster Tutorial.ent" />
-                <File Id="14" Path="entities/AA/enemies/servant_magician/servant_magician.ent" />
-                <File Id="15" Path="entities/AA/enemies/mrkrabs/servant_mrkrabs.ent" />
-                <File Id="16" Path="entities/AA/enemies/moders/servant_moder05.ent" />
-                <File Id="17" Path="entities/AA/enemies/plankton/servant_plankton.ent" />
-                <File Id="18" Path="custom_stories/Isla Caprela/entities/enemy/fp_monster_ghost/fp_monster_ghost.ent" />
-                <File Id="19" Path="entities/AA/enemies/flying_demon/flying_demon.ent" />
-                <File Id="20" Path="entities/AA/enemies/servant_ninja/servant_ninja.ent" />
-                <File Id="21" Path="custom_stories/bjeda/entities/enemy/Amnesia_Rebirth_GHOUL/ghoul.ent" />
-                <File Id="22" Path="entities/AA/scpassets/doors/scp_doorframe.ent" />
-                <File Id="23" Path="entities/AA/scpassets/doors/scp_door_light_zb.ent" />
-                <File Id="24" Path="entities/AA/scpassets/doors/scp_door_light_za.ent" />
-                <File Id="25" Path="entities/AA/scpassets/electronics/scp_doorbutton.ent" />
-                <File Id="26" Path="entities/AA/scpassets/electronics/scp_doorkeycard.ent" />
-                <File Id="27" Path="entities/AA/scpassets/keycards/scp_keycard_1.ent" />
-                <File Id="28" Path="entities/AA/scpassets/keycards/scp_keycard_2.ent" />
-                <File Id="29" Path="entities/AA/scpassets/keycards/scp_keycard_3.ent" />
-                <File Id="30" Path="entities/AA/scpassets/keycards/scp_keycard_4.ent" />
-                <File Id="31" Path="entities/AA/scpassets/keycards/scp_keycard_5.ent" />
-                <File Id="32" Path="entities/AA/scpassets/doors/scp_door_big_xa.ent" />
-                <File Id="33" Path="entities/AA/scpassets/doors/scp_door_big_xb.ent" />
-                <File Id="34" Path="entities/AA/scpassets/doors/scp_door_big_za.ent" />
-                <File Id="35" Path="entities/AA/scpassets/doors/scp_door_big_zb.ent" />
+                <File Id="0" Path="entities/AAA/scpassets/doors/scp_door_light_xa.ent" />
+                <File Id="1" Path="entities/AAA/scpassets/doors/scp_door_bigframe.ent" />
+                <File Id="2" Path="entities/AAA/scpassets/doors/scp_door_light_xb.ent" />
+                <File Id="3" Path="entities/AAA/enemies/scp173/scp173.ent" />
+                <File Id="4" Path="entities/AAA/enemies/moders/servant_moder04.ent" />
+                <File Id="5" Path="entities/AAA/enemies/moders/servant_moder03.ent" />
+                <File Id="6" Path="entities/AAA/enemies/moders/servant_moder02.ent" />
+                <File Id="7" Path="entities/AAA/enemies/moders/servant_moder01.ent" />
+                <File Id="8" Path="entities/AAA/enemies/moders/servant_moder06.ent" />
+                <File Id="9" Path="entities/AAA/enemybox/enemybox.ent" />
+                <File Id="10" Path="entities/AAA/enemies/fp_monster_servant_buffy/fp_monster_servant_buffy.ent" />
+                <File Id="11" Path="entities/AAA/enemies/fp_monster_servant_skinny/fp_monster_servant_skinny.ent" />
+                <File Id="12" Path="entities/AAA/enemies/servant_beholder/servant_beholder.ent" />
+                <File Id="13" Path="entities/AAA/enemies/fp_monster_chubby/Monster Tutorial.ent" />
+                <File Id="14" Path="entities/AAA/enemies/servant_magician/servant_magician.ent" />
+                <File Id="15" Path="entities/AAA/enemies/mrkrabs/servant_mrkrabs.ent" />
+                <File Id="16" Path="entities/AAA/enemies/moders/servant_moder05.ent" />
+                <File Id="17" Path="entities/AAA/enemies/plankton/servant_plankton.ent" />
+                <File Id="18" Path="entities/AAA/enemies/fp_monster_ghost/fp_monster_ghost.ent" />
+                <File Id="19" Path="entities/AAA/enemies/flying_demon/flying_demon.ent" />
+                <File Id="20" Path="entities/AAA/enemies/servant_ninja/servant_ninja.ent" />
+                <File Id="21" Path="entities/AAA/enemies/Amnesia_Rebirth_GHOUL/ghoul.ent" />
+                <File Id="22" Path="entities/AAA/scpassets/doors/scp_doorframe.ent" />
+                <File Id="23" Path="entities/AAA/scpassets/doors/scp_door_light_zb.ent" />
+                <File Id="24" Path="entities/AAA/scpassets/doors/scp_door_light_za.ent" />
+                <File Id="25" Path="entities/AAA/scpassets/electronics/scp_doorbutton.ent" />
+                <File Id="26" Path="entities/AAA/scpassets/electronics/scp_doorkeycard.ent" />
+                <File Id="27" Path="entities/AAA/scpassets/keycards/scp_keycard_1.ent" />
+                <File Id="28" Path="entities/AAA/scpassets/keycards/scp_keycard_2.ent" />
+                <File Id="29" Path="entities/AAA/scpassets/keycards/scp_keycard_3.ent" />
+                <File Id="30" Path="entities/AAA/scpassets/keycards/scp_keycard_4.ent" />
+                <File Id="31" Path="entities/AAA/scpassets/keycards/scp_keycard_5.ent" />
+                <File Id="32" Path="entities/AAA/scpassets/doors/scp_door_big_xa.ent" />
+                <File Id="33" Path="entities/AAA/scpassets/doors/scp_door_big_xb.ent" />
+                <File Id="34" Path="entities/AAA/scpassets/doors/scp_door_big_za.ent" />
+                <File Id="35" Path="entities/AAA/scpassets/doors/scp_door_big_zb.ent" />
             </FileIndex_Entities>
             <FileIndex_Decals NumOfFiles="0" />
             <StaticObjects>
@@ -7927,7 +7927,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="659" Name="scp_door_light_za_00" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="53.3 -8 -218.961">
+                <Entity Active="true" FileIndex="24" Group="0" ID="659" Name="scp_door_light_za_00" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="53.3 -8 -218.961">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -7943,7 +7943,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="22" Group="0" ID="660" Name="scp_doorframe_2" Rotation="1.52923 -1.5708 -3.10003" Scale="0.9 0.376 1" Tag="" WorldPos="53.25 -8 -218.961">
+                <Entity Active="true" FileIndex="22" Group="0" ID="660" Name="scp_doorframe_2" Rotation="-1.61236 -1.5708 0.0415627" Scale="0.9 0.376 1" Tag="" WorldPos="53.25 -8 -218.961">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -7962,7 +7962,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="661" Name="scp_door_light_zb_00" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="53.2 -8 -218.961">
+                <Entity Active="true" FileIndex="23" Group="0" ID="661" Name="scp_door_light_zb_00" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="53.2 -8 -218.961">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -7978,7 +7978,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="672" Name="scp_door_light_zb_001" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="-14.0004 3.80259 0.635211">
+                <Entity Active="true" FileIndex="23" Group="0" ID="672" Name="scp_door_light_zb_001" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="-14.0004 3.80259 0.635211">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8013,7 +8013,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="674" Name="scp_door_light_za_001" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="-13.9004 3.80259 0.635211">
+                <Entity Active="true" FileIndex="24" Group="0" ID="674" Name="scp_door_light_za_001" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="-13.9004 3.80259 0.635211">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8064,7 +8064,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="678" Name="scp_door_light_za_002" Rotation="1.54358 -1.5708 -3.11683" Scale="1.4 1.04842 1.25" Tag="" WorldPos="-26.9965 3.80259 6.25199">
+                <Entity Active="true" FileIndex="24" Group="0" ID="678" Name="scp_door_light_za_002" Rotation="-1.59801 -1.57045 0.0247625" Scale="1.4 1.04842 1.25" Tag="" WorldPos="-26.9965 3.80259 6.25199">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8080,7 +8080,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="680" Name="scp_door_light_zb_019" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="6.33602 3.80259 0.635211">
+                <Entity Active="true" FileIndex="23" Group="0" ID="680" Name="scp_door_light_zb_019" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="6.33602 3.80259 0.635211">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8115,7 +8115,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="682" Name="scp_door_light_za_019" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="6.43602 3.80259 0.635211">
+                <Entity Active="true" FileIndex="24" Group="0" ID="682" Name="scp_door_light_za_019" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="6.43602 3.80259 0.635211">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8563,7 +8563,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="721" Name="scp_door_light_zb_007" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="10.2218 0 -20.5014">
+                <Entity Active="true" FileIndex="23" Group="0" ID="721" Name="scp_door_light_zb_007" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="10.2218 0 -20.5014">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8598,7 +8598,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="723" Name="scp_door_light_za_007" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="10.3218 0 -20.5014">
+                <Entity Active="true" FileIndex="24" Group="0" ID="723" Name="scp_door_light_za_007" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="10.3218 0 -20.5014">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8614,7 +8614,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="725" Name="scp_door_light_zb_008" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="30.642 0 -20.501">
+                <Entity Active="true" FileIndex="23" Group="0" ID="725" Name="scp_door_light_zb_008" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="30.642 0 -20.501">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8649,7 +8649,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="727" Name="scp_door_light_za_008" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="30.7419 0 -20.5014">
+                <Entity Active="true" FileIndex="24" Group="0" ID="727" Name="scp_door_light_za_008" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="30.7419 0 -20.5014">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8741,7 +8741,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="735" Name="scp_door_light_zb_009" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="-10.1887 0 -20.5014">
+                <Entity Active="true" FileIndex="23" Group="0" ID="735" Name="scp_door_light_zb_009" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="-10.1887 0 -20.5014">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8776,7 +8776,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="737" Name="scp_door_light_za_009" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="-10.0887 0 -20.5014">
+                <Entity Active="true" FileIndex="24" Group="0" ID="737" Name="scp_door_light_za_009" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="-10.0887 0 -20.5014">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8830,7 +8830,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="741" Name="scp_door_light_zb_010" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="46.8272 0 -20.5014">
+                <Entity Active="true" FileIndex="23" Group="0" ID="741" Name="scp_door_light_zb_010" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="46.8272 0 -20.5014">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8865,7 +8865,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="743" Name="scp_door_light_za_010" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="46.9272 0 -20.5014">
+                <Entity Active="true" FileIndex="24" Group="0" ID="743" Name="scp_door_light_za_010" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="46.9272 0 -20.5014">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8919,7 +8919,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="752" Name="scp_door_light_zb_011" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="41.1184 0 -15.2697">
+                <Entity Active="true" FileIndex="23" Group="0" ID="752" Name="scp_door_light_zb_011" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="41.1184 0 -15.2697">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8954,7 +8954,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="754" Name="scp_door_light_za_011" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="41.2184 0 -15.2697">
+                <Entity Active="true" FileIndex="24" Group="0" ID="754" Name="scp_door_light_za_011" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="41.2184 0 -15.2697">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -8970,7 +8970,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="756" Name="scp_door_light_zb_012" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="36.4929 0 -15.2697">
+                <Entity Active="true" FileIndex="23" Group="0" ID="756" Name="scp_door_light_zb_012" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="36.4929 0 -15.2697">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9005,7 +9005,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="758" Name="scp_door_light_za_012" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="36.5929 0 -15.2697">
+                <Entity Active="true" FileIndex="24" Group="0" ID="758" Name="scp_door_light_za_012" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="36.5929 0 -15.2697">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9021,7 +9021,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="760" Name="scp_door_light_zb_013" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="36.4929 0 -25.689">
+                <Entity Active="true" FileIndex="23" Group="0" ID="760" Name="scp_door_light_zb_013" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="36.4929 0 -25.689">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9056,7 +9056,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="762" Name="scp_door_light_za_013" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="36.5929 0 -25.689">
+                <Entity Active="true" FileIndex="24" Group="0" ID="762" Name="scp_door_light_za_013" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="36.5929 0 -25.689">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9463,7 +9463,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="805" Name="scp_door_light_zb_016" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="-30.6707 0 -20.5014">
+                <Entity Active="true" FileIndex="23" Group="0" ID="805" Name="scp_door_light_zb_016" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="-30.6707 0 -20.5014">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9498,7 +9498,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="807" Name="scp_door_light_za_016" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="-30.5707 0 -20.5014">
+                <Entity Active="true" FileIndex="24" Group="0" ID="807" Name="scp_door_light_za_016" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="-30.5707 0 -20.5014">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9552,7 +9552,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="813" Name="scp_door_light_zb_017" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="-48.3366 -0.0277652 -20.4784">
+                <Entity Active="true" FileIndex="23" Group="0" ID="813" Name="scp_door_light_zb_017" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="-48.3366 -0.0277652 -20.4784">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9587,7 +9587,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="815" Name="scp_door_light_za_017" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="-48.2366 -0.0277652 -20.4784">
+                <Entity Active="true" FileIndex="24" Group="0" ID="815" Name="scp_door_light_za_017" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="-48.2366 -0.0277652 -20.4784">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9641,7 +9641,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="823" Name="scp_door_light_zb_018" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="-65.4481 -0.0277652 -20.3764">
+                <Entity Active="true" FileIndex="23" Group="0" ID="823" Name="scp_door_light_zb_018" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="-65.4481 -0.0277652 -20.3764">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9676,7 +9676,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="825" Name="scp_door_light_za_018" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="-65.3481 -0.0277652 -20.3764">
+                <Entity Active="true" FileIndex="24" Group="0" ID="825" Name="scp_door_light_za_018" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="-65.3481 -0.0277652 -20.3764">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -9994,7 +9994,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="860" Name="scp_door_light_zb_021" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="2.58236 0 -35.2564">
+                <Entity Active="true" FileIndex="23" Group="0" ID="860" Name="scp_door_light_zb_021" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="2.58236 0 -35.2564">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10010,7 +10010,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="22" Group="0" ID="861" Name="scp_doorframe_22" Rotation="-1.61236 -1.56955 0.0415653" Scale="0.9 0.376 0.99" Tag="" WorldPos="2.63236 0 -35.2564">
+                <Entity Active="true" FileIndex="22" Group="0" ID="861" Name="scp_doorframe_22" Rotation="-1.61236 -1.56946 0.0415653" Scale="0.9 0.376 0.99" Tag="" WorldPos="2.63236 0 -35.2564">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10029,7 +10029,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="862" Name="scp_door_light_za_021" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="2.68236 0 -35.2564">
+                <Entity Active="true" FileIndex="24" Group="0" ID="862" Name="scp_door_light_za_021" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="2.68236 0 -35.2564">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10153,7 +10153,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="874" Name="scp_door_light_zb_023" Rotation="-1.48781 1.56982 0.0829827" Scale="1.4 1.00001 1.24998" Tag="" WorldPos="46.5588 -0.050134 -54.5393">
+                <Entity Active="true" FileIndex="23" Group="0" ID="874" Name="scp_door_light_zb_023" Rotation="-1.48781 1.56988 0.0829827" Scale="1.4 1.00001 1.24998" Tag="" WorldPos="46.5588 -0.050134 -54.5393">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10169,7 +10169,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="22" Group="0" ID="875" Name="scp_doorframe_24" Rotation="-1.61236 -1.5708 0.0415653" Scale="0.9 0.376001 0.999997" Tag="" WorldPos="46.6088 -0.050134 -54.5393">
+                <Entity Active="true" FileIndex="22" Group="0" ID="875" Name="scp_doorframe_24" Rotation="1.52923 -1.5708 -3.10003" Scale="0.9 0.376001 0.999997" Tag="" WorldPos="46.6088 -0.050134 -54.5393">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10188,7 +10188,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="876" Name="scp_door_light_za_023" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="46.6588 -0.050134 -54.5393">
+                <Entity Active="true" FileIndex="24" Group="0" ID="876" Name="scp_door_light_za_023" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="46.6588 -0.050134 -54.5393">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10280,7 +10280,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="888" Name="scp_door_light_zb_024" Rotation="-1.48781 1.5708 0.0829827" Scale="1.4 1 1.25" Tag="" WorldPos="-9.57628 0 -56.6359">
+                <Entity Active="true" FileIndex="23" Group="0" ID="888" Name="scp_door_light_zb_024" Rotation="1.65378 1.5708 -3.05861" Scale="1.4 1 1.25" Tag="" WorldPos="-9.57628 0 -56.6359">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10296,7 +10296,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="22" Group="0" ID="889" Name="scp_doorframe_25" Rotation="-1.61236 -1.57002 0.0415653" Scale="0.850139 0.549028 1" Tag="" WorldPos="-9.52628 0 -56.6359">
+                <Entity Active="true" FileIndex="22" Group="0" ID="889" Name="scp_doorframe_25" Rotation="-1.61236 -1.56995 0.0415653" Scale="0.850139 0.549028 1" Tag="" WorldPos="-9.52628 0 -56.6359">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10315,7 +10315,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="890" Name="scp_door_light_za_024" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="-9.47628 0 -56.6359">
+                <Entity Active="true" FileIndex="24" Group="0" ID="890" Name="scp_door_light_za_024" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="-9.47628 0 -56.6359">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10369,7 +10369,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="916" Name="scp_door_light_zb_025" Rotation="1.65378 1.56982 -3.05861" Scale="1.4 1.00001 1.24998" Tag="" WorldPos="-48.469 -0.05 -53.848">
+                <Entity Active="true" FileIndex="23" Group="0" ID="916" Name="scp_door_light_zb_025" Rotation="1.65378 1.56988 -3.05861" Scale="1.4 1.00001 1.24998" Tag="" WorldPos="-48.469 -0.05 -53.848">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10385,7 +10385,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="22" Group="0" ID="917" Name="scp_doorframe_28" Rotation="-1.61236 -1.57002 0.0415653" Scale="0.9 0.376001 0.999997" Tag="" WorldPos="-48.419 -0.05 -53.848">
+                <Entity Active="true" FileIndex="22" Group="0" ID="917" Name="scp_doorframe_28" Rotation="-1.61236 -1.57031 0.0415653" Scale="0.9 0.376001 0.999997" Tag="" WorldPos="-48.419 -0.05 -53.848">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10404,7 +10404,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="918" Name="scp_door_light_za_025" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="-48.369 -0.05 -53.848">
+                <Entity Active="true" FileIndex="24" Group="0" ID="918" Name="scp_door_light_za_025" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="-48.369 -0.05 -53.848">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10458,7 +10458,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="923" Name="scp_door_light_zb_026" Rotation="-1.48615 1.5708 0.0813626" Scale="1.4 1.02001 1.24999" Tag="" WorldPos="41.978 -0.050134 -37.4938">
+                <Entity Active="true" FileIndex="23" Group="0" ID="923" Name="scp_door_light_zb_026" Rotation="1.65544 1.5708 -3.06023" Scale="1.4 1.02001 1.24999" Tag="" WorldPos="41.978 -0.050134 -37.4938">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10474,7 +10474,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="22" Group="0" ID="924" Name="scp_doorframe_29" Rotation="-1.61319 -1.57031 0.0407512" Scale="0.9 0.383521 0.999998" Tag="" WorldPos="42.029 -0.050134 -37.4938">
+                <Entity Active="true" FileIndex="22" Group="0" ID="924" Name="scp_doorframe_29" Rotation="-1.61319 -1.5708 0.0407512" Scale="0.9 0.383521 0.999998" Tag="" WorldPos="42.029 -0.050134 -37.4938">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -10493,7 +10493,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="925" Name="scp_door_light_za_026" Rotation="1.54432 -1.5708 -3.11614" Scale="1.4 1.02 1.25" Tag="" WorldPos="42.08 -0.050134 -37.4938">
+                <Entity Active="true" FileIndex="24" Group="0" ID="925" Name="scp_door_light_za_026" Rotation="-1.59727 -1.5708 0.0254528" Scale="1.4 1.02 1.25" Tag="" WorldPos="42.08 -0.050134 -37.4938">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -11030,7 +11030,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="992" Name="scp_door_light_zb_032" Rotation="1.65378 1.56982 -3.05861" Scale="1.4 1.00001 1.24998" Tag="" WorldPos="-68.05 -12.068 -36.494">
+                <Entity Active="true" FileIndex="23" Group="0" ID="992" Name="scp_door_light_zb_032" Rotation="1.65378 1.56988 -3.05861" Scale="1.4 1.00001 1.24998" Tag="" WorldPos="-68.05 -12.068 -36.494">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -11046,7 +11046,7 @@
                         <Var Name="AngularOffsetArea" Value="" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="22" Group="0" ID="993" Name="scp_doorframe_37" Rotation="-1.61236 -1.57031 0.0415653" Scale="0.9 0.376001 0.999997" Tag="" WorldPos="-68 -12.068 -36.494">
+                <Entity Active="true" FileIndex="22" Group="0" ID="993" Name="scp_doorframe_37" Rotation="-1.61236 -1.5708 0.0415653" Scale="0.9 0.376001 0.999997" Tag="" WorldPos="-68 -12.068 -36.494">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -11065,7 +11065,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="994" Name="scp_door_light_za_032" Rotation="1.54484 -1.5708 -3.11563" Scale="1.4 1 1.25" Tag="" WorldPos="-67.95 -12.068 -36.494">
+                <Entity Active="true" FileIndex="24" Group="0" ID="994" Name="scp_door_light_za_032" Rotation="-1.59675 -1.5708 0.0259627" Scale="1.4 1 1.25" Tag="" WorldPos="-67.95 -12.068 -36.494">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -11119,23 +11119,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="23" Group="0" ID="1008" Name="scp_door_light_zb_033" Rotation="-1.47171 1.56965 0.0694805" Scale="1.4 1.19516 1.24998" Tag="" WorldPos="63.6162 -0.0454507 -54.5722">
-                    <UserVariables>
-                        <Var Name="CastShadows" Value="true" />
-                        <Var Name="StaticPhysics" Value="false" />
-                        <Var Name="IsAffectedByDecal" Value="false" />
-                        <Var Name="CallbackFunc" Value="" />
-                        <Var Name="ConnectedProps" Value="" />
-                        <Var Name="ConnectionStateChangeCallback" Value="" />
-                        <Var Name="FullGameSave" Value="false" />
-                        <Var Name="PlayerLookAtCallback" Value="" />
-                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
-                        <Var Name="PlayerInteractCallback" Value="" />
-                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
-                        <Var Name="AngularOffsetArea" Value="" />
-                    </UserVariables>
-                </Entity>
-                <Entity Active="true" FileIndex="22" Group="0" ID="1009" Name="scp_doorframe_38" Rotation="1.52113 -1.5708 -3.10681" Scale="0.9 0.449378 0.999997" Tag="" WorldPos="63.676 -0.0454507 -54.5722">
+                <Entity Active="true" FileIndex="22" Group="0" ID="1009" Name="scp_doorframe_38" Rotation="-1.62046 -1.57045 0.0347826" Scale="0.9 0.449378 0.999997" Tag="" WorldPos="63.676 -0.0454507 -54.5722">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -11154,7 +11138,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="24" Group="0" ID="1010" Name="scp_door_light_za_033" Rotation="-1.60181 -1.5708 0.0217248" Scale="1.4 1.19515 1.25" Tag="" WorldPos="63.7357 -0.0454507 -54.5722">
+                <Entity Active="true" FileIndex="24" Group="0" ID="1010" Name="scp_door_light_za_033" Rotation="1.53978 -1.5708 -3.11987" Scale="1.4 1.19515 1.25" Tag="" WorldPos="63.7357 -0.0454507 -54.5722">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -11278,7 +11262,7 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="26" Group="0" ID="1023" Name="Scp_DoorOpener_KeyB_034" Rotation="3.14159 -1.43051e-006 3.14159" Scale="0.1 0.1 0.1" Tag="" WorldPos="-35.6176 5.33792 -29.9638">
+                <Entity Active="true" FileIndex="26" Group="0" ID="1024" Name="Scp_DoorOpener_KeyB_034" Rotation="1.35247e-008 6.07967e-006 5.04736e-008" Scale="0.1 0.1 0.1" Tag="" WorldPos="-38.753 5.33792 -30.0884">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -11297,7 +11281,570 @@
                         <Var Name="VisionMaxSanity" Value="30" />
                     </UserVariables>
                 </Entity>
-                <Entity Active="true" FileIndex="26" Group="0" ID="1024" Name="Scp_DoorOpener_KeyB_35" Rotation="1.35247e-008 6.07967e-006 5.04736e-008" Scale="0.1 0.1 0.1" Tag="" WorldPos="-38.753 5.33792 -30.0884">
+                <Entity Active="true" FileIndex="23" Group="0" ID="1025" Name="scp_door_light_zb_035" Rotation="1.65979 1.56982 -3.06421" Scale="1.4 1.07275 1.24998" Tag="" WorldPos="-65.5935 -0.05 -53.7822">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="22" Group="0" ID="1026" Name="scp_doorframe_40" Rotation="-1.61538 -1.57031 0.0387498" Scale="0.9 0.403351 0.999997" Tag="" WorldPos="-65.5399 -0.05 -53.7822">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="24" Group="0" ID="1027" Name="scp_door_light_za_035" Rotation="-1.59864 -1.57045 0.024203" Scale="1.4 1.07274 1.25" Tag="" WorldPos="-65.4863 -0.05 -53.7822">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="25" Group="0" ID="1029" Name="Scp_DoorOpener_ButA_035" Rotation="-2.24974 1.5708 -0.678939" Scale="0.1 0.1 0.1" Tag="" WorldPos="-65.4623 1.404 -55.2703">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="25" Group="0" ID="1030" Name="Scp_DoorOpener_ButB_035" Rotation="2.26293 -1.5708 2.44946" Scale="0.1 0.1 0.1" Tag="" WorldPos="-65.5971 1.404 -52.2503">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="0" Group="0" ID="1031" Name="scp_door_light_xa_036" Rotation="-1.5708 -1.44229e-008 -3.09086e-008" Scale="1.4 1.12653 1.25" Tag="" WorldPos="-67.9735 -0.0565291 -51.2374">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="22" Group="0" ID="1032" Name="scp_doorframe_41" Rotation="-1.57079 -9.84847e-008 3.82137e-015" Scale="0.9 0.424107 0.999995" Tag="" WorldPos="-67.9735 -0.0565291 -51.1811">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="2" Group="0" ID="1033" Name="scp_door_light_xb_036" Rotation="1.57079 9.84847e-008 3.14159" Scale="1.4 1.12653 1.25" Tag="" WorldPos="-67.9735 -0.0565291 -51.1248">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="26" Group="0" ID="1035" Name="Scp_DoorOpener_KeyA_036" Rotation="3.14159 -1.43051e-006 3.14159" Scale="0.1 0.1 0.1" Tag="" WorldPos="-66.4847 1.40365 -51.0343">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="26" Group="0" ID="1036" Name="Scp_DoorOpener_KeyB_036" Rotation="2.6226e-006 5.87304e-006 -2.6226e-006" Scale="0.1 0.1 0.1" Tag="" WorldPos="-69.4655 1.40365 -51.254">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="26" Group="0" ID="1037" Name="Scp_DoorOpener_KeyB_037" Rotation="2.6226e-006 5.87304e-006 -2.6226e-006" Scale="0.1 0.1 0.1" Tag="" WorldPos="67.0053 1.40365 -50.1811">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="26" Group="0" ID="1038" Name="Scp_DoorOpener_KeyA_037" Rotation="0.313333 -1.5708 -0.313335" Scale="0.1 0.1 0.1" Tag="" WorldPos="69.1917 1.40365 -60.413">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="35" Group="0" ID="1039" Name="scp_door_big_zb_037" Rotation="-1.5708 -1.5708 -2.18192e-006" Scale="1.0873 1.31 1.2445" Tag="" WorldPos="68.5979 -0.0484082 -54.6133">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="34" Group="0" ID="1040" Name="scp_door_big_za_037" Rotation="-1.57079 1.5708 8.30517e-008" Scale="1.0873 1.31 1.2445" Tag="" WorldPos="68.5979 -0.0484082 -54.6242">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="1" Group="0" ID="1041" Name="scp_door_bigframe_5" Rotation="-1.57079 1.5708 8.30517e-008" Scale="1.0873 1.31 1.2445" Tag="" WorldPos="68.5995 -0.0484082 -54.5923">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="23" Group="0" ID="1043" Name="scp_door_light_zb_033" Rotation="-1.47171 1.56965 0.0694805" Scale="1.4 1.19516 1.24998" Tag="" WorldPos="63.6162 -0.0454507 -54.5722">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="24" Group="0" ID="1045" Name="scp_door_914_1" Rotation="1.5711 1.5708 3.13261" Scale="1.30995 1.19515 1.34983" Tag="" WorldPos="75.5391 -0.0454507 -49.3458">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="24" Group="0" ID="1046" Name="scp_door_914_2" Rotation="1.5711 1.5708 3.13261" Scale="1.30995 1.19515 1.34983" Tag="" WorldPos="75.5391 -0.0454507 -61.8817">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="23" Group="0" ID="1047" Name="scp_door_light_zb_038" Rotation="-1.48204 1.57045 0.0775875" Scale="1.4 1.06985 1.25" Tag="" WorldPos="63.8565 0 -20.594">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="22" Group="0" ID="1048" Name="scp_doorframe_42" Rotation="-1.61526 -1.5697 0.0388545" Scale="0.9 0.402262 1" Tag="" WorldPos="63.91 0 -20.594">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="24" Group="0" ID="1049" Name="scp_door_light_za_038" Rotation="1.54303 -1.57045 -3.11732" Scale="1.4 1.06985 1.25" Tag="" WorldPos="63.9635 0 -20.594">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="25" Group="0" ID="1051" Name="Scp_DoorOpener_ButA_038" Rotation="-2.24974 1.5708 -0.678939" Scale="0.1 0.1 0.1" Tag="" WorldPos="63.9886 1.404 -22.0765">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="25" Group="0" ID="1052" Name="Scp_DoorOpener_ButB_038" Rotation="2.26293 -1.5708 2.44946" Scale="0.1 0.1 0.1" Tag="" WorldPos="63.8547 1.404 -19.0904">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="0" Group="0" ID="1053" Name="scp_door_light_xa_039" Rotation="-1.5708 -1.39808e-008 -3.2454e-008" Scale="1.4 1.092 1.3125" Tag="" WorldPos="77.934 -0.0565291 -19.2548">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="22" Group="0" ID="1054" Name="scp_doorframe_43" Rotation="-1.57079 -9.54656e-008 4.01244e-015" Scale="0.9 0.411106 0.9975" Tag="" WorldPos="77.934 -0.0565291 -19.2002">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="2" Group="0" ID="1055" Name="scp_door_light_xb_039" Rotation="1.57079 9.54656e-008 3.14159" Scale="1.4 1.092 1.3125" Tag="" WorldPos="77.934 -0.0565291 -19.1456">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="26" Group="0" ID="1057" Name="Scp_DoorOpener_KeyB_039" Rotation="2.6226e-006 5.87304e-006 -2.6226e-006" Scale="0.1 0.1 0.1" Tag="" WorldPos="76.4316 1.40365 -19.2271">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="26" Group="0" ID="1058" Name="Scp_DoorOpener_KeyA_039" Rotation="3.14159 -1.43051e-006 3.14159" Scale="0.1 0.1 0.1" Tag="" WorldPos="79.3978 1.40365 -19.1677">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="23" Group="0" ID="1065" Name="scp_door_light_zb_040" Rotation="-1.48204 1.57045 0.0775875" Scale="1.4 1.06985 1.25" Tag="" WorldPos="68.9066 -1.15203 -31.2725">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="22" Group="0" ID="1066" Name="scp_doorframe_44" Rotation="-1.61526 -1.56976 0.0388544" Scale="0.9 0.402262 1" Tag="" WorldPos="68.96 -1.15203 -31.2725">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="24" Group="0" ID="1067" Name="scp_door_light_za_040" Rotation="1.54303 -1.5708 -3.11732" Scale="1.4 1.06985 1.25" Tag="" WorldPos="69.0135 -1.15203 -31.2725">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="AngularOffsetArea" Value="" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="25" Group="0" ID="1069" Name="Scp_DoorOpener_ButA_040" Rotation="-1.26734 -1.5708 -0.303455" Scale="0.1 0.1 0.1" Tag="" WorldPos="68.4898 0.230402 -29.853">
+                    <UserVariables>
+                        <Var Name="CastShadows" Value="true" />
+                        <Var Name="StaticPhysics" Value="false" />
+                        <Var Name="IsAffectedByDecal" Value="false" />
+                        <Var Name="CallbackFunc" Value="" />
+                        <Var Name="ConnectedProps" Value="" />
+                        <Var Name="ConnectionStateChangeCallback" Value="" />
+                        <Var Name="FullGameSave" Value="false" />
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="false" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ContainedItem" Value="None" />
+                        <Var Name="DisableBreakable" Value="false" />
+                        <Var Name="IsInsanityVision" Value="false" />
+                        <Var Name="VisionMaxSanity" Value="30" />
+                    </UserVariables>
+                </Entity>
+                <Entity Active="true" FileIndex="25" Group="0" ID="1070" Name="Scp_DoorOpener_ButB_040" Rotation="-2.24974 1.5708 -0.678939" Scale="0.1 0.1 0.1" Tag="" WorldPos="68.9223 0.230402 -32.7847">
                     <UserVariables>
                         <Var Name="CastShadows" Value="true" />
                         <Var Name="StaticPhysics" Value="false" />
@@ -11498,15 +12045,40 @@
                     <Component ID="993" />
                     <Component ID="994" />
                 </Compound>
-                <Compound Active="true" Group="0" ID="1011" Name="Compound_37" Rotation="0 0 0" Scale="1.19515 1 1" Tag="" WorldPos="63.676 -0.0454507 -54.5722">
-                    <Component ID="1008" />
-                    <Component ID="1009" />
-                    <Component ID="1010" />
-                </Compound>
                 <Compound Active="true" Group="0" ID="1019" Name="Compound_38" Rotation="0 0 0" Scale="1 1 1.413" Tag="" WorldPos="-37.1966 3.97699 -30.0406">
                     <Component ID="1016" />
                     <Component ID="1017" />
                     <Component ID="1018" />
+                </Compound>
+                <Compound Active="true" Group="0" ID="1028" Name="Compound_39" Rotation="0 0 0" Scale="1.07274 1 1" Tag="" WorldPos="-65.5399 -0.05 -53.7822">
+                    <Component ID="1025" />
+                    <Component ID="1026" />
+                    <Component ID="1027" />
+                </Compound>
+                <Compound Active="true" Group="0" ID="1034" Name="Compound_40" Rotation="0 0 0" Scale="1 1 1.08321" Tag="" WorldPos="-67.9735 -0.0565291 -51.1811">
+                    <Component ID="1031" />
+                    <Component ID="1032" />
+                    <Component ID="1033" />
+                </Compound>
+                <Compound Active="true" Group="0" ID="1042" Name="Compound_41" Rotation="0 0 0" Scale="1 0.95 0.83" Tag="" WorldPos="68.5987 -0.0484082 -54.6082">
+                    <Component ID="1039" />
+                    <Component ID="1040" />
+                    <Component ID="1041" />
+                </Compound>
+                <Compound Active="true" Group="0" ID="1050" Name="Compound_37" Rotation="0 0 0" Scale="1.06985 1 1" Tag="" WorldPos="63.91 0 -20.594">
+                    <Component ID="1047" />
+                    <Component ID="1048" />
+                    <Component ID="1049" />
+                </Compound>
+                <Compound Active="true" Group="0" ID="1056" Name="Compound_42" Rotation="0 0 0" Scale="1 1.05 1.05" Tag="" WorldPos="77.934 -0.0565291 -19.2002">
+                    <Component ID="1053" />
+                    <Component ID="1054" />
+                    <Component ID="1055" />
+                </Compound>
+                <Compound Active="true" Group="0" ID="1068" Name="Compound_43" Rotation="0 0 0" Scale="1.06985 1 1" Tag="" WorldPos="68.96 -1.15203 -31.2725">
+                    <Component ID="1065" />
+                    <Component ID="1066" />
+                    <Component ID="1067" />
                 </Compound>
             </Misc>
             <StaticObjectCombos />

@@ -28,8 +28,8 @@ void AddConditions()
 	}
 	
 	string[] KeycardLockedIndex = {"0", "0"};
-	string[] KeycardLevelIndex = {"004", "011", "012", "013", "020", "021", "026", "034"};
-	int[] KeycardLevelRequired = {5, 1, 1, 1, 1, 2, 1, 1};
+	string[] KeycardLevelIndex = {"004", "011", "012", "013", "020", "021", "026", "034", "036", "037", "039"};
+	int[] KeycardLevelRequired = {5, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1};
 	for(int x = 0; x < KeycardLockedIndex.length(); x++)
 	{
 		SetLocalVarInt("KeycardLocked_" + KeycardLockedIndex[x], 1);
