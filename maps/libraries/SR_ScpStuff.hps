@@ -1,3 +1,11 @@
+/*keycard spawns
+1 - LCZ unlocked rooms
+2 - LCZ & HCZ lvl 1 rooms (1 per zone)
+3 - 914
+4 - LCZ & HCZ lvl 3 rooms
+5 - HCZ lvl 4 rooms
+*/
+
 void DoorFunctionality()
 {
 	for(int x = 1; x <= 200; x++)
@@ -21,15 +29,15 @@ void DoorFunctionality()
 }
 void AddConditions()
 {
-	string[] ButtonLockedIndex = {"019", "0"};
+	string[] ButtonLockedIndex = {"019", "054"};
 	for(int x = 0; x < ButtonLockedIndex.length(); x++)
 	{
 		SetLocalVarInt("ButtonLocked_" + ButtonLockedIndex[x], 1);
 	}
 	
-	string[] KeycardLockedIndex = {"0", "0"};
-	string[] KeycardLevelIndex = {"004", "011", "012", "013", "020", "021", "026", "034", "036", "037", "039"};
-	int[] KeycardLevelRequired = {5, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1};
+	string[] KeycardLockedIndex = {"060", "0"};
+	string[] KeycardLevelIndex = {"004", "011", "012", "013", "020", "021", "026", "034", "036", "037", "039", "044", "046", "058"};
+	int[] KeycardLevelRequired = {5, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 2, 3};
 	for(int x = 0; x < KeycardLockedIndex.length(); x++)
 	{
 		SetLocalVarInt("KeycardLocked_" + KeycardLockedIndex[x], 1);
